@@ -1,58 +1,56 @@
-# CIVL7009 Source Group Picker
+# YOLO Transformed Dataset Cleaning Browser
 
 [中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.1-094438)
+![Version](https://img.shields.io/badge/latest-V1.2-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A lightweight desktop utility for YOLO-style visual training datasets: consolidate multi-source image collections, review same-origin augmentations, choose one representative source image, and synchronise image-label cleanup into `done/out` folders.
+A lightweight desktop browser for YOLO-style transformed training datasets: review same-origin image variants, choose one representative source image, and synchronise image-label cleanup into `done/out` folders.
 
 ## Why
 
-Large YOLO datasets often combine several sources, scraped batches, annotation-tool exports, or augmentation pipelines. A single source image may appear with rotated, cropped, colour-shifted, re-exported, or otherwise transformed variants. Cleaning these groups manually in Windows File Explorer is slow and easy to get wrong.
+YOLO datasets often contain source images plus transformed versions: rotated, cropped, colour-shifted, re-exported, or otherwise augmented samples. Before training, these same-origin groups often need human review so that near-duplicates are not silently treated as independent source material.
 
-This tool turns that task into a focused source-group review workflow: show one same-origin `.rf.` prefix group, choose the image to keep as the representative source sample, move variants aside, and keep YOLO labels synchronised.
+This tool presents one `.rf.` prefix group at a time, lets the reviewer choose the representative source image, moves variants to `out`, and keeps YOLO `.txt` labels synchronised.
 
-## Current Release: V1.1
+## Current Release: V1.2
 
-V1.1 keeps the V1.0 safety model and expands the workflow from fixed review-folder names to flexible target-folder review.
+V1.2 keeps V1.1's flexible target-folder workflow and adds smoother interaction through background file movement and preview caching.
 
-New in V1.1:
+New in V1.2:
 
-- Direct target image-folder selection from the GUI.
-- `--image-dir` audit/open mode for a single image working folder.
-- Optional `--label-dir` for explicit image-label folder pairing.
-- Automatic paired label-folder inference from an `images/...` path to the matching `labels/...` path.
-- Dynamic group-size handling for ad-hoc folders, where different `.rf.` prefixes may have different member counts.
-- Softer `ManualReview_GroupSize_N` hint handling: mismatches are warnings when a prefix is otherwise valid and selectable.
-- Target-folder audit export for one selected working folder.
-- Backward compatibility with the V1.0 `ManualReview_GroupSize_N` workflow.
+- Background move queue for non-blocking `done/out` file operations.
+- Queue status panel for queued, running, moved, and failed tasks.
+- Background failure rollback where partial move operations can be safely reversed.
+- Failure blocking: follow-up queued moves stop after a failed background task.
+- Preview cache to reduce repeated thumbnail decoding.
+- Unit tests for successful background moves and failed background rollback.
 
 ## Core Capabilities
 
-- Groups image files by the last `.rf.` marker in the filename stem.
-- Moves the selected source image to `images/.../done`.
-- Moves same-prefix variant images to `images/.../out`.
-- Moves matching `.txt` labels to `labels/.../done` and `labels/.../out`.
-- Looks up labels from root, `done`, `out`, `Done_auto`, and `Out_auto`.
-- Blocks unsafe moves when labels are missing, duplicated, or target files already exist.
-- Audits root/done/out counts, prefix counts, group-size distributions, and formula checks when a folder supplies a group-size hint.
-- Exports JSON, CSV, and Markdown audit reports.
-- Supports undo for the last completed group transaction.
-- Supports previous/next navigation and double-click full-size image viewing.
-- Provides a Windows executable through GitHub Releases.
+- Direct image working-folder selection.
+- Automatic `images/...` to `labels/...` pairing.
+- Optional explicit `--label-dir`.
+- Dynamic `.rf.` prefix group sizes for ad-hoc review folders.
+- Backward-compatible `ManualReview_GroupSize_N` workflow.
+- Strict duplicate/missing-label and target-conflict blocking.
+- Synchronous image-label cleanup into `done/out`.
+- Undo for the last completed transaction.
+- JSON, CSV, and Markdown audit reports.
+- Previous/next navigation and double-click full-size image viewing.
+- Windows executable release asset.
 
 ## What It Does Not Do
 
 - It does not train, evaluate, or modify any model.
 - It does not delete, overwrite, edit, upload, or expose raw images or labels.
-- It does not include V1.2+, V1.8+, V1.9/V2 PySide6, Safe Gate, FastReviewIndex, manifest queue, or staging features.
+- It does not include V1.8+ FastReviewIndex, V1.9/V2 PySide6, Safe Gate, manifest queue, or staging features.
 
 ## Working Folder Model
 
-V1.1 supports both standard and ad-hoc source-group review folders under a YOLO-style dataset tree:
+V1.2 supports both standard and ad-hoc transformed-image review folders under a YOLO-style dataset tree:
 
 ```text
 <dataset-id-root>/
@@ -70,34 +68,34 @@ V1.1 supports both standard and ad-hoc source-group review folders under a YOLO-
       Out_auto/
 ```
 
-The classic V1.0 folder name `ManualReview_GroupSize_N` is still supported. In V1.1, non-standard review folders are also supported when files can be grouped by `.rf.` prefix and each selectable prefix has more than one image.
+The classic folder name `ManualReview_GroupSize_N` is still supported. Non-standard review folders are also supported when files can be grouped by `.rf.` prefix and each selectable prefix has more than one image.
 
 ## Quick Start
 
 ### Use the executable
 
-Download the V1.1 release asset:
+Download the V1.2 release asset:
 
 ```text
-CIVL7009_Source_Group_Picker_V1.1_202606050147.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606050237.zip
 ```
 
 Extract it and run:
 
 ```text
-Executable/CIVL7009_Source_Group_Picker_V1.1_202606032239.exe
+Executable/YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606032251.exe
 ```
 
 ### Run from source
 
 ```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.1_202606032239.py
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py
 ```
 
 ### Audit a dataset root
 
 ```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.1_202606032239.py `
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py `
   --audit-only `
   --id-root <dataset-id-root>
 ```
@@ -105,7 +103,7 @@ uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picke
 ### Audit a direct image working folder
 
 ```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.1_202606032239.py `
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py `
   --audit-only `
   --image-dir <dataset-id-root>/images/<review-folder>
 ```
@@ -113,29 +111,29 @@ uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picke
 ## Tests
 
 ```powershell
-uv run --with Pillow python Dataset/Select_Programme/test_source_group_picker_gui_V1.1_202606032239.py
+uv run --with Pillow python Dataset/Select_Programme/test_source_group_picker_gui_V1.2_202606032251.py
 ```
 
-Current V1.1 verification:
+Current V1.2 verification:
 
 ```text
-13/13 tests OK
+15/15 tests OK
 ```
 
 ## Release Asset
 
-The V1.1 binary package is attached to the GitHub Release, not committed into the repository.
+The V1.2 binary package is attached to the GitHub Release, not committed into the repository.
 
 Package:
 
 ```text
-CIVL7009_Source_Group_Picker_V1.1_202606050147.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606050237.zip
 ```
 
 SHA256:
 
 ```text
-6b9d5c23d58c5010c36dc6d692f94e6988736e20719d020cd1490d3aa977e429
+0df7a5c9a562a176b7e5640abcead808322887c247166ab23e87d337a78222ed
 ```
 
 ## Data Safety

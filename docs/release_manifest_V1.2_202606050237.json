@@ -1,0 +1,82 @@
+﻿{
+    "package":  "YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606050237",
+    "generated_at":  "2026-06-05T02:43:24+08:00",
+    "description":  "Program-only V1.2 package for YOLO-style transformed-dataset cleaning with background move queue and preview cache.",
+    "files":  [
+                  {
+                      "relative_path":  ".uv-cache\\.gitignore",
+                      "size_bytes":  1,
+                      "sha256":  "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\.lock",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\CACHEDIR.TAG",
+                      "size_bytes":  43,
+                      "sha256":  "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\interpreter-v4\\469d7701fee4e263\\958b47dab0c5aed4.msgpack",
+                      "size_bytes":  1403,
+                      "sha256":  "0c40e84871f8c8ac2d15b82d38621cc9d24fbce0957d3a43c0d4ec52b1463939"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\sdists-v9\\.git",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\sdists-v9\\.gitignore",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  "__pycache__\\CIVL7009_source_group_picker_gui_V1.2_202606032251.cpython-311.pyc",
+                      "size_bytes":  103008,
+                      "sha256":  "9d2b1362fc13e4df9562bd69bb1e1717b6d42dfb5222cf63eb293e12bba685b8"
+                  },
+                  {
+                      "relative_path":  "Build_Spec\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606032251.spec",
+                      "size_bytes":  800,
+                      "sha256":  "7b7b8feb28b450be17cac8366cb89ecb9305c5bd4f4f71db0f7909726882b09a"
+                  },
+                  {
+                      "relative_path":  "CIVL7009_source_group_picker_gui_V1.2_202606032251.py",
+                      "size_bytes":  62696,
+                      "sha256":  "4c5e401eea9ae6f990a5b11acfd33256a1146a9056ec6c24d85413de5fa90f14"
+                  },
+                  {
+                      "relative_path":  "Executable\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606032251.exe",
+                      "size_bytes":  36847474,
+                      "sha256":  "72a5a01a15d5e411e53b7ecf7c7d0b5e3642c398701f8fbc27bbf02187319d12"
+                  },
+                  {
+                      "relative_path":  "GITHUB_RELEASE_DRAFT_V1.2_202606050237.md",
+                      "size_bytes":  1796,
+                      "sha256":  "f52999cb2d6ba53e5056cadca706e29d739d80bfccbad2e9731d1190a7fe449a"
+                  },
+                  {
+                      "relative_path":  "README.md",
+                      "size_bytes":  4096,
+                      "sha256":  "685d0c7638c3f44529f9e9c774ff4cd57218198f04247754880fdb28888ade34"
+                  },
+                  {
+                      "relative_path":  "README.zh-CN.md",
+                      "size_bytes":  3956,
+                      "sha256":  "e5b8f911932f8847b915736e4f60ccb92827e5b22515adf6b44273cb92d2a80a"
+                  },
+                  {
+                      "relative_path":  "RELEASE_NOTES_V1.2_202606050237.md",
+                      "size_bytes":  2751,
+                      "sha256":  "a7011af2128eda3423a033ab35a814261ddcfb599fe0d212c506b2631402ae0e"
+                  },
+                  {
+                      "relative_path":  "test_source_group_picker_gui_V1.2_202606032251.py",
+                      "size_bytes":  14188,
+                      "sha256":  "623b87ae57191c623140ef7e711dd82ad598aa597a644a47309f2c4d74514cd8"
+                  }
+              ]
+}
