@@ -1,0 +1,82 @@
+﻿{
+    "package":  "CIVL7009_Source_Group_Picker_V1.1_202606050147",
+    "generated_at":  "2026-06-05T01:55:58+08:00",
+    "description":  "Program-only V1.1 package for YOLO-style multi-source visual training dataset source-group review and cleanup with dynamic target-folder support.",
+    "files":  [
+                  {
+                      "relative_path":  ".uv-cache\\.gitignore",
+                      "size_bytes":  1,
+                      "sha256":  "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\.lock",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\CACHEDIR.TAG",
+                      "size_bytes":  43,
+                      "sha256":  "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\interpreter-v4\\469d7701fee4e263\\958b47dab0c5aed4.msgpack",
+                      "size_bytes":  1403,
+                      "sha256":  "0c40e84871f8c8ac2d15b82d38621cc9d24fbce0957d3a43c0d4ec52b1463939"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\sdists-v9\\.git",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  ".uv-cache\\sdists-v9\\.gitignore",
+                      "size_bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "relative_path":  "__pycache__\\CIVL7009_source_group_picker_gui_V1.1_202606032239.cpython-311.pyc",
+                      "size_bytes":  79674,
+                      "sha256":  "d9f27f944e127f4e64fd8128d2ada694ad00e5d6cfc42aa48ab8a132f6af7f23"
+                  },
+                  {
+                      "relative_path":  "Build_Spec\\CIVL7009_Source_Group_Picker_V1.1_202606032239.spec",
+                      "size_bytes":  787,
+                      "sha256":  "6262d16a3f8c1504b99d000c8a0299993f44422fb457a692672871ddd2d24cfe"
+                  },
+                  {
+                      "relative_path":  "CIVL7009_source_group_picker_gui_V1.1_202606032239.py",
+                      "size_bytes":  47953,
+                      "sha256":  "330492651e3f055861a5d3e2e65ae230a804c9a22c32a591133af519d8f04216"
+                  },
+                  {
+                      "relative_path":  "Executable\\CIVL7009_Source_Group_Picker_V1.1_202606032239.exe",
+                      "size_bytes":  36838577,
+                      "sha256":  "560deeaf0fc457a55b3782189af4fb15efb1b17fbded7459d06bc6ce118e7b3d"
+                  },
+                  {
+                      "relative_path":  "GITHUB_RELEASE_DRAFT_V1.1_202606050147.md",
+                      "size_bytes":  1937,
+                      "sha256":  "ef552be47bcc15f75d80da359233ec3a53d22d8ff2102cb944d4d6c6fcef9aec"
+                  },
+                  {
+                      "relative_path":  "README.md",
+                      "size_bytes":  4801,
+                      "sha256":  "f3666011af01ae41ac593ee9d7f072b19414c36f3e236476ed648ef84841d2bb"
+                  },
+                  {
+                      "relative_path":  "README.zh-CN.md",
+                      "size_bytes":  4478,
+                      "sha256":  "2cdf3809d40c69f2295c4194478323edea44831fee86560aedb8057d7dabcabd"
+                  },
+                  {
+                      "relative_path":  "RELEASE_NOTES_V1.1_202606050147.md",
+                      "size_bytes":  3417,
+                      "sha256":  "a0b25effce1b3b66561163191b8ddca30a0e9d1c61c636ec582ad08b56f9dffd"
+                  },
+                  {
+                      "relative_path":  "test_source_group_picker_gui_V1.1_202606032239.py",
+                      "size_bytes":  10965,
+                      "sha256":  "48be351898d63a861ef7ce0a67142263ea4b33208c542f569a371088ef6c3509"
+                  }
+              ]
+}
