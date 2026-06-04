@@ -1,0 +1,28 @@
+# Runtime and audit outputs
+Dataset/Select_Programme/Audit_Reports/
+Dataset/Select_Programme/Runtime_Logs/
+Dataset/Select_Programme/Recovery_Reports/
+Dataset/Select_Programme/Build_Work/
+
+# Release binaries are attached as GitHub Release assets, not committed.
+*.exe
+*.zip
+
+# Raw dataset material must never be committed to this repository.
+Dataset/Source_Archive/
+**/images/
+**/labels/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.webp
+*.tif
+*.tiff
+*.pt
+*.onnx
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
