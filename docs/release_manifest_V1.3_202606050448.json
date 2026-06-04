@@ -1,0 +1,55 @@
+﻿{
+    "package":  "YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606050448",
+    "project_name":  "YOLO Transformed Dataset Cleaning Browser",
+    "version":  "V1.3",
+    "generated_at":  "2026-06-05T04:55:35.0818802+08:00",
+    "description":  "V1.3 release package with cached label index, faster current-group transaction preparation, background audit refresh, upcoming preview preloading, and V1.2 background move queue safety.",
+    "data_safety":  {
+                        "contains_raw_dataset_images":  false,
+                        "contains_raw_dataset_labels":  false,
+                        "contains_model_weights":  false,
+                        "audit_claim_status":  "PENDING_AUDIT"
+                    },
+    "files":  [
+                  {
+                      "path":  "Build_Spec\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606032313.spec",
+                      "bytes":  800,
+                      "sha256":  "d86d70136f69d37d187a939f2cce5ce4ff5a667210ddf4930cd5f58ed0e55e4d"
+                  },
+                  {
+                      "path":  "CIVL7009_source_group_picker_gui_V1.3_202606032313.py",
+                      "bytes":  71091,
+                      "sha256":  "a6ce3067851e57750fd4025ec57eefb338e3acc4472f1438b4a16c6d10982408"
+                  },
+                  {
+                      "path":  "Executable\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606032313.exe",
+                      "bytes":  36850909,
+                      "sha256":  "1710f8bb697f424ba4077c38ac58951de3c94b2b53b4995f1fcc07e04f18205a"
+                  },
+                  {
+                      "path":  "GITHUB_RELEASE_DRAFT_V1.3_202606050448.md",
+                      "bytes":  1681,
+                      "sha256":  "e405862d8e35d58fd8c44c8a230ed4f839a6f793f373aa7c9f8aa432e15ef7fd"
+                  },
+                  {
+                      "path":  "README.md",
+                      "bytes":  4121,
+                      "sha256":  "dc432678a9076cef963ca960d0facb3f7a2a3c21aa5dae583944e51d19972b62"
+                  },
+                  {
+                      "path":  "README.zh-CN.md",
+                      "bytes":  3813,
+                      "sha256":  "709357cc9e346cd72427fa8f2c637fddbd15b9714dd6b288b4c7927ffe99558b"
+                  },
+                  {
+                      "path":  "RELEASE_NOTES_V1.3_202606050448.md",
+                      "bytes":  2327,
+                      "sha256":  "703062dfa4b87d4904c14d7f7a40bec5ce95a9f39bb05ab839198fce556adbe7"
+                  },
+                  {
+                      "path":  "test_source_group_picker_gui_V1.3_202606032313.py",
+                      "bytes":  15319,
+                      "sha256":  "09f922842cb92ce2300ee4fbb5f297ef4e85dba10cdc53f108e589d8ede7a76a"
+                  }
+              ]
+}

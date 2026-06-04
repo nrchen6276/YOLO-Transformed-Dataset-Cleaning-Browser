@@ -1,42 +1,42 @@
 # YOLO Transformed Dataset Cleaning Browser
 
-[中文说明](README.zh-CN.md)
+[Chinese README](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.2-094438)
+![Version](https://img.shields.io/badge/latest-V1.3-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A lightweight desktop browser for YOLO-style transformed training datasets: review same-origin image variants, choose one representative source image, and synchronise image-label cleanup into `done/out` folders.
+A lightweight desktop browser for cleaning YOLO transformed datasets. It helps reviewers compare same-origin image variants, choose the representative source image, and keep YOLO label files synchronised while moving reviewed files into `done/out` folders.
 
 ## Why
 
-YOLO datasets often contain source images plus transformed versions: rotated, cropped, colour-shifted, re-exported, or otherwise augmented samples. Before training, these same-origin groups often need human review so that near-duplicates are not silently treated as independent source material.
+YOLO training datasets often contain transformed versions of the same original image: rotations, crops, colour shifts, re-exports, augmentations, or near-duplicate variants. If those variants are treated as independent source material, downstream training and audit work can become harder to trust.
 
-This tool presents one `.rf.` prefix group at a time, lets the reviewer choose the representative source image, moves variants to `out`, and keeps YOLO `.txt` labels synchronised.
+This tool turns that cleanup task into a visual review workflow: one source-prefix group at a time, one chosen representative, and label-synchronised movement for the rest.
 
-## Current Release: V1.2
+## Current Release: V1.3
 
-V1.2 keeps V1.1's flexible target-folder workflow and adds smoother interaction through background file movement and preview caching.
+V1.3 focuses on smoother repeated review work.
 
-New in V1.2:
+New in V1.3:
 
-- Background move queue for non-blocking `done/out` file operations.
-- Queue status panel for queued, running, moved, and failed tasks.
-- Background failure rollback where partial move operations can be safely reversed.
-- Failure blocking: follow-up queued moves stop after a failed background task.
-- Preview cache to reduce repeated thumbnail decoding.
-- Unit tests for successful background moves and failed background rollback.
+- Cached label index for faster repeated YOLO `.txt` lookup.
+- Current-group transaction preparation from already displayed image members.
+- Background audit refresh after queued move completion.
+- Upcoming-group preloading to warm preview cache.
+- Regression coverage for cached-member and cached-label transaction preparation.
+- V1.2 background move queue, failure rollback, preview cache, undo, and audit export remain available.
 
 ## Core Capabilities
 
 - Direct image working-folder selection.
 - Automatic `images/...` to `labels/...` pairing.
 - Optional explicit `--label-dir`.
-- Dynamic `.rf.` prefix group sizes for ad-hoc review folders.
-- Backward-compatible `ManualReview_GroupSize_N` workflow.
-- Strict duplicate/missing-label and target-conflict blocking.
-- Synchronous image-label cleanup into `done/out`.
+- Dynamic `.rf.` source-prefix group sizes for ad-hoc transformed review folders.
+- Backward-compatible `ManualReview_GroupSize_N` folders.
+- Strict duplicate-label, missing-label, and target-conflict blocking.
+- Label-synchronised movement into `done/out`.
 - Undo for the last completed transaction.
 - JSON, CSV, and Markdown audit reports.
 - Previous/next navigation and double-click full-size image viewing.
@@ -47,13 +47,14 @@ New in V1.2:
 - It does not train, evaluate, or modify any model.
 - It does not delete, overwrite, edit, upload, or expose raw images or labels.
 - It does not include V1.8+ FastReviewIndex, V1.9/V2 PySide6, Safe Gate, manifest queue, or staging features.
+- Audit output remains `PENDING_AUDIT`; it is operational evidence, not a model-performance claim.
 
 ## Working Folder Model
 
-V1.2 supports both standard and ad-hoc transformed-image review folders under a YOLO-style dataset tree:
+V1.3 supports standard and ad-hoc review folders under a YOLO-style dataset tree:
 
 ```text
-<dataset-id-root>/
+<dataset-root>/
   images/
     <review-folder>/
       *.jpg
@@ -74,72 +75,61 @@ The classic folder name `ManualReview_GroupSize_N` is still supported. Non-stand
 
 ### Use the executable
 
-Download the V1.2 release asset:
+Download the V1.3 release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606050237.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606050448.zip
 ```
 
-Extract it and run:
+After extraction, run:
 
 ```text
-Executable/YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606032251.exe
-```
-
-### Run from source
-
-```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py
-```
-
-### Audit a dataset root
-
-```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py `
-  --audit-only `
-  --id-root <dataset-id-root>
-```
-
-### Audit a direct image working folder
-
-```powershell
-uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.2_202606032251.py `
-  --audit-only `
-  --image-dir <dataset-id-root>/images/<review-folder>
-```
-
-## Tests
-
-```powershell
-uv run --with Pillow python Dataset/Select_Programme/test_source_group_picker_gui_V1.2_202606032251.py
-```
-
-Current V1.2 verification:
-
-```text
-15/15 tests OK
-```
-
-## Release Asset
-
-The V1.2 binary package is attached to the GitHub Release, not committed into the repository.
-
-Package:
-
-```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.2_202606050237.zip
+Executable/YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606032313.exe
 ```
 
 SHA256:
 
 ```text
-0df7a5c9a562a176b7e5640abcead808322887c247166ab23e87d337a78222ed
+ff9f79c7eb8e054385b7f0103deecf48c78590b50425801416da2a1a56dfe7b4
 ```
+
+### Run from source
+
+```powershell
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.3_202606032313.py
+```
+
+### Audit a dataset root
+
+```powershell
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.3_202606032313.py `
+  --audit-only `
+  --id-root <dataset-root>
+```
+
+### Audit a single image working folder
+
+```powershell
+uv run --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.3_202606032313.py `
+  --audit-only `
+  --image-dir <dataset-root>/images/<review-folder>
+```
+
+## Tests
+
+```powershell
+uv run --with Pillow python Dataset/Select_Programme/test_source_group_picker_gui_V1.3_202606032313.py
+```
+
+V1.3 package test result: `16/16 OK`.
+
+## Release Assets
+
+- [V1.3 release](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases/tag/v1.3)
+- `YOLO_Transformed_Dataset_Cleaning_Browser_V1.3_202606050448.zip`
+- Source file: `Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.3_202606032313.py`
+- Test file: `Dataset/Select_Programme/test_source_group_picker_gui_V1.3_202606032313.py`
 
 ## Data Safety
 
-This repository is program-only. It excludes raw dataset images, labels, model artefacts, runtime logs, and generated audit outputs. Audit outputs are operational cleaning evidence, not model-performance claims.
-
-## Licence
-
-No open-source licence has been selected yet. Until a licence is added, all rights are reserved by the project owner.
+This repository and release package do not include raw dataset images, YOLO label files, model weights, runtime logs, audit outputs, or training artefacts. The executable is attached as a GitHub Release asset rather than committed into the repository.
