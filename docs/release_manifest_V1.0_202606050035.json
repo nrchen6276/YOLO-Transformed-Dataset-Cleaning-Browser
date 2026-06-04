@@ -1,50 +1,47 @@
 ﻿{
     "package":  "CIVL7009_Source_Group_Picker_V1.0_202606050035",
-    "created_at":  "2026-06-05T00:41:27",
-    "scope":  "V1.0 program release only",
-    "raw_dataset_included":  false,
+    "generated_at":  "2026-06-05T01:34:26+08:00",
+    "description":  "Program-only V1.0 package for YOLO-style multi-source visual training dataset source-group review and cleanup.",
     "files":  [
                   {
                       "relative_path":  "Build_Spec\\CIVL7009_Source_Group_Picker_V1.0_202606032227.spec",
-                      "bytes":  799,
-                      "sha256":  "054b124e4ff173ac8b0b3aaff24ea2ea5e1fdfac35b22dfbe36c67c0b95c710b",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  794,
+                      "sha256":  "409403f906a6136b7cfa2708d6337f271562e17e5f5e1b44e6853ff3ca288e13"
                   },
                   {
                       "relative_path":  "CIVL7009_manualreview_source_picker_gui_V1.0_202606032227.py",
-                      "bytes":  43236,
-                      "sha256":  "a98d079dc94ff5488470a05512cb4b300470497567cb7f57e85457aef246b360",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  43327,
+                      "sha256":  "ce503a332398d848e41906aa0d5b6a7bea8c65f72a23364a99d2e34f810fc06c"
                   },
                   {
                       "relative_path":  "Executable\\CIVL7009_Source_Group_Picker_V1.0_202606032227.exe",
-                      "bytes":  36834980,
-                      "sha256":  "ef82e611e8b650a6e57772ca25f9023aef76fffa368caf267b41d00c234d2736",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  36835363,
+                      "sha256":  "42912557d34ca21686710990108d034e5a0afa65fa3dd0a397837b502e51ae3b"
                   },
                   {
                       "relative_path":  "GITHUB_RELEASE_DRAFT_V1.0_202606050035.md",
-                      "bytes":  2153,
-                      "sha256":  "ce3f2c11570e1be91f8c6d62fde2f963c33653933eb5d27812aff947065bcaf3",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  2160,
+                      "sha256":  "607618e1fadbccdfcc5291df63fd5ce4aba638c4afa2a15882fba24b2e9749cd"
                   },
                   {
                       "relative_path":  "README.md",
-                      "bytes":  4561,
-                      "sha256":  "827a1ac6c4aa7cc83de95dda815c3cf2fa097bdf16951d609a58936d15f976bf",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  4371,
+                      "sha256":  "d213fce2ff31aba1efc5727316c24b98ab994b37f64316610220a7481c7d9621"
+                  },
+                  {
+                      "relative_path":  "README.zh-CN.md",
+                      "size_bytes":  4100,
+                      "sha256":  "395597c5170f752b0d335118e2f29648e2e9641211ff50815efb777b40f6ea5c"
                   },
                   {
                       "relative_path":  "RELEASE_NOTES_V1.0_202606050035.md",
-                      "bytes":  2474,
-                      "sha256":  "233fb3efae8a616720f646e47d065c80339d3115e8650030126e06ee3142a9f7",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  2275,
+                      "sha256":  "60bca526cee1e954fe0118c03b366dd5962a1b180e93fce212ac1199dd869fe9"
                   },
                   {
                       "relative_path":  "test_manualreview_source_picker_gui_V1.0_202606032227.py",
-                      "bytes":  9717,
-                      "sha256":  "91b334ac9f89edfce965292e1cba2f7c955e36a19d35e7c5576c52c7f16268aa",
-                      "contains_raw_dataset":  false
+                      "size_bytes":  9660,
+                      "sha256":  "2874147a0020cb9670b23466256dd89d7b6f2baf0131e794580710299c6a7642"
                   }
               ]
 }

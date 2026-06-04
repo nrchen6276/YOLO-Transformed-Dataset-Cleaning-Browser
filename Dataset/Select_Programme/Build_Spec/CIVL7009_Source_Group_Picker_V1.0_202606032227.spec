@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['D:\\P\\CIVL7009\\Dataset\\Select_Programme\\CIVL7009_manualreview_source_picker_gui_V1.0_202606032227.py'],
+    ['..\\CIVL7009_manualreview_source_picker_gui_V1.0_202606032227.py'],
     pathex=[],
     binaries=[],
     datas=[],

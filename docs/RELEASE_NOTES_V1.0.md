@@ -4,12 +4,13 @@
 
 ## English
 
-`CIVL7009 Source Group Picker V1.0` is the first lightweight release of the ManualReview source-image selection tool.
+`CIVL7009 Source Group Picker V1.0` is the first lightweight release of a source-group review tool for multi-source YOLO-style visual training dataset consolidation and cleaning.
 
 ### Added
 
 - Tkinter desktop GUI for same-prefix image group review.
-- `ManualReview_GroupSize_N` scanning under `images` and `labels`.
+- YOLO-style dataset-root scanning with sibling `images` and `labels` folders.
+- V1.0 group-size working-folder support through the `ManualReview_GroupSize_N` convention for grouped same-origin review batches.
 - `.rf.` prefix grouping.
 - Click-to-select movement into `done/out`.
 - Synchronous image-label movement.
@@ -29,16 +30,17 @@
 
 ### Status
 
-All governance and audit outputs remain `PENDING_AUDIT`.
+Audit outputs are operational cleaning evidence and do not make model-performance claims.
 
 ## 中文
 
-`CIVL7009 Source Group Picker V1.0` 是 ManualReview 图源人工筛选工具的第一个轻量发布版本。
+`CIVL7009 Source Group Picker V1.0` 是面向多源 YOLO 风格视觉训练数据集合并与清洗的图源组人工审核工具的第一个轻量发布版本。
 
 ### 新增
 
 - Tkinter 桌面 GUI，用于同 prefix 图片组筛选。
-- 扫描 `images` 与 `labels` 下的 `ManualReview_GroupSize_N`。
+- 扫描包含同级 `images` 与 `labels` 的 YOLO 风格数据集根目录。
+- 通过 V1.0 组大小工作目录约定 `ManualReview_GroupSize_N` 支持同源图片组的人工筛选。
 - 基于 `.rf.` 的 prefix 分组。
 - 点击选择后移动到 `done/out`。
 - 图片与标签同步移动。
@@ -58,4 +60,4 @@ All governance and audit outputs remain `PENDING_AUDIT`.
 
 ### 状态
 
-所有治理与校核输出均保持 `PENDING_AUDIT`。
+校核输出只作为数据清洗过程证据，不代表模型性能结论。

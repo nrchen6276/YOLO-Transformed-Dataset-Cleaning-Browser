@@ -7,16 +7,18 @@
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-一个轻量桌面工具，用于在 CIVL7009 `ManualReview_GroupSize_N` 目录中，从同一 `.rf.` prefix 图片组里人工选择“图源”。
+一个面向 YOLO 风格视觉训练数据集的轻量桌面工具：用于多源图像集合整合后的人工筛选、同源变换图清洗、图源代表图选择，以及图片-标签同步整理。
 
 ## 为什么需要它
 
-当一张源图对应多张变换图时，在 Windows 文件资源管理器里逐组挑选会很慢，也容易错放文件。这个工具一次显示一个同 prefix 图片组，人工点击图源后，自动把图源和变换图分入 `done/out`，并同步移动标签。
+YOLO 数据集经常来自多个来源、多个下载批次、Roboflow 风格导出或增强流水线。同一张源图可能带有旋转、裁剪、颜色变化等多个变换版本。人工在 Windows 文件资源管理器里逐组清理这些图片，速度慢，也容易错放标签。
+
+这个工具把清理过程变成一个聚焦的图源组审核工作流：一次显示一个同源 `.rf.` prefix 图片组，人工选择要保留为图源代表的图片，其余变换图移入 `out`，并同步移动 YOLO `.txt` 标签。
 
 ## V1.0 功能
 
-- 扫描 `Dataset/Source_Archive/<ID>/images/ManualReview_GroupSize_N`。
-- 匹配对应的 `labels/ManualReview_GroupSize_N`。
+- 扫描包含同级 `images/` 与 `labels/` 的 YOLO 风格数据集根目录。
+- 识别 V1.0 的组大小工作目录约定 `ManualReview_GroupSize_N`，并匹配 `labels/` 下的对应目录。
 - 使用文件 stem 中最后一个 `.rf.` 标记进行 prefix 分组。
 - 选中的图源进入 `images/.../done`。
 - 同 prefix 的其他变换图进入 `images/.../out`。
@@ -37,10 +39,12 @@
 - 不删除、不覆盖、不编辑、不上传、不暴露原始图片或标签。
 - 不包含 V1.1、V1.8、V1.9、V2.x、PySide6、staging、Safe Gate、FastReviewIndex 等后续功能。
 
-## 目录约定
+## 工作目录约定
+
+V1.0 需要先把待清洗数据整理成下面这种 YOLO 风格图源组审核与清洗目录：
 
 ```text
-Dataset/Source_Archive/<ID>/
+<dataset-id-root>/
   images/
     ManualReview_GroupSize_N/
       *.jpg
@@ -56,6 +60,8 @@ Dataset/Source_Archive/<ID>/
 ```
 
 `ManualReview_GroupSize_1` 会被视为原始单图统计目录，不进入人工择一队列。
+
+这个命名方式是 V1.0 的工作目录约定。工具目标是通用的多源 YOLO 数据集合并、审核与清洗，不绑定某一个本地数据集结构。
 
 ## 快速开始
 
@@ -84,7 +90,7 @@ uv run --with Pillow python Dataset/Select_Programme/CIVL7009_manualreview_sourc
 ```powershell
 uv run --with Pillow python Dataset/Select_Programme/CIVL7009_manualreview_source_picker_gui_V1.0_202606032227.py `
   --audit-only `
-  --id-root Dataset/Source_Archive/01
+  --id-root <dataset-id-root>
 ```
 
 ## 测试
@@ -112,12 +118,12 @@ CIVL7009_Source_Group_Picker_V1.0_202606050035.zip
 SHA256：
 
 ```text
-f3aa42488236db6764ee43d985679012a5246497ae6bf858b576b261c5943f8a
+e170f10a15ae095bf9647be4f3ea7ef0160f4aec7022cc1889a68a32d9246420
 ```
 
 ## 数据安全
 
-本仓库只包含程序，不包含原始数据集图片、标签、模型产物、运行日志或生成的审计输出。所有治理输出均保持 `PENDING_AUDIT` 状态。
+本仓库只包含程序，不包含原始数据集图片、标签、模型产物、运行日志或生成的审计输出。校核报告只作为数据清洗过程证据，不代表模型性能结论。
 
 ## 许可证
 

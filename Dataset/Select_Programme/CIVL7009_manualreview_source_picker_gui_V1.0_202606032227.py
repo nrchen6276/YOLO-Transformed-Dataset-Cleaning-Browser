@@ -38,7 +38,7 @@ ALLOWED_IMAGE_SUBDIRS = {"done", "out"}
 ALLOWED_LABEL_SUBDIRS = {"done", "out", "done_auto", "out_auto"}
 
 class ManualReviewError(RuntimeError):
-    """Raised when a ManualReview directory is unsafe for GUI processing."""
+    """Raised when a source-group review directory is unsafe for GUI processing."""
 
 
 @dataclass
@@ -580,7 +580,7 @@ def export_audit_report(id_root: Path, output_root: Path | None = None) -> Path:
     id_root = id_root.resolve()
     output_root = output_root.resolve() if output_root else output_root_for_id_root(id_root)
     timecode = datetime.now().strftime("%Y%m%d%H%M")
-    run_dir = output_root / f"Step08A_数据集治理05_Phase2E_GUI_{timecode}"
+    run_dir = output_root / f"YOLO_Source_Group_Picker_Audit_V1.0_{timecode}"
     run_dir.mkdir(parents=True, exist_ok=False)
     summaries: list[dict[str, Any]] = []
     prefix_rows: list[dict[str, Any]] = []
@@ -661,18 +661,18 @@ def build_markdown_summary(id_root: Path, summaries: list[dict[str, Any]], timec
         )
     table = "\n".join(rows) if rows else "| none | | | | | | | |"
     return (
-        "# ManualReview GUI Audit Summary\n\n"
+        "# YOLO Source Group Picker Audit Summary\n\n"
         "## English\n"
         f"- Status: {STATUS}.\n"
         f"- Audit target: `{id_root}`.\n"
-        "- This audit checks ManualReview group-size folders only. Global `Done` and `transformations` folders are outside scope.\n"
+        "- This audit checks the V1.0 source-group review working folders only. Global `Done` and `transformations` folders are outside scope.\n"
         "- Image rule: `done` has one representative per prefix; `out` has `N - 1` images per same prefix; "
         "`out = done x (N - 1)`.\n"
         "- No images or labels were deleted, overwritten, or edited by this report export.\n\n"
         "## 中文\n"
         f"- 状态：{STATUS}。\n"
         f"- 审计对象：`{id_root}`。\n"
-        "- 本审计只检查 ManualReview 分组目录，全局 `Done` 和 `transformations` 不属于本工具范围。\n"
+        "- 本审计只检查 V1.0 图源组审核工作目录，全局 `Done` 和 `transformations` 不属于本工具范围。\n"
         "- 图片规则：`done` 每个前缀一张代表图；`out` 同一前缀应有 `N - 1` 张；"
         "`out = done x (N - 1)`。\n"
         "- 本报告导出不删除、不覆盖、不编辑图片或标签。\n\n"
@@ -692,7 +692,7 @@ class ManualReviewPickerApp:
         if Image is None or ImageTk is None:
             raise ManualReviewError("Pillow/ImageTk 不可用，请使用 uv run --extra annotation 启动。")
         self.root = tk.Tk()
-        self.root.title("CIVL7009 ManualReview Source Picker")
+        self.root.title("YOLO Source Group Picker V1.0")
         self.root.geometry("1280x820")
         self.id_root: Path | None = None
         self.current_review_dir: Path | None = None
@@ -726,7 +726,7 @@ class ManualReviewPickerApp:
 
         left = ttk.Frame(body, width=360)
         body.add(left, weight=0)
-        ttk.Label(left, text="ManualReview 目录").pack(anchor="w")
+        ttk.Label(left, text="图源组审核目录").pack(anchor="w")
         self.dir_list = tk.Listbox(left, height=16, exportselection=False)
         self.dir_list.pack(fill="both", expand=False, pady=4)
         self.dir_list.bind("<<ListboxSelect>>", self.on_dir_select)
@@ -751,7 +751,7 @@ class ManualReviewPickerApp:
         self.canvas.bind("<Configure>", lambda _event: self.render_current_group())
 
     def choose_id_root(self) -> None:
-        selected = filedialog.askdirectory(title="选择 Dataset/Source_Archive/<ID> 根目录")
+        selected = filedialog.askdirectory(title="选择 YOLO 数据集根目录（包含 images 和 labels）")
         if selected:
             self.load_id_root(Path(selected))
 
@@ -977,9 +977,9 @@ class ManualReviewPickerApp:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="CIVL7009 ManualReview source image picker GUI.")
-    parser.add_argument("--id-root", default="", help="Dataset/Source_Archive/<ID> root, e.g. Dataset/Source_Archive/01.")
-    parser.add_argument("--review-dir", default="", help="Specific images/ManualReview_GroupSize_N directory.")
+    parser = argparse.ArgumentParser(description="YOLO source-group image picker and label-synchronised cleanup GUI.")
+    parser.add_argument("--id-root", default="", help="YOLO-style dataset root containing sibling images/ and labels/ folders.")
+    parser.add_argument("--review-dir", default="", help="Specific images/ManualReview_GroupSize_N source-group review directory.")
     parser.add_argument("--audit-only", action="store_true", help="Export an audit report and exit without launching GUI.")
     parser.add_argument("--output-root", default="", help="Optional Select_Programme output root for --audit-only.")
     return parser.parse_args(argv)

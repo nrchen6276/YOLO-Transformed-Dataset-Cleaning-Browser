@@ -1,5 +1,6 @@
 ﻿{
     "zip":  "D:\\P\\CIVL7009\\Dataset\\Select_Programme\\GitHub_Releases\\CIVL7009_Source_Group_Picker_V1.0_202606050035.zip",
-    "bytes":  36503121,
-    "sha256":  "f3aa42488236db6764ee43d985679012a5246497ae6bf858b576b261c5943f8a"
+    "sha256":  "e170f10a15ae095bf9647be4f3ea7ef0160f4aec7022cc1889a68a32d9246420",
+    "generated_at":  "2026-06-05T01:34:28+08:00",
+    "note":  "Rebuilt after generalising V1.0 release descriptions for YOLO-style multi-source dataset cleaning."
 }

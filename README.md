@@ -7,16 +7,18 @@
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A lightweight desktop tool for manually choosing the source image from `.rf.`-prefix image groups in CIVL7009 ManualReview folders.
+A lightweight desktop utility for YOLO-style visual training datasets: consolidate multi-source image collections, review same-origin augmentations, choose one representative source image, and synchronise image-label cleanup into `done/out` folders.
 
 ## Why
 
-Manual source-image selection is slow and error-prone in Windows File Explorer when every source image has multiple transformed variants. This tool shows one same-prefix group at a time, lets the reviewer choose the source image, and moves the selected image and labels into a traceable `done/out` layout.
+Large YOLO datasets often combine several sources, scraped batches, Roboflow-style exports, or augmentation pipelines. A single source image may appear together with rotated, cropped, colour-shifted, or otherwise transformed variants. Cleaning these groups manually in Windows File Explorer is slow and easy to get wrong.
+
+This tool turns that task into a focused source-group review workflow: show one same-origin `.rf.` prefix group, choose the image to keep as the representative source sample, move variants aside, and keep YOLO labels synchronised.
 
 ## What V1.0 Does
 
-- Scans `Dataset/Source_Archive/<ID>/images/ManualReview_GroupSize_N`.
-- Matches the corresponding `labels/ManualReview_GroupSize_N` folder.
+- Scans a YOLO-style dataset root with sibling `images/` and `labels/` folders.
+- Recognises the V1.0 group-size working-folder convention, `ManualReview_GroupSize_N`, under `images/` and matches the corresponding folder under `labels/`.
 - Groups files by the last `.rf.` marker in the filename stem.
 - Moves the selected source image to `images/.../done`.
 - Moves same-prefix variant images to `images/.../out`.
@@ -36,10 +38,12 @@ Manual source-image selection is slow and error-prone in Windows File Explorer w
 - It does not delete, overwrite, edit, upload, or expose raw images or labels.
 - It does not include V1.1, V1.8, V1.9, V2.x, PySide6, staging, Safe Gate, or FastReviewIndex features.
 
-## Directory Contract
+## Working Folder Contract
+
+V1.0 expects a YOLO-style dataset root prepared for source-group review and cleanup:
 
 ```text
-Dataset/Source_Archive/<ID>/
+<dataset-id-root>/
   images/
     ManualReview_GroupSize_N/
       *.jpg
@@ -55,6 +59,8 @@ Dataset/Source_Archive/<ID>/
 ```
 
 `ManualReview_GroupSize_1` is treated as an original singleton statistics directory and is not entered into the manual choose-one queue.
+
+This naming convention is the V1.0 working-folder contract. The tool itself is intended for general multi-source YOLO dataset consolidation, review, and cleaning, and is not tied to a single local dataset layout.
 
 ## Quick Start
 
@@ -83,7 +89,7 @@ uv run --with Pillow python Dataset/Select_Programme/CIVL7009_manualreview_sourc
 ```powershell
 uv run --with Pillow python Dataset/Select_Programme/CIVL7009_manualreview_source_picker_gui_V1.0_202606032227.py `
   --audit-only `
-  --id-root Dataset/Source_Archive/01
+  --id-root <dataset-id-root>
 ```
 
 ## Tests
@@ -111,12 +117,12 @@ CIVL7009_Source_Group_Picker_V1.0_202606050035.zip
 SHA256:
 
 ```text
-f3aa42488236db6764ee43d985679012a5246497ae6bf858b576b261c5943f8a
+e170f10a15ae095bf9647be4f3ea7ef0160f4aec7022cc1889a68a32d9246420
 ```
 
 ## Data Safety
 
-This repository is program-only. It excludes raw dataset images, labels, model artefacts, runtime logs, and generated audit outputs. All governance outputs remain `PENDING_AUDIT`.
+This repository is program-only. It excludes raw dataset images, labels, model artefacts, runtime logs, and generated audit outputs. Audit outputs are operational cleaning evidence, not model-performance claims.
 
 ## Licence
 
