@@ -1,0 +1,67 @@
+{
+  "programme_version": "V3.0.5",
+  "ui_version": "V3.0.5_202606052235",
+  "created_at": "2026-06-05T22:35:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Pillow": "11.3.0",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.5_202606052235.py",
+  "package": "Dataset/Select_Programme/civl7009_picker_v3_0_5",
+  "spec": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V3.0.5_202606052235.spec",
+  "exe": {
+    "path": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V3.0.5_202606052235.exe",
+    "sha256": "4C3C68454A52E0F4A619EF946CE11A6CAD2060AB1FE7CE3DB088E5F0955CCC37",
+    "bytes": 73052856,
+    "smoke_open": "OK"
+  },
+  "bundled_core": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "test_results": [
+    {
+      "name": "test_source_group_picker_qt_V3.0.5_202606052235.py",
+      "result": "14/14 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V3.0.4_202606051830.py",
+      "result": "13/13 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V2.2.4_202606042313.py",
+      "result": "10/10 OK"
+    },
+    {
+      "name": "source-run --help",
+      "result": "OK"
+    },
+    {
+      "name": "source-run --smoke-open",
+      "result": "OK"
+    },
+    {
+      "name": "exe --smoke-open",
+      "result": "OK"
+    }
+  ],
+  "fix_summary": [
+    "Manual Object image previews now scale to the available card preview area instead of being capped by the old 430x250 thumbnail.",
+    "Thumbnail workers now produce larger default payloads at 1280x960 while retaining asynchronous group-scoped loading.",
+    "ManualObjectCard uses a scalable preview widget that rescales stored image data on resize with aspect ratio preservation.",
+    "Card detail rows are height-limited so the image preview area receives most of the vertical card space.",
+    "BBox labels use larger fonts, thicker outlines, and larger text backgrounds.",
+    "BBox font loading prefers Windows UI fonts such as Microsoft YaHei UI for Chinese class names.",
+    "A new label row directly under the filename shows mapped class names from ID_Classes class files."
+  ],
+  "safety": {
+    "does_not_execute_hash_scan": true,
+    "does_not_create_manual_objects": true,
+    "does_not_create_manual_review_staging": true,
+    "does_not_modify_source_archive_ids": true,
+    "does_not_modify_staged_images_or_labels": true,
+    "manual_objects_mode_writes_only_selection_files": true,
+    "claim_status": "PENDING_AUDIT",
+    "package_asset_raw_scan": "no raw image/model/YAML files found",
+    "manual_review_staging_scan": "no _ManualReview_Staging directory found"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "asset": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606052324.zip",
+  "bytes": 72715412,
+  "sha256": "241b4fa3d43b7d1610183a310c5610769d2f10d5cf934d18b9050661f15ab8bc",
+  "generated_at": "2026-06-05T23:38:16.644529+08:00",
+  "contains_raw_dataset_images": false,
+  "contains_raw_dataset_labels": false,
+  "contains_model_weights": false
+}
