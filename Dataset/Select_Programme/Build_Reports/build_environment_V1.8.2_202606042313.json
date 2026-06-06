@@ -1,0 +1,32 @@
+{
+  "schema_version": "CIVL7009_GITHUB_RELEASE_BUILD_REPORT_V1",
+  "project_name": "YOLO Transformed Dataset Cleaning Browser",
+  "internal_version": "V1.8.2_202606042313",
+  "programme_version": "V1.8.2",
+  "timecode": "202606042313",
+  "created_at_utc": "2026-06-06T22:39:53.051862+00:00",
+  "release_kind": "source_core_compatibility_release",
+  "gui_framework": "Tkinter core source",
+  "python_runtime": "3.11.13 (main, Oct  7 2025, 15:29:59) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_file": "Dataset\\Select_Programme\\CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "source_sha256": "50a01cdbf13a1bdd33afb7fcb7e43547e0296e083137c0faf1594e7cd1b74617",
+  "standalone_executable_in_internal_artefacts": false,
+  "pyinstaller_spec_in_internal_artefacts": false,
+  "dedicated_same_version_test_file_in_internal_artefacts": false,
+  "verification": {
+    "source_help_smoke": "OK",
+    "source_help_command": "uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py --help",
+    "regression_replay": "V1.8.1 test suite replayed against V1.8.2 core",
+    "regression_result": "30 OK, 2 errors, skipped=1",
+    "known_issue": "audit_yolo_dataset() references undefined group_size in original V1.8.2 source; affects YOLO initialisation helper tests."
+  },
+  "release_boundary": {
+    "raw_dataset_images_included": false,
+    "raw_dataset_labels_included": false,
+    "runtime_logs_included": false,
+    "audit_reports_included": false,
+    "model_weights_included": false,
+    "status": "PENDING_AUDIT"
+  }
+}

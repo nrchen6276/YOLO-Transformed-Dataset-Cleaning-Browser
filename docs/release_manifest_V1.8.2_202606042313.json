@@ -1,0 +1,26 @@
+{
+  "schema_version": "CIVL7009_GITHUB_RELEASE_MANIFEST_V1",
+  "project_name": "YOLO Transformed Dataset Cleaning Browser",
+  "internal_version": "V1.8.2_202606042313",
+  "tag": "V1.8.2_202606042313",
+  "title": "YOLO Transformed Dataset Cleaning Browser V1.8.2_202606042313",
+  "release_kind": "source_core_compatibility_release",
+  "follows_internal_version": "V1.8.1_202606041443",
+  "asset_name": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.2_202606042313.zip",
+  "contains_executable": false,
+  "contains_raw_dataset_images": false,
+  "contains_raw_dataset_labels": false,
+  "contains_runtime_logs": false,
+  "contains_model_weights": false,
+  "source_file_sha256": "50a01cdbf13a1bdd33afb7fcb7e43547e0296e083137c0faf1594e7cd1b74617",
+  "known_issue_summary": "V1.8.1 regression replay against V1.8.2 core: 30 OK, 2 errors, skipped=1; YOLO initialisation helper uses undefined group_size.",
+  "files": [
+    "README.md",
+    "README.zh-CN.md",
+    "docs/RELEASE_NOTES_V1.8.2_202606042313.md",
+    "docs/release_manifest_V1.8.2_202606042313.json",
+    "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+    "Dataset/Select_Programme/Build_Reports/build_environment_V1.8.2_202606042313.json"
+  ],
+  "created_at_utc": "2026-06-06T22:39:53.104862+00:00"
+}

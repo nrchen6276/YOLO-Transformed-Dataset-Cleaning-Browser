@@ -2,36 +2,43 @@
 
 [中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.8.1__202606041443-094438)
+![Version](https://img.shields.io/badge/latest-V1.8.2__202606042313-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A lightweight desktop browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style vision datasets. It helps reviewers compare one source-related image group at a time, choose the representative source image, move the remaining variants to `out`, and keep the corresponding YOLO `.txt` labels synchronised.
+A lightweight review browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style computer-vision datasets. It helps dataset maintainers compare source-related image groups, keep a representative source image, separate variant images into `out`, and keep YOLO `.txt` labels synchronised with the image decision.
 
-This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V1.8.1_202606041443`.
+This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V1.8.2_202606042313`.
 
 ## Why This Exists
 
-YOLO training datasets often contain multiple transformed versions of the same original image: rotations, crops, colour edits, augmentations, re-exports, or near-duplicates. If these variants are treated as independent sources without review, later training, leakage checks, and data-quality audit become harder to explain.
+YOLO training datasets often contain multiple transformed versions of the same underlying image: rotations, crops, colour edits, augmentations, re-exports, or near-duplicates. If those variants are treated as independent sources without review, later training, leakage checks, and data-quality audits become harder to explain.
 
-This tool turns that cleaning task into a fast visual review workflow. A reviewer sees one source-prefix group at a time, selects the image to keep as the source representative, and lets the tool move the variants and labels into `done/out` with a process trail. All governance outputs remain `PENDING_AUDIT`.
+This tool turns that cleaning task into a visual review workflow. A reviewer sees one source-related group at a time, selects the image to keep as the source representative, and lets the tool move variants and labels into the intended review folders with a process trail. Governance outputs remain `PENDING_AUDIT`.
 
-## Current Release: V1.8.1_202606041443
+## Current Release: V1.8.2_202606042313
 
-`V1.8.1_202606041443` is a Tkinter source-group review, dataset-initialisation, safe-transaction, and performance-hotfix release. It follows `V1.8_202606040320` exactly in the internal version sequence.
+`V1.8.2_202606042313` is a source-only core compatibility release. It follows `V1.8.1_202606041443` exactly in the internal version sequence and preserves the core file later bundled by Qt/PySide6 shells.
 
-New in V1.8.1:
+Important boundary:
 
-- Adds `FastReviewIndex` for in-memory current-review indexing.
-- Adds quick preview loading so the first groups can render before full indexing finishes.
-- Keeps click preparation on the current group path rather than repeatedly scanning large directories.
-- Adds performance probes for scan/index/prepare operations.
-- Splits runtime logs into production, test, and debug-style folders.
-- Adds `IN_PROGRESS_SYNCED` label-sync state for in-progress folders whose labels are complete.
-- Caps thumbnail preloading to reduce disk contention in large review folders.
-- Keeps V1.8 transaction journal, recovery snapshots, review locks, casefold directory safety, ID Initialisation, cached-state transactions, keypad shortcuts, background move queue, thumbnail cache, process logging, rollback-on-failure, undo, dynamic `.rf.` grouping, and audit export.
-- Test coverage: `32 tests OK, skipped=1` on Windows, where the skipped case is the platform-limited `done`/`Done` sibling collision scenario.
+- The internal artefact set contains the V1.8.2 core source file, but no same-version standalone executable, PyInstaller spec, or dedicated V1.8.2 test file.
+- The GitHub asset for this release is therefore a source/core package, not a Windows executable package.
+- The original V1.8.2 source is released as-is for version-order fidelity.
+
+New or relevant in V1.8.2:
+
+- Keeps the V1.8.1 `FastReviewIndex`, quick preview, transaction journal, recovery scan, review lock, dynamic `.rf.` grouping, label lookup, background move queue, and audit export core.
+- Keeps the CLI entry points for GUI launch, direct review-folder selection, and `--audit-only`.
+- Keeps runtime log splitting by run mode and source-group transaction safety.
+- Acts as the versioned core used by later Qt/PySide6 UI builds.
+
+Known issue found during release verification:
+
+- Replaying the V1.8.1 regression suite against the V1.8.2 core produced `30 tests OK, 2 errors, skipped=1`.
+- The two errors are both in YOLO initialisation helper tests and trace to `audit_yolo_dataset()` referencing an undefined `group_size`.
+- Source-group review, transaction, lock, undo, fast-index, and audit-path tests in the replayed suite passed.
 
 ## Core Capabilities
 
@@ -43,25 +50,24 @@ New in V1.8.1:
 - Block duplicate labels, missing labels, target conflicts, and incomplete groups.
 - Move selected source image/label to `done` and variants to `out`.
 - Export JSON, CSV, and Markdown audit reports.
-- Audit and initialise ordinary YOLO datasets into source-group review boards.
 - Record transaction journals and recovery snapshots for source-group moves.
 - Use review-directory locks to avoid concurrent edits to the same working folder.
 - Use fast in-memory review indexing and quick preview loading for large working folders.
 - Navigate previous/next groups and open a 100% original image viewer.
 - Use number-key shortcuts following the traditional keypad layout.
-- Provide a Windows executable as the release asset.
 
 ## What It Does Not Include
 
 - It does not train, evaluate, or modify any model.
 - It does not generate hash or near-hash Manual Objects candidate groups.
 - It does not include later PySide6, Manual Objects review, conflict review, Tier-prefix governance, or N20_PLUS workflows.
+- It does not provide a same-version V1.8.2 Windows executable.
 - It does not delete, overwrite, upload, or expose raw dataset images or labels.
 - Audit outputs remain `PENDING_AUDIT`; they are process evidence, not model-performance claims.
 
 ## Expected Working Folder Shape
 
-V1.8.1 supports standard or ad-hoc YOLO-style review trees:
+V1.8.2 supports standard or ad-hoc YOLO-style review trees:
 
 ```text
 <dataset-root>/
@@ -86,32 +92,26 @@ Classic names such as `ManualReview_GroupSize_N` remain supported. Non-standard 
 Download the release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.1_202606041443.zip
-```
-
-Unzip it and run:
-
-```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.8.1_202606041443.exe
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.2_202606042313.zip
 ```
 
 Run from source:
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py
 ```
 
-Run tests:
+Show CLI help:
 
 ```powershell
-uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py --help
 ```
 
-Expected verification:
+Expected release verification:
 
 ```text
-32 tests OK, skipped=1
-exe --help OK
+source --help OK
+V1.8.1 regression suite replayed against V1.8.2 core: 30 OK, 2 errors, skipped=1
 ```
 
 ## Safety Boundary

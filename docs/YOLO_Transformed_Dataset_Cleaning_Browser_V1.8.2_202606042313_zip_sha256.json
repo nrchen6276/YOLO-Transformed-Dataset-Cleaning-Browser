@@ -1,0 +1,10 @@
+{
+  "schema_version": "CIVL7009_GITHUB_RELEASE_ZIP_SHA256_V1",
+  "asset_name": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.2_202606042313.zip",
+  "asset_path": "D:\\P\\CIVL7009\\Dataset\\Select_Programme\\GitHub_Releases\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.2_202606042313.zip",
+  "sha256": "d438566909e66d46148b76c31731afe0ed73e92b7e8349a39dae959183fb9d87",
+  "size_bytes": 46484,
+  "created_at_utc": "2026-06-06T22:39:53.147862+00:00",
+  "contains_executable": false,
+  "release_kind": "source_core_compatibility_release"
+}
