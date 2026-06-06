@@ -1,0 +1,58 @@
+{
+  "schema_version": "CIVL7009_GITHUB_RELEASE_MANIFEST_V1",
+  "programme": "YOLO Transformed Dataset Cleaning Browser",
+  "internal_version": "V1.6_202606040015",
+  "github_release_tag": "V1.6_202606040015",
+  "created_at_utc": "2026-06-06T17:53:27.541373+00:00",
+  "version_policy": "External release tag and title match the internal file version exactly.",
+  "included_repo_files": [
+    {
+      "path": "README.md",
+      "size": 4736,
+      "sha256": "17adef1dd5b9d6ad053ab52a3f3bae5e77e718bb66b0007215274171f58317d7"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "size": 4276,
+      "sha256": "e7415cca7a9e7d57f43d15bb7f3a830617bbb5ca30e49248abb7d2d37e431bd8"
+    },
+    {
+      "path": "docs/RELEASE_NOTES_V1.6_202606040015.md",
+      "size": 3047,
+      "sha256": "e5bdd9c0e72f1e66a5b4ac471e06e69bbb79eb21857cd6da422af908427b22b8"
+    },
+    {
+      "path": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.6_202606040015.py",
+      "size": 100987,
+      "sha256": "e73e14f87e898821695c2c380854d620b8a7830c5359344d7c900f3c141cb7e5"
+    },
+    {
+      "path": "Dataset/Select_Programme/test_source_group_picker_gui_V1.6_202606040015.py",
+      "size": 18340,
+      "sha256": "e47eb9d7d6edca34691a2f6f0b405526802ffc2f29a43dff4c30685b7f9116ff"
+    },
+    {
+      "path": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V1.6_202606040015.spec",
+      "size": 830,
+      "sha256": "ae517a3a86ada9f2337d54c1c76bad837207199ead69f77f69a7ff4a2c9e5cf3"
+    },
+    {
+      "path": "Dataset/Select_Programme/Build_Reports/build_environment_V1.6_202606040015.json",
+      "size": 910,
+      "sha256": "9d6aae3608ef9fa3d41e75bf861d5891d4f62f72ac8ded7bcd63d988b6896fe5"
+    }
+  ],
+  "release_asset": {
+    "name": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.6_202606040015.zip",
+    "contains_executable": true,
+    "contains_raw_dataset_images": false,
+    "contains_raw_dataset_labels": false,
+    "contains_runtime_logs": false,
+    "contains_audit_outputs": false,
+    "contains_model_files": false
+  },
+  "verification": {
+    "tests": "19/19 OK",
+    "exe_help_smoke": "exit code 0"
+  }
+}

@@ -2,14 +2,14 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V1.5__202606032354-094438)
+![Version](https://img.shields.io/badge/latest-V1.6__202606040015-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 这是一个轻量桌面浏览器，用于清洗 YOLO 风格视觉训练数据集中的同源变换、重复或近重复图片变体。它帮助复核者同屏比较同一图源相关的一组图片，选择代表性图源，把其余变体移动到 `out`，并同步移动对应的 YOLO `.txt` 标签。
 
-本仓库严格按照内部程序版本顺序发版。当前公开 release 与内部构建 `V1.5_202606032354` 对齐。
+本仓库严格按照内部程序版本顺序发版。当前公开 release 与内部构建 `V1.6_202606040015` 对齐。
 
 ## 为什么需要它
 
@@ -17,17 +17,16 @@ YOLO 训练数据集中经常会混入同一原图的多种变换版本，例如
 
 这个工具把清洗任务变成可视化复核流程：一次展示一个 source-prefix 组，人工选择代表图源，其余变体与标签同步进入 `out`，并保留 `PENDING_AUDIT` 的过程证据。
 
-## 当前版本：V1.5_202606032354
+## 当前版本：V1.6_202606040015
 
-`V1.5_202606032354` 属于 Tkinter 图源组筛选线，严格接在内部 `V1.4_202606032328` 之后。
+`V1.6_202606040015` 属于 Tkinter 图源组筛选线，严格接在内部 `V1.5_202606032354` 之后。
 
-V1.5 新增或改进：
+V1.6 新增或改进：
 
-- 基于缓存状态（cached state）的当前组事务准备，减少点击准备阶段重复查找标签和目标文件状态。
-- 传统数字小键盘布局辅助函数，用于图组排布。
-- 支持按数字键选择图片，并与可视化小键盘顺序一致。
-- 继承 V1.4 的后台移动队列、缩略图缓存、过程日志、失败回滚、撤销、动态 `.rf.` 分组和校核报告导出。
-- 测试覆盖增加到 `18/18 OK`。
+- GUI 异常明细现在会显示具体异常 prefix 和文件名，复核者不再需要只靠统计数字推测问题组。
+- 校核摘要把 prefix 级异常行带入界面文本区，便于人工排查。
+- 继承 V1.5 的缓存状态事务准备、数字小键盘布局、数字键选择、后台移动队列、缩略图缓存、过程日志、失败回滚、撤销、动态 `.rf.` 分组和校核报告导出。
+- 测试覆盖增加到 `19/19 OK`。
 
 ## 核心能力
 
@@ -78,31 +77,31 @@ V1.5 支持 YOLO 风格数据集树下的标准或临时复核目录：
 下载 release asset：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606032354.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.6_202606040015.zip
 ```
 
 解压后运行：
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.5_202606032354.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.6_202606040015.exe
 ```
 
 从源码运行：
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.5_202606032354.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.6_202606040015.py
 ```
 
 运行测试：
 
 ```powershell
-uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.5_202606032354.py
+uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.6_202606040015.py
 ```
 
 预期验证结果：
 
 ```text
-18/18 OK
+19/19 OK
 exe --help OK
 ```
 
