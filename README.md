@@ -2,14 +2,14 @@
 
 [中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.8__202606040320-094438)
+![Version](https://img.shields.io/badge/latest-V1.8.1__202606041443-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 A lightweight desktop browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style vision datasets. It helps reviewers compare one source-related image group at a time, choose the representative source image, move the remaining variants to `out`, and keep the corresponding YOLO `.txt` labels synchronised.
 
-This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V1.8_202606040320`.
+This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V1.8.1_202606041443`.
 
 ## Why This Exists
 
@@ -17,20 +17,21 @@ YOLO training datasets often contain multiple transformed versions of the same o
 
 This tool turns that cleaning task into a fast visual review workflow. A reviewer sees one source-prefix group at a time, selects the image to keep as the source representative, and lets the tool move the variants and labels into `done/out` with a process trail. All governance outputs remain `PENDING_AUDIT`.
 
-## Current Release: V1.8_202606040320
+## Current Release: V1.8.1_202606041443
 
-`V1.8_202606040320` is a Tkinter source-group review, dataset-initialisation, and safe-transaction release. It follows `V1.7_202606040155` exactly in the internal version sequence.
+`V1.8.1_202606041443` is a Tkinter source-group review, dataset-initialisation, safe-transaction, and performance-hotfix release. It follows `V1.8_202606040320` exactly in the internal version sequence.
 
-New in V1.8:
+New in V1.8.1:
 
-- Adds a persistent transaction journal for file movement states such as `PLANNED`, `RUNNING`, `COMMITTED`, `FAILED`, and undo states.
-- Adds recovery snapshots and unfinished-transaction scanning.
-- Adds single-review-directory lock handling with active and stale lock detection.
-- Adds Windows casefold directory checks for `done/out` folder safety.
-- Makes duplicate label audit errors blocking for selection.
-- Tightens root group-size mismatch handling as a selection-blocking issue.
-- Keeps V1.7 ID Initialisation, YOLO audit/export, cached-state transactions, keypad shortcuts, background move queue, thumbnail cache, process logging, undo, dynamic `.rf.` grouping, and audit export.
-- Test coverage: `28 tests OK, skipped=1` on Windows, where the skipped case is the platform-limited `done`/`Done` sibling collision scenario.
+- Adds `FastReviewIndex` for in-memory current-review indexing.
+- Adds quick preview loading so the first groups can render before full indexing finishes.
+- Keeps click preparation on the current group path rather than repeatedly scanning large directories.
+- Adds performance probes for scan/index/prepare operations.
+- Splits runtime logs into production, test, and debug-style folders.
+- Adds `IN_PROGRESS_SYNCED` label-sync state for in-progress folders whose labels are complete.
+- Caps thumbnail preloading to reduce disk contention in large review folders.
+- Keeps V1.8 transaction journal, recovery snapshots, review locks, casefold directory safety, ID Initialisation, cached-state transactions, keypad shortcuts, background move queue, thumbnail cache, process logging, rollback-on-failure, undo, dynamic `.rf.` grouping, and audit export.
+- Test coverage: `32 tests OK, skipped=1` on Windows, where the skipped case is the platform-limited `done`/`Done` sibling collision scenario.
 
 ## Core Capabilities
 
@@ -45,6 +46,7 @@ New in V1.8:
 - Audit and initialise ordinary YOLO datasets into source-group review boards.
 - Record transaction journals and recovery snapshots for source-group moves.
 - Use review-directory locks to avoid concurrent edits to the same working folder.
+- Use fast in-memory review indexing and quick preview loading for large working folders.
 - Navigate previous/next groups and open a 100% original image viewer.
 - Use number-key shortcuts following the traditional keypad layout.
 - Provide a Windows executable as the release asset.
@@ -59,7 +61,7 @@ New in V1.8:
 
 ## Expected Working Folder Shape
 
-V1.5 supports standard or ad-hoc YOLO-style review trees:
+V1.8.1 supports standard or ad-hoc YOLO-style review trees:
 
 ```text
 <dataset-root>/
@@ -84,31 +86,31 @@ Classic names such as `ManualReview_GroupSize_N` remain supported. Non-standard 
 Download the release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.8_202606040320.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.1_202606041443.zip
 ```
 
 Unzip it and run:
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.8_202606040320.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.8.1_202606041443.exe
 ```
 
 Run from source:
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8_202606040320.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 Run tests:
 
 ```powershell
-uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8_202606040320.py
+uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 Expected verification:
 
 ```text
-28 tests OK, skipped=1
+32 tests OK, skipped=1
 exe --help OK
 ```
 
