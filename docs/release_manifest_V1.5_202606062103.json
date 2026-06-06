@@ -1,0 +1,164 @@
+{
+  "package": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606062103",
+  "project_name": "YOLO Transformed Dataset Cleaning Browser",
+  "release_version": "V1.5",
+  "internal_programme_version": "V5.2_202606061825",
+  "generated_at": "2026-06-06T21:08:03.386369+08:00",
+  "description": "Program release package with full N20_PLUS Manual Objects display, batched asynchronous thumbnail loading, YOLO bbox overlays, Manual Objects review, conflict-aware workflows, Tier prefix governance, and source-group review compatibility.",
+  "data_safety": {
+    "contains_raw_dataset_images": false,
+    "contains_raw_dataset_labels": false,
+    "contains_model_weights": false,
+    "contains_runtime_logs": false,
+    "contains_audit_outputs": false,
+    "audit_claim_status": "PENDING_AUDIT"
+  },
+  "verified": {
+    "v52_tests": "34/34 OK",
+    "exe_smoke_open": "OK, exit code 0",
+    "n20_plus_regression": "35-item synthetic N20_PLUS group renders all cards and loads all thumbnails",
+    "release_package_raw_scan": "OK: no raw image/model/YAML/runtime-log/audit-output files in package"
+  },
+  "files": [
+    {
+      "path": "Dataset\\Select_Programme\\Build_Reports\\build_environment_V5.2_202606061825.json",
+      "bytes": 1477,
+      "sha256": "9548fe7ba0df4ae7622f95e82adc16d0ef0eb91f1f9131d3d1d1c3401afe8e08"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Build_Spec\\CIVL7009_Source_Group_Picker_V5.2_202606061825.spec",
+      "bytes": 1318,
+      "sha256": "178c39a0387565901dbf4cf91586f8f08c70d91c2a6ac31169e2c1813a40d63a"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\__init__.py",
+      "bytes": 204,
+      "sha256": "276cf3d45d073b4efed02657c713a036f465b6727d79051b28575b90e7f6826c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\app.py",
+      "bytes": 154142,
+      "sha256": "7fbffa84198bd2ce1d886e7995d1a51abde37f465dbcc480bdb6b4f15b52e544"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\assets.py",
+      "bytes": 6834,
+      "sha256": "a8135fa887386b12d317a4008e7f8ea7c95f6cd2f518758e97377f69d05957a4"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\conflict_resolution.py",
+      "bytes": 34687,
+      "sha256": "8a4273f882c2707f25835417012683fdccd6ff5315ad8d06eb759132a0659806"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\core.py",
+      "bytes": 6178,
+      "sha256": "76553649bbe6d1a2d89b9f02519967d4d09591ea9a327624d9a5108a7e3f7d3c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\manual_objects.py",
+      "bytes": 30889,
+      "sha256": "aba3887e1311670db2c4547f4223c22154ae3f2ee19d3e6fd84275c9bb711400"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\paths.py",
+      "bytes": 1023,
+      "sha256": "e8c23b619e81ee40ddadc40e2d9e9847c55ed507378c79a5a45c46d519c1dc29"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\tier_governance.py",
+      "bytes": 11625,
+      "sha256": "bbf86aa7a3fd9c932458559ea0fc9675e4d71bf9fa54b6a51a2f35ed4d6493d8"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v5_2\\version.py",
+      "bytes": 476,
+      "sha256": "4fe21f5dfecf6a265462e018f0c161e590ca1ffde09a01d2356386a4459355c1"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\CIVL7009_source_group_picker_qt_V5.2_202606061825.py",
+      "bytes": 104,
+      "sha256": "310df93908e0309d6cc6b9029bfccbd638b852e3ae90dada4c4757d7cb864745"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V5.2_202606061825.exe",
+      "bytes": 73210727,
+      "sha256": "b41268c73fe997fbe86a7fcc476ae21cbeed3d4e9bffbe134859de4deeed2aa7"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\README_V5.2_202606061825.md",
+      "bytes": 2453,
+      "sha256": "01e9334a8f3368fae51615e13a89c0594bc4a028e4578399f9c100e97fabc4e8"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\test_source_group_picker_qt_V5.2_202606061825.py",
+      "bytes": 56459,
+      "sha256": "d72041d12ecb790ab9ca23916a9b5c75581fb63f6867529cac2c866c3ce27ea8"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\ambiguous_state.svg",
+      "bytes": 1295,
+      "sha256": "3675ae1523033c4575c38b24af0d0c91461c00520e51c41f6e337bca88630b4c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\app_icon.svg",
+      "bytes": 1293,
+      "sha256": "8ab9657c51528f4de8a65388690fe7785dd8b74dd550323da29d19a687138f73"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\asset_manifest.json",
+      "bytes": 3385,
+      "sha256": "2fe91815c79e66f955fa77dbcb1d64e0dfaad2ce3b2d18e615873a98115d2666"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\asset_prompt_log.json",
+      "bytes": 542,
+      "sha256": "376a4129d79ad30c79cecb5b48a7ac97966c207ebb610c0c2810f5eaaa311223"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\design_tokens.json",
+      "bytes": 721,
+      "sha256": "7b8a8e1b1b9218e89aa8b5b0632d65e60ddaeb8b7961d1b803b6a7436f9902f5"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\empty_manual_objects.svg",
+      "bytes": 1308,
+      "sha256": "4b05580db51a0ef3254fbaca252fd1504567d12e59e9fcf5fe6629899770bf37"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\error_state.svg",
+      "bytes": 1283,
+      "sha256": "6e0ecb8a90e12697a04c1540a7f090430869d081f45b611a2a383dee501d2b34"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\lock_state.svg",
+      "bytes": 1289,
+      "sha256": "92a0edd773a0b886ea82958cd1d7b104866c90952867c7aebc71233f1f4717cb"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\manual_objects_pipeline.svg",
+      "bytes": 1296,
+      "sha256": "816dc434cd24fc6181cb9f8800e168ff937b05b45d8a95302d75cf9b9921b81e"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V5.2_202606061825\\selection_saved.svg",
+      "bytes": 1300,
+      "sha256": "2cf208f035f19184d6994ec6175ec353c3549c8b0138bd698d2412c584800886"
+    },
+    {
+      "path": "docs\\RELEASE_NOTES_V1.5.md",
+      "bytes": 3175,
+      "sha256": "366907bacf678aeb97f4fe25a84ae649f5c072aaf036b057afa1b691d29ea924"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5208,
+      "sha256": "4014dbc6768e59bba849f881ebcaf43a61bb528f8a3e71ab4338c68b8857d2ab"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 4823,
+      "sha256": "a86f80c47399b3b35f86b4797c668516d121446c560d335aa93d95f1c1c7849c"
+    }
+  ]
+}
