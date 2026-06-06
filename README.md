@@ -2,100 +2,93 @@
 
 [中文 README](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.5-094438)
+![Version](https://img.shields.io/badge/latest-V1.4-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A PySide6 desktop browser for cleaning YOLO visual-training datasets that contain transformed images, duplicate samples, near-duplicate samples, or cross-dataset candidate groups. It is designed for fast human review: compare candidate images, inspect YOLO `.txt` bounding boxes, keep or remove candidates, and write structured review decisions for later data-governance scripts.
-
-The tool is intentionally conservative. It is a review and cleaning browser, not a model-training tool and not a destructive dataset mover.
+A desktop browser for cleaning YOLO visual-training datasets that contain transformed, duplicated, or cross-dataset similar image candidates. It helps reviewers compare image groups, keep one or more intended representatives, inspect YOLO `.txt` bounding boxes, and write review decisions without exposing raw dataset material to the repository.
 
 ## Why
 
-YOLO datasets often contain rotated, cropped, colour-shifted, re-exported, duplicated, or perceptual-hash-similar versions of the same source material. If these candidates are treated as independent training samples without review, leakage checks, provenance tracking, and downstream experiment interpretation become harder to trust.
+YOLO datasets often contain transformed versions of the same source image, near-duplicate images across datasets, or candidate groups produced by hash and perceptual-hash audits. Treating these candidates as independent training material can make dataset governance, leakage review, and downstream experiment interpretation harder to trust.
 
-This tool turns that work into a visual workflow:
+This tool turns those cleanup tasks into a visual review workflow:
 
-- browse same-source transformed image groups;
-- review cross-dataset exact-hash and near-hash candidate groups;
-- draw YOLO label boxes and class names on previews;
-- mark one, many, all, or no candidates as retained;
-- record review history and structured `manual_selection.json` decisions;
-- keep operational evidence as `PENDING_AUDIT` rather than overclaiming model quality.
+- compare same-origin transformed image variants;
+- review cross-dataset duplicate or near-duplicate candidate groups;
+- display YOLO label boxes on the preview image;
+- map numeric label IDs to per-dataset class names;
+- write structured manual-selection outputs for later governance agents.
 
-## Current Release: V1.5
+## Current Release: V1.4
 
-Public release `V1.5` packages the internally verified `V5.2_202606061825` build.
+V1.4 is the first public release line to include the newer PySide6 review cockpit and Manual Objects workflow.
 
-New in V1.5:
+New in V1.4:
 
-- Large `N20_PLUS` Manual Objects groups now render all candidate cards in the scrollable review stage.
-- Thumbnail previews for large groups load asynchronously in bounded batches instead of truncating to the first 30 candidates.
-- The preview status panel reports completed, running, queued, and failed thumbnail loads.
-- Manual preview refresh now clears cache for the whole current group.
-- Existing Manual Objects review features are retained: YOLO bbox overlay, class-name mapping, review history, `ALL_OUT`, `ALL_DONE`, undo, conflict-aware hints, and object-level conflict review.
-- Source-group review features are retained: dynamic `.rf.` grouping, background movement into `done/out`, label synchronisation, undo, and keyboard-driven review.
+- PySide6 desktop shell with workflow tabs.
+- Manual Objects review for cross-dataset hash / near-hash candidate groups.
+- Fast global index loading for large candidate stores.
+- On-demand asynchronous image preview loading after a concrete group is selected.
+- Click-to-save and auto-next within the same `Reason / Nxx` bucket.
+- YOLO `.txt` bounding-box overlays on image previews.
+- Per-dataset class-file detection under `ID_Classes/<dataset_id>/`; class file names do not have to be `classes.txt`.
+- Larger adaptive preview cards that use available workspace area.
+- Structured `manual_selection.json` output for later governance workflows.
 
 ## Core Capabilities
 
-- Direct review-folder selection for transformed YOLO source groups.
-- Automatic image-label pairing between `images/...` and `labels/...`.
-- Dynamic same-source grouping for transformed image variants.
-- Background movement into `done/out` for source-group review, with transaction safety.
-- Manual Objects review from `group_manifest.json` and `_indexes/manual_objects_index.csv`.
-- Review statuses: `APPROVED`, `ALL_OUT`, `ALL_DONE`, `SKIP`, `AMBIGUOUS`, `NEEDS_AGENT_CHECK`.
-- YOLO bbox overlay and per-dataset class-file detection.
-- Object-level conflict-awareness for cross-reason Manual Objects decisions.
-- Tier-prefix governance page for prefix-audit workflows.
-- JSON, CSV, Markdown, and history outputs for later governance agents.
+- Direct image working-folder selection for transformed source-group review.
+- Automatic `images/...` to `labels/...` pairing.
+- Dynamic `.rf.` source-prefix group sizes for ad-hoc transformed review folders.
+- Label-synchronised movement into `done/out` for source-group review.
+- Undo for the last completed source-group transaction.
+- Cross-dataset Manual Objects review based on `group_manifest.json`.
+- Selection statuses: `APPROVED`, `SKIP`, `AMBIGUOUS`, `NEEDS_AGENT_CHECK`.
+- YOLO bbox overlay with class-name mapping.
+- JSON, CSV, and Markdown audit/report outputs.
 - Windows executable release asset.
 
 ## What It Does Not Do
 
 - It does not train, evaluate, or modify any model.
+- It does not delete, overwrite, edit, upload, or expose raw images or labels.
 - It does not generate hash / near-hash candidate groups.
-- It does not delete raw dataset images or labels.
-- It does not upload or expose raw dataset material.
-- It does not execute physical staging by default.
-- It does not turn an audit result into a model-performance claim.
+- It does not execute physical staging or dataset-wide destructive operations.
+- Audit output remains `PENDING_AUDIT`; it is operational cleaning evidence, not a model-performance claim.
 
 ## Quick Start
 
-Download the latest release asset:
+### Use the executable
+
+Download the V1.4 release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606062103.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606052324.zip
 ```
 
 After extraction, run:
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V5.2_202606061825.exe
+Executable/CIVL7009_Source_Group_Picker_V3.0.5_202606052235.exe
 ```
 
-From source:
-
-```powershell
-uv run --with PySide6 --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V5.2_202606061825.py
-```
-
-Run tests:
-
-```powershell
-uv run --with PySide6 --with pillow python Dataset/Select_Programme/test_source_group_picker_qt_V5.2_202606061825.py
-```
-
-Expected verification:
+SHA256:
 
 ```text
-34/34 OK
-exe --smoke-open OK
+4C3C68454A52E0F4A619EF946CE11A6CAD2060AB1FE7CE3DB088E5F0955CCC37
 ```
 
-## Manual Objects Class Names
+### Run from source
 
-For YOLO bbox labels to display class names, place any `.txt` class file under each dataset ID folder:
+```powershell
+uv run --with PySide6 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.5_202606052235.py
+```
+
+## Manual Objects Class Files
+
+For bbox labels, place class-name text files under:
 
 ```text
 Manual_Objects/
@@ -106,13 +99,29 @@ Manual_Objects/
       classes_for_id09.txt
 ```
 
-The file name does not have to be `classes.txt`; the first valid non-empty `.txt` file in each ID folder is used as that dataset's class list.
+The filename is flexible. The first valid non-empty `.txt` file in each ID folder is used as that ID's class list.
 
-## Safety Boundary
+## Tests
 
-Release packages exclude raw dataset images, labels, runtime logs, audit outputs, model weights, and dataset archives. Manual Objects mode writes only review decisions such as `manual_selection.json` and `_selection_history` when the reviewer saves a result. All audit outputs remain `PENDING_AUDIT`.
+```powershell
+uv run --with PySide6 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V3.0.5_202606052235.py
+```
 
-## Releases
+V1.4 package test result: `14/14 OK`.
 
-- [Latest release](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases/latest)
-- [All releases](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases)
+Regression checks:
+
+- V3.0.4 regression: `13/13 OK`
+- V2.2.4 regression: `10/10 OK`
+- executable smoke test: OK
+
+## Release Assets
+
+- [V1.4 release](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases/tag/v1.4)
+- `YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606052324.zip`
+- Source entry: `Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.5_202606052235.py`
+- Test file: `Dataset/Select_Programme/test_source_group_picker_qt_V3.0.5_202606052235.py`
+
+## Data Safety
+
+This repository and release package do not include raw dataset images, YOLO label files, model weights, runtime logs, audit outputs, or training artefacts. The executable and zip archive are attached as GitHub Release assets rather than committed into the repository.

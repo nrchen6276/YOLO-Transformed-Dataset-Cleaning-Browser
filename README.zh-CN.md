@@ -2,100 +2,93 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V1.5-094438)
+![Version](https://img.shields.io/badge/latest-V1.4-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-这是一个用于清洗 YOLO 视觉训练数据集的 PySide6 桌面浏览器，面向变换图、重复图、近重复图和跨数据集候选组等人工复核任务。它帮助用户快速比较候选图片、查看 YOLO `.txt` 标注框、选择保留或移除对象，并写出后续数据治理脚本可回读的结构化人工选择结果。
-
-它是一个保守的数据清洗与复核工具，不是训练工具，也不是破坏性数据集移动器。
+一个用于清洗 YOLO 视觉训练数据集的桌面浏览器，面向变换图、重复图、跨数据集相似候选图等人工复核任务。它可以帮助审核者同屏比较候选组、选择保留对象、查看 YOLO `.txt` 标注框，并写出结构化人工选择结果。
 
 ## 为什么需要它
 
-YOLO 数据集中经常会出现旋转、裁剪、调色、重导出、重复或感知哈希相似的图片。如果这些候选在训练前没有被人工复核，就更难判断样本来源、泄漏风险和后续实验解释是否可信。
+YOLO 数据集中常见同一来源图像的变换版本、跨数据集重复图、近哈希候选组或哈希审计生成的人工复核对象。如果这些候选在训练前被静默当作完全独立样本，后续数据治理、泄漏检查和实验解释都会更难可信。
 
-这个工具把这些清洗任务变成可视化工作流：
+这个工具把清洗任务变成可视化工作流：
 
-- 浏览同源变换图片组；
-- 复核跨数据集精确哈希和近哈希候选组；
-- 在预览图上绘制 YOLO 标签框和类别名；
-- 支持保留一个、保留多个、全部保留或全部移除；
-- 记录操作历史，并写出 `manual_selection.json`；
-- 将所有治理输出保持为 `PENDING_AUDIT`，避免把过程证据误写成模型效果结论。
+- 对比同源变换图；
+- 复核跨数据集重复或近重复候选组；
+- 在预览图上显示 YOLO 标签框；
+- 把数字类别 ID 映射为每个数据集自己的类别名；
+- 写出后续治理 agent 可回读的人工选择结果。
 
-## 当前版本：V1.5
+## 当前版本：V1.4
 
-公开发布版本 `V1.5` 打包了内部已验证的 `V5.2_202606061825` 构建。
+V1.4 是公共发布线中首次包含新版 PySide6 复核界面和 Manual Objects 工作流的版本。
 
-V1.5 新增：
+V1.4 新增：
 
-- `N20_PLUS` 大型 Manual Objects 候选组现在会在可滚动图片区显示全部候选卡片。
-- 大组缩略图改为分批异步加载，不再只显示前 30 张候选。
-- 预览状态面板会显示已完成、进行中、排队和失败的缩略图数量。
-- “刷新当前组预览”会刷新当前组全部候选缓存。
-- 保留已有 Manual Objects 复核能力：YOLO 标注框叠加、类别名映射、操作历史、`ALL_OUT`、`ALL_DONE`、撤销、冲突提示和对象级冲突复核。
-- 保留图源组筛选能力：动态 `.rf.` 分组、后台移动到 `done/out`、标签同步、撤销和键盘驱动复核。
+- PySide6 桌面界面和工作流标签页。
+- 跨数据集哈希 / 近哈希候选组的 Manual Objects 复核。
+- 面向大规模候选区的全局 index 快速读取。
+- 选中具体组后才异步加载图片预览。
+- 单击保存并在同一 `Reason / Nxx` 内自动进入下一组。
+- YOLO `.txt` 标注框叠加预览。
+- `ID_Classes/<dataset_id>/` 类别文件检测；类别文件名不必叫 `classes.txt`。
+- 更大的自适应图片预览卡片，尽可能利用工作区空间。
+- 写出 `manual_selection.json` 供后续治理流程回读。
 
 ## 核心能力
 
-- 直接选择 YOLO 变换图源组工作目录。
-- 自动匹配 `images/...` 与 `labels/...`。
-- 对同源变换图进行动态分组。
-- 在图源组复核中后台移动到 `done/out`，并保持标签同步。
-- 基于 `group_manifest.json` 与 `_indexes/manual_objects_index.csv` 执行跨库候选复核。
-- 支持复核状态：`APPROVED`、`ALL_OUT`、`ALL_DONE`、`SKIP`、`AMBIGUOUS`、`NEEDS_AGENT_CHECK`。
-- YOLO 标注框叠加和按数据集 ID 的类别文件检测。
-- 跨 reason 决策的对象级冲突提示。
-- Tier 前缀治理页面，用于统一前缀标记审计。
-- 导出 JSON、CSV、Markdown 和历史记录，供后续治理 agent 回读。
+- 直接选择图片工作文件夹进行同源变换图清洗。
+- 自动从 `images/...` 推断对应 `labels/...`。
+- 支持非常规清洗目录中的动态 `.rf.` source-prefix 分组。
+- 图源组复核中将图片与标签同步移动到 `done/out`。
+- 支持撤销上一组已完成图源事务。
+- 基于 `group_manifest.json` 的跨数据集 Manual Objects 复核。
+- 人工状态：`APPROVED`、`SKIP`、`AMBIGUOUS`、`NEEDS_AGENT_CHECK`。
+- YOLO bbox 叠加和类别名映射。
+- 导出 JSON、CSV 和 Markdown 校核/汇总报告。
 - 提供 Windows 可执行文件 release asset。
 
-## 它不做什么
+## 不做什么
 
-- 不训练、评估或修改任何模型。
+- 不训练、不评估、不修改任何模型。
+- 不删除、不覆盖、不编辑、不上传、不暴露原始图片或标签。
 - 不生成哈希或近哈希候选组。
-- 不删除原始数据集图片或标签。
-- 不上传或暴露原始数据集材料。
-- 默认不执行 physical staging。
-- 不把审计结果升级为模型性能结论。
+- 不执行 physical staging 或数据集级破坏性操作。
+- 校核输出保持 `PENDING_AUDIT`，它是数据清洗过程证据，不是模型性能结论。
 
 ## 快速开始
 
-下载最新 release asset：
+### 使用可执行文件
+
+下载 V1.4 release asset：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606062103.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606052324.zip
 ```
 
 解压后运行：
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V5.2_202606061825.exe
+Executable/CIVL7009_Source_Group_Picker_V3.0.5_202606052235.exe
 ```
 
-从源码运行：
-
-```powershell
-uv run --with PySide6 --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V5.2_202606061825.py
-```
-
-运行测试：
-
-```powershell
-uv run --with PySide6 --with pillow python Dataset/Select_Programme/test_source_group_picker_qt_V5.2_202606061825.py
-```
-
-预期验证结果：
+SHA256：
 
 ```text
-34/34 OK
-exe --smoke-open OK
+4C3C68454A52E0F4A619EF946CE11A6CAD2060AB1FE7CE3DB088E5F0955CCC37
+```
+
+### 从源码运行
+
+```powershell
+uv run --with PySide6 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.5_202606052235.py
 ```
 
 ## Manual Objects 类别文件
 
-如果需要在 YOLO 标注框上显示类别名，请把任意 `.txt` 类别文件放入每个数据集 ID 文件夹：
+若需要 bbox 标签显示类别名，请把类别 `.txt` 放到：
 
 ```text
 Manual_Objects/
@@ -106,13 +99,29 @@ Manual_Objects/
       classes_for_id09.txt
 ```
 
-类别文件名不必叫 `classes.txt`；每个 ID 文件夹中第一个有效的非空 `.txt` 会作为该数据集的类别表。
+文件名可以自定义。每个 ID 文件夹中第一个有效非空 `.txt` 会作为该 ID 的类别表。
 
-## 安全边界
+## 测试
 
-发布包不包含原始数据集图片、标签、运行日志、审计输出、模型权重或数据集压缩包。Manual Objects 模式只会在用户保存复核结果时写入 `manual_selection.json` 和 `_selection_history`。所有审计输出继续保持 `PENDING_AUDIT`。
+```powershell
+uv run --with PySide6 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V3.0.5_202606052235.py
+```
 
-## 发布
+V1.4 包内测试结果：`14/14 OK`。
 
-- [最新版本](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases/latest)
-- [全部版本](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases)
+回归检查：
+
+- V3.0.4 regression: `13/13 OK`
+- V2.2.4 regression: `10/10 OK`
+- exe smoke test: OK
+
+## 发布资产
+
+- [V1.4 release](https://github.com/nrchen6276/YOLO-Transformed-Dataset-Cleaning-Browser/releases/tag/v1.4)
+- `YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606052324.zip`
+- 源码入口：`Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.5_202606052235.py`
+- 测试文件：`Dataset/Select_Programme/test_source_group_picker_qt_V3.0.5_202606052235.py`
+
+## 数据安全边界
+
+本仓库和发布包不包含原始数据集图片、YOLO 标签文件、模型权重、运行日志、校核输出或训练产物。可执行文件和 zip 压缩包作为 GitHub Release assets 附加，不提交进仓库。
