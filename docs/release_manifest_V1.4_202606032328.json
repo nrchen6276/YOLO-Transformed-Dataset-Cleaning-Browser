@@ -1,0 +1,63 @@
+{
+  "package": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606032328",
+  "project_name": "YOLO Transformed Dataset Cleaning Browser",
+  "release_version": "V1.4_202606032328",
+  "internal_programme_version": "V1.4_202606032328",
+  "generated_at": "2026-06-06T22:42:25.373415+08:00",
+  "description": "Internal V1.4 Tkinter source-group review release with process logging, background move queue, rollback, thumbnail queue/cache, dynamic .rf. grouping, audit reports, and undo.",
+  "data_safety": {
+    "contains_raw_dataset_images": false,
+    "contains_raw_dataset_labels": false,
+    "contains_model_weights": false,
+    "contains_runtime_logs": false,
+    "contains_audit_outputs": false,
+    "claim_status": "PENDING_AUDIT"
+  },
+  "verified": {
+    "tests": "16/16 OK",
+    "exe_help": "exit code 0",
+    "release_package_raw_scan": "OK: no raw image/model/YAML/runtime-log/audit-output files in package"
+  },
+  "files": [
+    {
+      "path": "Dataset\\Select_Programme\\Build_Reports\\build_environment_V1.4_202606032328.json",
+      "bytes": 1381,
+      "sha256": "4522ea16b392293620f7432731794f801e836ced5cc349d3aa16bcf157262452"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Build_Spec\\CIVL7009_Source_Group_Picker_V1.4_202606032328.spec",
+      "bytes": 830,
+      "sha256": "036bc09fedf02af9f86fc93ecfc0652efc57ecde495d5ff76278020d9dc536bb"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\CIVL7009_source_group_picker_gui_V1.4_202606032328.py",
+      "bytes": 88649,
+      "sha256": "122217a05b7165b75a21010d48d9e140a42dc86b13762f8ab73c4c86d257876c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V1.4_202606032328.exe",
+      "bytes": 36861548,
+      "sha256": "f8d7d7f812453fa126ccbf331724142ae09d8d1e352ca1af9fcecc5e4ef006f3"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\test_source_group_picker_gui_V1.4_202606032328.py",
+      "bytes": 15456,
+      "sha256": "ced6e6b9407866a90cd2f5b45f29d774a280ce87a5a398ef4bbe403681008cbc"
+    },
+    {
+      "path": "docs\\RELEASE_NOTES_V1.4_202606032328.md",
+      "bytes": 2701,
+      "sha256": "1a6206024b64e5f1de9c3c8a80c5ba5ec58ca9fcba5bf418cc7228502d088337"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4414,
+      "sha256": "3cd5dfd4b8e38cc54c970cb6ff84f5239bc8879dce5de8783f568083a5ed080a"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "bytes": 4146,
+      "sha256": "b535e9219c84cf4534948113e235ceab00d3bacad9b8616ae8e0a6971bdcf2ed"
+    }
+  ]
+}

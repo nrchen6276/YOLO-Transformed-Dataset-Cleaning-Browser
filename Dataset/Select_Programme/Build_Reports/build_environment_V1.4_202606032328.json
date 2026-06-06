@@ -1,0 +1,31 @@
+{
+  "project_name": "YOLO Transformed Dataset Cleaning Browser",
+  "release_version": "V1.4_202606032328",
+  "internal_programme_version": "V1.4_202606032328",
+  "generated_at": "2026-06-06T22:42:25.373415+08:00",
+  "python_for_test": "3.11.13 via uv run",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "gui": "Tkinter",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.4_202606032328.py",
+  "test_file": "Dataset/Select_Programme/test_source_group_picker_gui_V1.4_202606032328.py",
+  "spec_file": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V1.4_202606032328.spec",
+  "exe": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.4_202606032328.exe",
+  "exe_size_bytes": 36861548,
+  "exe_sha256": "f8d7d7f812453fa126ccbf331724142ae09d8d1e352ca1af9fcecc5e4ef006f3",
+  "tests": {
+    "command": "uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.4_202606032328.py",
+    "result": "16/16 OK"
+  },
+  "smoke": {
+    "command": "CIVL7009_Source_Group_Picker_V1.4_202606032328.exe --help",
+    "result": "exit code 0"
+  },
+  "data_safety": {
+    "contains_raw_dataset_images": false,
+    "contains_raw_dataset_labels": false,
+    "contains_model_weights": false,
+    "contains_runtime_logs": false,
+    "contains_audit_outputs": false,
+    "claim_status": "PENDING_AUDIT"
+  }
+}
