@@ -2,14 +2,14 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V1.7__202606040155-094438)
+![Version](https://img.shields.io/badge/latest-V1.8__202606040320-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 这是一个轻量桌面浏览器，用于清洗 YOLO 风格视觉训练数据集中的同源变换、重复或近重复图片变体。它帮助复核者同屏比较同一图源相关的一组图片，选择代表性图源，把其余变体移动到 `out`，并同步移动对应的 YOLO `.txt` 标签。
 
-本仓库严格按照内部程序版本顺序发版。当前公开 release 与内部构建 `V1.7_202606040155` 对齐。
+本仓库严格按照内部程序版本顺序发版。当前公开 release 与内部构建 `V1.8_202606040320` 对齐。
 
 ## 为什么需要它
 
@@ -17,19 +17,20 @@ YOLO 训练数据集中经常会混入同一原图的多种变换版本，例如
 
 这个工具把清洗任务变成可视化复核流程：一次展示一个 source-prefix 组，人工选择代表图源，其余变体与标签同步进入 `out`，并保留 `PENDING_AUDIT` 的过程证据。
 
-## 当前版本：V1.7_202606040155
+## 当前版本：V1.8_202606040320
 
-`V1.7_202606040155` 属于 Tkinter 图源组筛选与数据集初始化线，严格接在内部 `V1.6_202606040015` 之后。
+`V1.8_202606040320` 属于 Tkinter 图源组筛选、数据集初始化和安全事务线，严格接在内部 `V1.7_202606040155` 之后。
 
-V1.7 新增或改进：
+V1.8 新增或改进：
 
-- 新增 ID 初始化页，用于普通 YOLO 数据集。
-- 支持校核常见 YOLO 结构：根目录 `images/labels`，或 `train|valid|val|test/images` 与对应 labels。
-- 初始化前可导出 Markdown 图片-标签匹配校核报告。
-- 将已匹配且带 `.rf.` prefix 的图片-标签对复制到 `ManualReview_GroupSize_N` 大盘；不会移动或删除原始 YOLO 文件夹。
-- 新增后台校核刷新，让 Review Board 可刷新而不冻结主流程。
-- 继承 V1.6 的异常明细、缓存状态事务准备、数字小键盘快捷键、后台移动队列、缩略图缓存、过程日志、失败回滚、撤销、动态 `.rf.` 分组和校核报告导出。
-- 测试覆盖增加到 `21/21 OK`。
+- 新增持久化事务日志，记录 `PLANNED`、`RUNNING`、`COMMITTED`、`FAILED` 和撤销状态。
+- 新增恢复快照（Recovery Snapshot）与未完成事务扫描。
+- 新增单个 review 目录锁，识别活动 lock 与 stale lock。
+- 新增 Windows casefold 目录检查，提升 `done/out` 文件夹安全性。
+- 标签重复的 audit 错误会阻断筛选。
+- root 组大小不匹配会作为阻断筛选的问题处理。
+- 继承 V1.7 的 ID 初始化、YOLO 校核/导出、缓存状态事务、数字小键盘快捷键、后台移动队列、缩略图缓存、过程日志、撤销、动态 `.rf.` 分组和校核报告导出。
+- 测试覆盖：Windows 下 `28 tests OK, skipped=1`；跳过项是平台限制下无法同时创建 `done`/`Done` 兄弟目录的大小写碰撞场景。
 
 ## 核心能力
 
@@ -42,6 +43,8 @@ V1.7 新增或改进：
 - 将选中图源及标签移动到 `done`，将变体移动到 `out`。
 - 导出 JSON、CSV 和 Markdown 校核报告。
 - 校核普通 YOLO 数据集，并初始化为图源组复核大盘。
+- 为图源组移动记录事务日志和恢复快照。
+- 使用 review 目录锁避免同一工作目录被并发编辑。
 - 支持上一组/下一组导航和双击 100% 原图查看。
 - 支持符合传统小键盘顺序的数字快捷键。
 - 提供 Windows 可执行文件作为 release asset。
@@ -81,31 +84,31 @@ V1.5 支持 YOLO 风格数据集树下的标准或临时复核目录：
 下载 release asset：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.7_202606040155.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.8_202606040320.zip
 ```
 
 解压后运行：
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.7_202606040155.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.8_202606040320.exe
 ```
 
 从源码运行：
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.7_202606040155.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8_202606040320.py
 ```
 
 运行测试：
 
 ```powershell
-uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.7_202606040155.py
+uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8_202606040320.py
 ```
 
 预期验证结果：
 
 ```text
-21/21 OK
+28 tests OK, skipped=1
 exe --help OK
 ```
 
