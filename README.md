@@ -1,61 +1,59 @@
 # YOLO Transformed Dataset Cleaning Browser
 
-[中文 README](README.zh-CN.md)
+[中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.4__202606032328-094438)
+![Version](https://img.shields.io/badge/latest-V1.5__202606032354-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A lightweight desktop browser for cleaning YOLO visual-training datasets that contain transformed or duplicated source-image variants. It helps reviewers compare same-origin images, choose the representative source image, move variants into `out`, and keep YOLO `.txt` labels synchronised.
+A lightweight desktop browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style vision datasets. It helps reviewers compare one source-related image group at a time, choose the representative source image, move the remaining variants to `out`, and keep the corresponding YOLO `.txt` labels synchronised.
 
-This repository now follows the internal programme version sequence. The current public release is the internal `V1.4_202606032328` build.
+This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V1.5_202606032354`.
 
-## Why
+## Why This Exists
 
-YOLO training datasets often contain transformed versions of the same original image: rotations, crops, colour shifts, re-exports, augmentations, or near-duplicate variants. If these variants are treated as independent source material without review, downstream training, leakage checks, and data-quality audits become harder to trust.
+YOLO training datasets often contain multiple transformed versions of the same original image: rotations, crops, colour edits, augmentations, re-exports, or near-duplicates. If these variants are treated as independent sources without review, later training, leakage checks, and data-quality audit become harder to explain.
 
-This tool turns that cleanup task into a visual review workflow: one source-prefix group at a time, one chosen representative, label-synchronised movement for variants, and process evidence that remains `PENDING_AUDIT`.
+This tool turns that cleaning task into a fast visual review workflow. A reviewer sees one source-prefix group at a time, selects the image to keep as the source representative, and lets the tool move the variants and labels into `done/out` with a process trail. All governance outputs remain `PENDING_AUDIT`.
 
-## Current Release: V1.4_202606032328
+## Current Release: V1.5_202606032354
 
-Internal `V1.4_202606032328` is a Tkinter release in the source-group review line.
+`V1.5_202606032354` is a Tkinter source-group review release. It follows `V1.4_202606032328` exactly in the internal version sequence.
 
-Included in V1.4:
+New in V1.5:
 
-- Runtime process logging (Plog) for review actions and timing evidence.
-- Background move queue for label-synchronised `done/out` transactions.
-- Failure rollback and queue blocking when a transaction fails.
-- Thumbnail worker queue with preview caching and upcoming-group preloading.
-- Cached label lookup and current-group transaction preparation inherited from V1.3.
-- Dynamic `.rf.` source-prefix group sizes for ad-hoc transformed review folders.
-- ManualReview audit summaries, formula checks, label-sync checks, and report export.
-- Undo for the last completed source-group transaction.
+- Cached-state transaction planning for the current group, reducing repeated target and label lookup work during click preparation.
+- Traditional numeric-keypad layout helpers for image groups.
+- Number-key selection support aligned with the visual keypad order.
+- Continued background move queue, thumbnail cache, process logging, rollback-on-failure, undo, dynamic `.rf.` grouping, and audit export from V1.4.
+- Test coverage increased to `18/18 OK`.
 
 ## Core Capabilities
 
-- Direct image working-folder selection.
-- Automatic `images/...` to `labels/...` pairing.
-- Optional explicit `--label-dir`.
-- Dynamic `.rf.` source-prefix group sizes for ad-hoc transformed review folders.
-- Backward-compatible `ManualReview_GroupSize_N` folders.
-- Strict duplicate-label, missing-label, and target-conflict blocking.
-- Label-synchronised movement into `done/out`.
-- JSON, CSV, and Markdown audit reports.
-- Previous/next navigation and double-click full-size image viewing.
-- Windows executable release asset.
+- Select an image review folder directly.
+- Infer the matching `labels/...` folder from the selected `images/...` folder.
+- Accept an explicit `--label-dir` when needed.
+- Group images by dynamic `.rf.` source-prefix logic in ordinary or ad-hoc review folders.
+- Keep compatibility with classic `ManualReview_GroupSize_N` folders.
+- Block duplicate labels, missing labels, target conflicts, and incomplete groups.
+- Move selected source image/label to `done` and variants to `out`.
+- Export JSON, CSV, and Markdown audit reports.
+- Navigate previous/next groups and open a 100% original image viewer.
+- Use number-key shortcuts following the traditional keypad layout.
+- Provide a Windows executable as the release asset.
 
-## What It Does Not Do
+## What It Does Not Include
 
 - It does not train, evaluate, or modify any model.
-- It does not generate hash / near-hash Manual Objects candidate groups.
-- It does not include later PySide6 Manual Objects, conflict-resolution, Tier-prefix, or N20_PLUS workflows.
-- It does not delete, overwrite, upload, or expose raw images or labels.
-- Audit output remains `PENDING_AUDIT`; it is operational data-cleaning evidence, not a model-performance claim.
+- It does not generate hash or near-hash Manual Objects candidate groups.
+- It does not include later PySide6, Manual Objects review, conflict review, Tier-prefix governance, or N20_PLUS workflows.
+- It does not delete, overwrite, upload, or expose raw dataset images or labels.
+- Audit outputs remain `PENDING_AUDIT`; they are process evidence, not model-performance claims.
 
-## Working Folder Model
+## Expected Working Folder Shape
 
-V1.4 supports standard and ad-hoc review folders under a YOLO-style dataset tree:
+V1.5 supports standard or ad-hoc YOLO-style review trees:
 
 ```text
 <dataset-root>/
@@ -73,41 +71,41 @@ V1.4 supports standard and ad-hoc review folders under a YOLO-style dataset tree
       Out_auto/
 ```
 
-The classic folder name `ManualReview_GroupSize_N` is still supported. Non-standard review folders are also supported when files can be grouped by `.rf.` prefix and each selectable prefix has more than one image.
+Classic names such as `ManualReview_GroupSize_N` remain supported. Non-standard review folders may also be used when files can be grouped by `.rf.` prefix and each selectable prefix has at least two images.
 
 ## Quick Start
 
 Download the release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.4_202606032328.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606032354.zip
 ```
 
-After extraction, run:
+Unzip it and run:
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.4_202606032328.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.5_202606032354.exe
 ```
 
-From source:
+Run from source:
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.4_202606032328.py
+uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.5_202606032354.py
 ```
 
 Run tests:
 
 ```powershell
-uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.4_202606032328.py
+uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.5_202606032354.py
 ```
 
 Expected verification:
 
 ```text
-16/16 OK
+18/18 OK
 exe --help OK
 ```
 
 ## Safety Boundary
 
-Release packages exclude raw dataset images, labels, runtime logs, audit outputs, model weights, and dataset archives. The tool only moves files inside the selected review working folder when the reviewer performs a source-group transaction.
+The release package does not contain raw dataset images, labels, runtime logs, audit outputs, model weights, or dataset archives. File movement happens only inside the review folder selected by the user, and only when the reviewer executes a source-group decision.

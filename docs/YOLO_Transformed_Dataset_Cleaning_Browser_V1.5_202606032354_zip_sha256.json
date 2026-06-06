@@ -1,0 +1,9 @@
+{
+  "schema_version": "CIVL7009_RELEASE_ASSET_HASH_V1",
+  "release_asset": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.5_202606032354.zip",
+  "internal_version": "V1.5_202606032354",
+  "sha256": "12c61c2dd2cecd8d3c0ac6bd699bac7d62b45aa88b54a63ed0fb321f24137731",
+  "size_bytes": 36546268,
+  "created_at_utc": "2026-06-06T15:32:00.362946+00:00",
+  "note": "This hash file is an external release-repository verifier and is intentionally not embedded inside the zip asset."
+}
