@@ -1,0 +1,138 @@
+{
+  "programme_version": "V2.0",
+  "ui_version": "V2.0_202606041906",
+  "created_at": "2026-06-07T22:01:28",
+  "policy": {
+    "contains_dataset_image": false,
+    "internet_assets_used": false,
+    "system_fonts_packaged": false,
+    "raw_dataset_sources_used": false,
+    "forbidden_motifs": [
+      "real street scenes",
+      "faces",
+      "surveillance imagery",
+      "public-safety incident scenes",
+      "dataset-like samples",
+      "HKU crest/logo without authorisation"
+    ]
+  },
+  "assets": [
+    {
+      "asset_name": "app_icon.svg",
+      "asset_type": "app_icon",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "30a8198070723e02fe2255393ef2ef413741667c52cd2de5ea366e2c458d0061"
+    },
+    {
+      "asset_name": "dashboard_background.svg",
+      "asset_type": "dashboard_background",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "0bd115148ae16a37f249a20429c53f3030749c8a523c7b7188696180a77bba30"
+    },
+    {
+      "asset_name": "design_tokens.json",
+      "asset_type": "design_tokens",
+      "generated_by": "procedural_png",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "4c484ae5431949a15652c369b3597eb6d12ab9abc66e59fbdcaf1726ef8410c1"
+    },
+    {
+      "asset_name": "empty_state.svg",
+      "asset_type": "empty_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "e672bc06ad2ed13dedecb39f031ca2aa8d497f93e697b767b0aa10ac0e94de7c"
+    },
+    {
+      "asset_name": "error_state.svg",
+      "asset_type": "error_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "b0be6ea403b81ea720ba42e2a7da8efa540aeae90ddcfdeeca19bdc7a5d63011"
+    },
+    {
+      "asset_name": "loading_overlay.svg",
+      "asset_type": "loading_overlay",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "65884ef590584caac42a61054285a0636a015524df1c318e7ff741d97b7486fe"
+    },
+    {
+      "asset_name": "lock_state.svg",
+      "asset_type": "lock_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "28e5d7330ab25e3feca11a82092d61bf75f10da7787138659ae326b55041d8d0"
+    },
+    {
+      "asset_name": "onboarding_manifest.svg",
+      "asset_type": "onboarding_manifest",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "3b1e70f6e6b758493da40963de459cacd17405d4e6e77dfcac0c10ee8bf4db31"
+    },
+    {
+      "asset_name": "recovery_state.svg",
+      "asset_type": "recovery_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "93d7dde974cf9a8f9b789c3e07847cb4fe34a7505980255bdf3ea2feee0b128f"
+    },
+    {
+      "asset_name": "safe_gate_state.svg",
+      "asset_type": "safe_gate_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "8435aee78763c529e44f8b00753697c87ae89976c0b34299ce0f9714ad7a94f3"
+    },
+    {
+      "asset_name": "sidebar_icons.svg",
+      "asset_type": "sidebar_icons",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "c43136ffc99e032a11676a1b6100dbb84e9c06e170f8470e418c9c6e5723516a"
+    },
+    {
+      "asset_name": "staging_state.svg",
+      "asset_type": "staging_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "a1bd9822fa936385660e0e074792381bfb8d0191e8c9dc4db51846b710effaf9"
+    },
+    {
+      "asset_name": "success_state.svg",
+      "asset_type": "success_state",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-07T22:01:28",
+      "sha256": "79dd5aa551efd9590e7ab4785a8224834498499159096bb992982469e3060ef7"
+    }
+  ]
+}
