@@ -1,0 +1,54 @@
+{
+  "programme_version": "V1.9.1",
+  "ui_version": "V1.9.1_202606041705",
+  "generated_at": "2026-06-04T17:05:00+08:00",
+  "python": "3.11.13",
+  "uv": "uv 0.11.6 (65950801c 2026-04-09 x86_64-pc-windows-msvc)",
+  "PySide6": "6.11.1",
+  "Qt": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "bundled_files": [
+    "CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+    "UI_Assets/V1.9.1_202606041705/"
+  ],
+  "source_file": "CIVL7009_source_group_picker_qt_V1.9.1_202606041705.py",
+  "spec_file": "Build_Spec/CIVL7009_Source_Group_Picker_V1.9.1_202606041705.spec",
+  "exe_file": "Executable/CIVL7009_Source_Group_Picker_V1.9.1_202606041705.exe",
+  "dependency_strategy": "uv run --with PySide6==6.11.1 --with Pillow --with pyinstaller==6.20.0; pyproject.toml not modified",
+  "source_run_tests": [
+    "V1.9.1 Qt unittest: 7/7 OK",
+    "V1.8.1 backend unittest: 32 OK, 1 skipped on Windows casefold collision",
+    "audit-only source-run passed for Source_Archive/01 and Source_Archive/04",
+    "open preview source-run passed for Source_Archive/01 GroupSize_2 and Source_Archive/04 GroupSize_3"
+  ],
+  "open_preview_performance": [
+    {
+      "review_dir": "Source_Archive/01/images/ManualReview_GroupSize_2",
+      "quick_visible_ms": 288.08,
+      "full_ready_ms": 6620.963
+    },
+    {
+      "review_dir": "Source_Archive/04/images/ManualReview_GroupSize_3",
+      "quick_visible_ms": 462.35,
+      "full_ready_ms": 14618.949
+    }
+  ],
+  "real_data_file_tree_protection": {
+    "before_after_fingerprint_equal": true,
+    "manualreview_staging_created": false,
+    "select_programme_raw_image_files_found": false
+  },
+  "exe_smoke_test": "passed: exe audit-only loaded bundled V1.8.1 core and exported audit report for Source_Archive/01",
+  "exe_smoke_log": "Runtime_Logs/AuditOnly/picker_events_V1.9.1_20260604173936829.jsonl",
+  "latest_exe_audit_report": "Audit_Reports/CIVL7009_Source_Group_Picker_Audit_V1.8.1_20260604173936896",
+  "exe_file_size_bytes": 74911595,
+  "naming_policy_review": "V1.9.1 dot-version filenames verified; no underscore-form V1.9.1 file names remain under Dataset/Select_Programme."
+}
