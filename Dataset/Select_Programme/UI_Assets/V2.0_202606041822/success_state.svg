@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="320" viewBox="0 0 512 320" role="img" aria-label="成功">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FDFDFD"/><stop offset="1" stop-color="#E8EDF2"/></linearGradient></defs>
+<rect width="512" height="320" rx="32" fill="url(#g)"/>
+<rect x="52" y="48" width="408" height="224" rx="28" fill="rgba(255,255,255,0.72)" stroke="#D1C18D" stroke-width="3"/>
+<path d="M112 218 C166 150 214 178 256 118 C300 180 364 134 414 214" fill="none" stroke="#00B28D" stroke-width="12" stroke-linecap="round"/>
+<circle cx="256" cy="154" r="44" fill="#00B28D" opacity="0.18"/>
+<text x="256" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" fill="#00B28D">✓</text>
+</svg>

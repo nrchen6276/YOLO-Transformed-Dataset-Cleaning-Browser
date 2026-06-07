@@ -2,120 +2,99 @@
 
 [中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V1.9.1__202606041705-094438)
+![Version](https://img.shields.io/badge/latest-V2.0__202606041822-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-A desktop review browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style computer-vision datasets. It helps dataset maintainers compare source-related image groups, keep a representative source image, separate variant images into `out`, and keep YOLO `.txt` labels synchronised with the image decision.
+A desktop review browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style computer-vision datasets. It helps dataset maintainers compare related image groups, keep or separate candidates, synchronise YOLO `.txt` labels, and keep the whole review process auditable.
 
-This repository is released in the same order requested for the public programme builds. The current public release is aligned with internal build `V1.9.1_202606041705`.
+This repository is released in the same order requested for the public programme builds. The current public release is aligned with internal build `V2.0_202606041822`.
 
 ## Why This Exists
 
-YOLO training datasets often contain multiple transformed versions of the same underlying image: rotations, crops, colour edits, augmentations, re-exports, or near-duplicates. If those variants are treated as independent sources without review, later training, leakage checks, and data-quality audits become harder to explain.
+YOLO training datasets often contain multiple transformed versions of the same underlying image: rotations, crops, colour edits, augmentations, re-exports, or near-duplicates. If those variants are treated as independent samples without review, later training, leakage checks, and data-quality audits become harder to explain.
 
-This tool turns that cleaning task into a visual review workflow. A reviewer sees one source-related group at a time, selects the image to keep as the source representative, and lets the tool move variants and labels into the intended review folders with a process trail. Governance outputs remain `PENDING_AUDIT`.
+This tool turns that cleaning task into a visual review workflow. A reviewer sees one related group at a time, makes a decision, and keeps a process trail. Governance outputs remain `PENDING_AUDIT`; they are operational evidence, not model-performance claims.
 
-## Current Release: V1.9.1_202606041705
+## Current Release: V2.0_202606041822
 
-`V1.9.1_202606041705` is the PySide6 Review Cockpit release. It adds a modern Qt desktop shell while preserving the tested V1.8.1 backend core for source-group audit, FastReviewIndex, file transactions, recovery, locks, and undo.
+`V2.0_202606041822` is the full PySide6 framework release. It keeps the V1.8.1/V1.9.1 safety boundary and adds a modular application structure for future review workflows.
 
-New in V1.9.1:
+New in V2.0:
 
-- PySide6/macOS-glass-style Review Cockpit with a safer, clearer desktop interface.
-- Safe Gate workflow: preview-only by default; file movement requires explicit enabling inside the app.
-- Core auditability: logs record UI version, backend core version, core file path, and SHA256.
-- Core load validation: missing symbols or invalid backend core fails closed.
-- Open-review progress overlay and ready state before committing moves.
-- Qt-safe worker pattern for review opening, background indexing, thumbnails, audit, and export.
-- UI assets generated as abstract SVG decoration only, with an asset manifest declaring no dataset imagery.
-- ID Initialisation remains a read-only/fallback area in this release; write actions are kept in the older backend workflow.
+- Modular PySide6 framework package: `civl7009_picker_v2/`.
+- Capability Matrix for feature flags, risk levels, raw-file movement status, and gates.
+- Manifest-only queue framework enabled by default, without moving raw files.
+- SQLite manifest integrity checks, schema metadata, and migration guardrails.
+- Default-off physical staging framework with same-volume and recovery safeguards.
+- Recovery Centre, Diagnostics Panel, Productivity Dashboard, and Settings pages.
+- ID Initialisation Wizard structure with dry-run-first policy.
+- image2/procedural abstract UI assets and design tokens.
+- Light, dark, high-contrast, and visual-quality foundations.
 - Windows executable included as a release asset.
 
 Verification for this release:
 
 ```text
+V2.0 Qt/framework tests: 9/9 OK
 V1.9.1 Qt tests: 7/7 OK
 V1.8.1 backend tests: 32 OK, skipped=1
 source --help OK
-exe audit-only smoke OK on a temporary sample dataset
+source --smoke-open OK
+exe --help OK
+exe --smoke-open OK
+zip extraction smoke OK
 ```
-
-Note: the windowed executable (`console=False`) may print `--help` text with a non-clean process code in some PowerShell sessions. The release smoke test therefore uses `--audit-only`, which exits successfully.
 
 ## Core Capabilities
 
-- Select an image review folder directly.
-- Infer the matching `labels/...` folder from the selected `images/...` folder.
-- Group images by dynamic `.rf.` source-prefix logic in ordinary or ad-hoc review folders.
-- Keep compatibility with classic `ManualReview_GroupSize_N` folders.
-- Block duplicate labels, missing labels, target conflicts, incomplete groups, and recovery conflicts.
-- Move selected source image/label to `done` and variants to `out` after Safe Gate is enabled.
-- Export JSON, CSV, and Markdown audit reports.
-- Record transaction journals and recovery snapshots for source-group moves.
-- Use review-directory locks to avoid concurrent edits to the same working folder.
-- Use fast in-memory review indexing and quick preview loading for large working folders.
-- Navigate previous/next groups and open a 100% original image viewer.
-- Use number-key shortcuts following the traditional keypad layout.
+- Review source-related image groups in YOLO-style folders.
+- Keep compatibility with classic `ManualReview_GroupSize_N` folders and ad-hoc `.rf.` grouped folders.
+- Use Safe Gate controlled file movement for source-group review.
+- Keep image-label pairing checks, duplicate-label blocks, target-conflict blocks, recovery snapshots, and review-directory locks.
+- Maintain fast in-memory review indexing for large working folders.
+- Export audit reports and process metadata.
+- Display framework pages for staging, recovery, initialisation, diagnostics, dashboard, and settings.
+- Keep physical staging disabled by default.
+- Keep manifest-only queue non-mutating by default.
 
 ## What It Does Not Include
 
 - It does not train, evaluate, or modify any model.
-- It does not generate hash or near-hash Manual Objects candidate groups.
+- It does not generate hash or near-hash candidate groups.
 - It does not include later Manual Objects review, conflict review, Tier-prefix governance, or N20_PLUS workflows.
 - It does not delete, overwrite, upload, or expose raw dataset images or labels.
-- Audit outputs remain `PENDING_AUDIT`; they are process evidence, not model-performance claims.
-
-## Expected Working Folder Shape
-
-V1.9.1 supports standard or ad-hoc YOLO-style review trees:
-
-```text
-<dataset-root>/
-  images/
-    <review-folder>/
-      *.jpg
-      done/
-      out/
-  labels/
-    <review-folder>/
-      *.txt
-      done/
-      out/
-      Done_auto/
-      Out_auto/
-```
-
-Classic names such as `ManualReview_GroupSize_N` remain supported. Non-standard review folders may also be used when files can be grouped by `.rf.` prefix and each selectable prefix has at least two images.
+- Audit outputs remain `PENDING_AUDIT`.
 
 ## Quick Start
 
 Download the release asset:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.9.1_202606041705.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V2.0_202606041822.zip
 ```
 
 Unzip it and run:
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.9.1_202606041705.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.0_202606041822.exe
 ```
 
 Run from source:
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V1.9.1_202606041705.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.0_202606041822.py
 ```
 
 Run tests:
 
 ```powershell
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.0_202606041822.py
 uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V1.9.1_202606041705.py
 uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 ## Safety Boundary
 
-The release package does not contain raw dataset images, labels, runtime logs, audit outputs, model weights, or dataset archives. File movement happens only inside the review folder selected by the user, and only after the reviewer enables the Safe Gate workflow.
+The release package does not contain raw dataset images, labels, runtime logs, audit outputs, model weights, or dataset archives. File movement remains limited to explicit review workflows and guarded features. Manifest-only queue is non-mutating; physical staging is off by default.

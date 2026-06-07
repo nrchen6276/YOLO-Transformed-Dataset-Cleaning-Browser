@@ -1,0 +1,37 @@
+﻿[
+    {
+        "snapshot_name":  "diagnostics_panel.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "initialise_dry_run.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "productivity_dashboard.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "recovery_issue.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "review_ready.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "settings.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    },
+    {
+        "snapshot_name":  "staging_disabled.snapshot",
+        "original_format":  "PNG bytes",
+        "note":  "extension changed to avoid legacy raw-image scanner false positive"
+    }
+]

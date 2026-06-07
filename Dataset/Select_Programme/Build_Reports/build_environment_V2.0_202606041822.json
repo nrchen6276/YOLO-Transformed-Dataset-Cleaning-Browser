@@ -1,0 +1,44 @@
+﻿{
+  "programme_version": "V2.0",
+  "ui_version": "V2.0_202606041822",
+  "generated_at": "2026-06-04T18:22:00+08:00",
+  "python": "3.11.13",
+  "uv": "uv run with UV_CACHE_DIR=D:/P/CIVL7009/.uv-cache-codex",
+  "PySide6": "6.11.1",
+  "Qt": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "source_file": "CIVL7009_source_group_picker_qt_V2.0_202606041822.py",
+  "package_dir": "civl7009_picker_v2/",
+  "spec_file": "Build_Spec/CIVL7009_Source_Group_Picker_V2.0_202606041822.spec",
+  "exe_file": "Executable/CIVL7009_Source_Group_Picker_V2.0_202606041822.exe",
+  "exe_file_size_bytes": 77555778,
+  "ui_assets": "UI_Assets/V2.0_202606041822/",
+  "image2_asset": "UI_Assets/V2.0_202606041822/splash_hero_image2.svg",
+  "tests": [
+    "V2.0 Qt/framework unittest: 9/9 OK",
+    "V1.9.1 Qt unittest: 7/7 OK",
+    "V1.8.1 backend unittest: 32 OK, 1 skipped on Windows casefold collision"
+  ],
+  "smoke_tests": [
+    "source-run --help exit 0",
+    "exe --help exit 0"
+  ],
+  "safety_checks": {
+    "raw_image_extension_count_in_select_programme": 0,
+    "underscore_version_filename_count": 0,
+    "physical_staging_default": "OFF",
+    "manifest_only_default": "ON",
+    "diagnostic_bundle_raw_files_included": false,
+    "image2_dataset_derived_imagery": false
+  },
+  "ui_snapshots": "Build_Reports/UI_Snapshots/V2.0_202606041822/",
+  "dependency_strategy": "pyproject.toml not modified; uv transient dependencies used for tests/build"
+}

@@ -1,0 +1,16 @@
+{
+  "programme_version": "V2.0",
+  "ui_version": "V2.0_202606041822",
+  "generated_at": "2026-06-04T18:35:28",
+  "assets": [
+    {
+      "asset_name": "splash_hero_image2.svg",
+      "prompt_hash": "c4eb4c5f0a79f8c04f6a77deb24fc51c5f229b4605c7621858cb82ca43e1820b",
+      "prompt_summary": "abstract macOS glass-style CIVL7009 Source Group Picker V2.0 UI hero; geometric queues, manifest sheets, glass panels; HKU palette; no real streets, faces, cameras, surveillance, public-safety incidents, dataset-like samples, raw data, HKU crest/logo",
+      "generated_by": "image_generation",
+      "source": "generated_then_svg_wrapped",
+      "contains_dataset_image": false,
+      "sha256": "c71c8645cc6cdf72a0409421461b4a0a236d54872fb978a838e545401b4e686c"
+    }
+  ]
+}
