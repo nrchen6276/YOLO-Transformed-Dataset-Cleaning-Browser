@@ -2,34 +2,36 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V2.1__202606041930-094438)
+![Version](https://img.shields.io/badge/latest-V2.2__202606042006-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 这是一个面向 YOLO 风格视觉训练数据集的桌面复核浏览器，用于清洗同源变换、重复或近重复图片变体。它帮助数据集维护者同屏比较相关图片组，执行保留或分流决策，同步 YOLO `.txt` 标签，并保留可审计的过程记录。
 
-本仓库按内部程序构建顺序补发公开版本。当前公开版本与内部构建 `V2.1_202606041930` 对齐。
+本仓库按内部程序构建顺序补发公开版本。当前公开版本与内部构建 `V2.2_202606042006` 对齐。
 
-## 当前版本：V2.1_202606041930
+## 当前版本：V2.2_202606042006
 
-`V2.1_202606041930` 在 V2 框架基础上重建交互层，把早期稳定线里的高速复核链路迁回，并让人工复核页重新以图片区为中心。
+`V2.2_202606042006` 是基于 V2.1 的交互打磨版本。它保留高速图源组复核链路，同时减少高吞吐人工清洗时的操作摩擦。
 
-V2.1 新增或改进：
+V2.2 新增或改进：
 
-- 重建 PySide6 包：`civl7009_picker_v2_1/`。
-- 提供清晰的目录入口：选择 ID 根目录，或直接选择筛选目录。
-- 使用横向工作流导航，不再让竖向侧栏占用大量横向空间。
-- 动态图片小键盘布局，支持 1 到 9+ 张图的组内比较与数字键选择。
-- image2 / 程序化抽象 UI 资产，用于空状态、加载、Safe Gate 标识、目录大盘、诊断和快捷键提示。
-- 保留 Safe Gate 预览模式：只有复核链路准备完成后才允许受控文件移动。
-- 后台移动队列、撤销、红色选中反馈和审计导出继续保留。
+- 取消手动输入 `MOVE`。
+- 启动时显示中文安全说明，确认后进入自动移动准备状态。
+- 只有目录锁、恢复扫描、快速索引（FastReviewIndex）、完整校核和事务日志路径检查全部通过后，才自动启用真实文件移动。
+- 将左侧竖向侧栏改为顶部横向导航卡片，节约横向空间。
+- 目录大盘表格随窗口宽度自适应，目录列优先获得宽度。
+- 恢复图片卡片的 HKU Academic Red `#EF4022` 红色选中反馈。
+- 统一并收紧全局圆角，让界面更紧凑，更适合长时间筛选。
+- 保留 image2 / 程序化抽象 UI 资产，并继续遵守无 raster UI asset 策略。
 
 验证结果：
 
 ```text
-V2.1 Qt tests: 5/5 OK
-V1.9.1 Qt tests: 7/7 OK
+V2.2 Qt tests: 7/7 OK
+V2.1 Qt regression: 5/5 OK
+V1.9.1 Qt regression: 7/7 OK
 V1.8.1 backend tests: 32 OK, skipped=1
 source --help OK
 source --smoke-open OK
@@ -49,24 +51,25 @@ YOLO 训练数据集中经常混入同一底图的多个变换版本，例如旋
 下载：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V2.1_202606041930.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V2.2_202606042006.zip
 ```
 
 解压后运行：
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.1_202606041930.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.2_202606042006.exe
 ```
 
 从源码运行：
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.1_202606041930.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.2_202606042006.py
 ```
 
 运行测试：
 
 ```powershell
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.2_202606042006.py
 uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.1_202606041930.py
 uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V1.9.1_202606041705.py
 uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py

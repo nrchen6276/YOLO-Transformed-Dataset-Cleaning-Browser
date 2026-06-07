@@ -1,0 +1,9 @@
+﻿{
+    "schema_version":  "CIVL7009_ZIP_SHA256_V1",
+    "asset_name":  "YOLO_Transformed_Dataset_Cleaning_Browser_V2.2_202606042006.zip",
+    "version":  "V2.2_202606042006",
+    "sha256":  "2476c884934c36a284c57a2b03a7829cc37fd0c6d89b3279135f83c4d263dd4e",
+    "size_bytes":  75624089,
+    "created_at":  "2026-06-07T23:21:00.7983980+08:00",
+    "note":  "Zip hash report is stored outside the zip to avoid self-referential hash drift."
+}

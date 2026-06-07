@@ -1,0 +1,51 @@
+{
+  "programme_version": "V2.2",
+  "ui_version": "V2.2_202606042006",
+  "build_type": "auto_move_horizontal_nav_hku_red_selection_hotfix",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "Pillow": "11.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_entry": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.2_202606042006.py",
+  "package": "D:/P/CIVL7009/Dataset/Select_Programme/civl7009_picker_v2_2",
+  "spec_file": "D:/P/CIVL7009/Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V2.2_202606042006.spec",
+  "executable": "D:/P/CIVL7009/Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.2_202606042006.exe",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "bundled_core": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+  "ui_assets": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2_202606042006",
+  "image2_policy": {
+    "image2_used": true,
+    "workspace_raster_extensions_written": false,
+    "asset_manifest": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2_202606042006/asset_manifest.json",
+    "asset_prompt_log": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2_202606042006/asset_prompt_log.json",
+    "contains_dataset_image": false
+  },
+  "v2_2_changes": [
+    "Startup explanation dialog arms automatic move mode without typed MOVE confirmation.",
+    "Safe Gate is auto-enabled only after lock, recovery scan, FastReviewIndex, full audit, and log write checks pass.",
+    "Left vertical sidebar was replaced by a horizontal navigation card row under the command bar.",
+    "Review Board table columns resize with the window, with the directory column receiving priority width.",
+    "ImageCard preview selection uses HKU Academic Red #EF4022 with border, preview outline, and status chip.",
+    "Global corner radii were reduced and unified: panels/cards 12px, buttons/chips/tables/text panels 8px."
+  ],
+  "verification": {
+    "v2_2_tests": "7/7 OK",
+    "v2_1_qt_regression": "5/5 OK",
+    "v1_9_1_qt_regression": "7/7 OK",
+    "v1_8_1_backend_regression": "32 OK, 1 skipped",
+    "source_smoke_open_exit_code": 0,
+    "exe_help_exit_code": 0,
+    "exe_smoke_open_exit_code": 0,
+    "exe_normal_start_result": "process remained running after 8 seconds and was terminated by smoke test",
+    "select_programme_raster_file_count": 0
+  },
+  "audit_status": "PENDING_AUDIT"
+}
