@@ -2,35 +2,33 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V2.0__202606041906-094438)
+![Version](https://img.shields.io/badge/latest-V2.1__202606041930-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 这是一个面向 YOLO 风格视觉训练数据集的桌面复核浏览器，用于清洗同源变换、重复或近重复图片变体。它帮助数据集维护者同屏比较相关图片组，执行保留或分流决策，同步 YOLO `.txt` 标签，并保留可审计的过程记录。
 
-本仓库按内部程序构建顺序补发公开版本。当前公开版本与内部构建 `V2.0_202606041906` 对齐。
+本仓库按内部程序构建顺序补发公开版本。当前公开版本与内部构建 `V2.1_202606041930` 对齐。
 
-## 当前版本：V2.0_202606041906
+## 当前版本：V2.1_202606041930
 
-`V2.0_202606041906` 是 V2.0 的 packaged executable hotfix（封装可执行文件启动修复）构建。它保留 V2.0 的完整 PySide6 框架，并修复了封装 exe 启动行为：前一版封装入口可能把 exe 路径误传给 `argparse`，在部分电脑上导致程序打开后立即退出。
+`V2.1_202606041930` 在 V2 框架基础上重建交互层，把早期稳定线里的高速复核链路迁回，并让人工复核页重新以图片区为中心。
 
-它继续保留 V2.0 的能力：
+V2.1 新增或改进：
 
-- 模块化 PySide6 包：`civl7009_picker_v2/`。
-- 能力矩阵（Capability Matrix）：显示功能开关、风险等级、raw-file movement 状态和启用门槛。
-- 清单队列（Manifest-only Queue）框架默认启用，不移动 raw files。
-- SQLite 清单完整性检查、schema metadata 和迁移保护。
-- 物理暂存（Physical Staging）框架默认关闭，并带同盘和恢复保护。
-- 恢复中心、诊断面板、操作仪表盘、设置页和 ID 初始化向导。
-- image2 / 程序化抽象 UI 资产与设计令牌（Design Tokens）。
-- light、dark、high contrast 与视觉质量模式基础。
-- 包含 Windows 可执行程序。
+- 重建 PySide6 包：`civl7009_picker_v2_1/`。
+- 提供清晰的目录入口：选择 ID 根目录，或直接选择筛选目录。
+- 使用横向工作流导航，不再让竖向侧栏占用大量横向空间。
+- 动态图片小键盘布局，支持 1 到 9+ 张图的组内比较与数字键选择。
+- image2 / 程序化抽象 UI 资产，用于空状态、加载、Safe Gate 标识、目录大盘、诊断和快捷键提示。
+- 保留 Safe Gate 预览模式：只有复核链路准备完成后才允许受控文件移动。
+- 后台移动队列、撤销、红色选中反馈和审计导出继续保留。
 
 验证结果：
 
 ```text
-V2.0 framework tests: 9/9 OK
+V2.1 Qt tests: 5/5 OK
 V1.9.1 Qt tests: 7/7 OK
 V1.8.1 backend tests: 32 OK, skipped=1
 source --help OK
@@ -51,30 +49,30 @@ YOLO 训练数据集中经常混入同一底图的多个变换版本，例如旋
 下载：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V2.0_202606041906.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V2.1_202606041930.zip
 ```
 
 解压后运行：
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.0_202606041906.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.1_202606041930.exe
 ```
 
 从源码运行：
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.0_202606041906.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.1_202606041930.py
 ```
 
 运行测试：
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.0_202606041822.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.1_202606041930.py
 uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V1.9.1_202606041705.py
 uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 ## 安全边界
 
-发布包不包含原始数据集图片、标签、运行日志、审计输出、模型权重或数据集压缩包。文件移动仅限明确的复核工作流和受保护功能。清单队列默认不改变 raw files；物理暂存默认关闭。
+发布包不包含原始数据集图片、标签、运行日志、审计输出、模型权重或数据集压缩包。文件移动仅限明确的复核工作流和受保护功能。审计输出保持 `PENDING_AUDIT`。
 

@@ -1,0 +1,41 @@
+{
+  "programme_version": "V2.1",
+  "ui_version": "V2.1_202606041930",
+  "build_type": "interaction_rebuild_image2_glass_ui",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "Pillow": "11.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_entry": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.1_202606041930.py",
+  "spec_file": "D:/P/CIVL7009/Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V2.1_202606041930.spec",
+  "executable": "D:/P/CIVL7009/Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.1_202606041930.exe",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "bundled_core": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+  "ui_assets": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.1_202606041930",
+  "image2_policy": {
+    "image2_used": true,
+    "workspace_raster_extensions_written": false,
+    "asset_manifest": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.1_202606041930/asset_manifest.json",
+    "asset_prompt_log": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.1_202606041930/asset_prompt_log.json",
+    "contains_dataset_image": false
+  },
+  "verification": {
+    "v2_1_tests": "5/5 OK",
+    "v1_9_1_qt_regression": "7/7 OK",
+    "v1_8_1_backend_regression": "32 OK, 1 skipped",
+    "source_help_exit_code": 0,
+    "source_smoke_open_exit_code": 0,
+    "exe_help_exit_code": 0,
+    "exe_smoke_open_exit_code": 0,
+    "exe_normal_start_result": "process remained running after 8 seconds and was terminated by smoke test",
+    "select_programme_raster_file_count": 0
+  }
+}

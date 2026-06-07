@@ -2,35 +2,33 @@
 
 [中文说明](README.zh-CN.md)
 
-![Version](https://img.shields.io/badge/latest-V2.0__202606041906-094438)
+![Version](https://img.shields.io/badge/latest-V2.1__202606041930-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
 ![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
 A desktop review browser for cleaning transformed, duplicated, or near-duplicated image variants in YOLO-style computer-vision datasets. It helps dataset maintainers compare related image groups, keep or separate candidates, synchronise YOLO `.txt` labels, and keep the whole review process auditable.
 
-This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V2.0_202606041906`.
+This repository is released in the same order as the internal programme builds. The current public release is aligned with internal build `V2.1_202606041930`.
 
-## Current Release: V2.0_202606041906
+## Current Release: V2.1_202606041930
 
-`V2.0_202606041906` is a V2.0 packaged-executable hotfix build. It preserves the V2.0 full PySide6 framework and fixes packaged startup behaviour: the previous packaged entry path could pass the executable path into `argparse` as an unexpected argument, causing the exe to close immediately on some machines.
+`V2.1_202606041930` rebuilds the interaction layer on top of the V2 framework. It restores the fast review workflow from the earlier stable line and makes the manual review page image-first again.
 
-It keeps the V2.0 framework:
+New in V2.1:
 
-- Modular PySide6 package: `civl7009_picker_v2/`.
-- Capability Matrix for feature flags, risk levels, raw-file movement status, and gates.
-- Manifest-only queue framework enabled by default, without moving raw files.
-- SQLite manifest integrity checks, schema metadata, and migration guardrails.
-- Default-off physical staging framework with same-volume and recovery safeguards.
-- Recovery Centre, Diagnostics Panel, Productivity Dashboard, Settings, and ID Initialisation Wizard pages.
-- image2/procedural abstract UI assets and design tokens.
-- Light, dark, high-contrast, and visual-quality foundations.
-- Windows executable included as a release asset.
+- Rebuilt PySide6 package: `civl7009_picker_v2_1/`.
+- Clear directory entry points for selecting an ID root or directly selecting a review folder.
+- Horizontal workflow navigation rather than a space-hungry vertical sidebar.
+- Dynamic image keypad stage for group sizes from 1 to 9+, with number-key shortcuts.
+- image2/procedural abstract UI assets for empty states, loading, safe-gate badges, review board, diagnostics, and shortcuts.
+- Safe Gate preview mode preserved: file moves happen only after the gated review flow is ready.
+- Background move queue, undo, red highlight feedback, and audit export remain part of the review workflow.
 
 Verification:
 
 ```text
-V2.0 framework tests: 9/9 OK
+V2.1 Qt tests: 5/5 OK
 V1.9.1 Qt tests: 7/7 OK
 V1.8.1 backend tests: 32 OK, skipped=1
 source --help OK
@@ -51,30 +49,30 @@ This tool turns that cleaning task into a visual review workflow. A reviewer see
 Download:
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V2.0_202606041906.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V2.1_202606041930.zip
 ```
 
 Run:
 
 ```text
-Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.0_202606041906.exe
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.1_202606041930.exe
 ```
 
 Run from source:
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.0_202606041906.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.1_202606041930.py
 ```
 
 Run tests:
 
 ```powershell
-uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.0_202606041822.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V2.1_202606041930.py
 uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V1.9.1_202606041705.py
 uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 ## Safety Boundary
 
-The release package does not contain raw dataset images, labels, runtime logs, audit outputs, model weights, or dataset archives. File movement remains limited to explicit review workflows and guarded features. Manifest-only queue is non-mutating; physical staging is off by default.
+The release package does not contain raw dataset images, labels, runtime logs, audit outputs, model weights, or dataset archives. File movement remains limited to explicit review workflows and guarded features. Audit outputs remain `PENDING_AUDIT`.
 
