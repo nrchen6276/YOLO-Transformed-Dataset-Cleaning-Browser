@@ -2,14 +2,14 @@
 
 [English README](README.md)
 
-![Version](https://img.shields.io/badge/latest-V1.8.2__202606042313-094438)
+![Version](https://img.shields.io/badge/latest-V1.9.1__202606041705-094438)
 ![Python](https://img.shields.io/badge/python-3.11-D1C18D)
-![GUI](https://img.shields.io/badge/GUI-Tkinter-009CD5)
+![GUI](https://img.shields.io/badge/GUI-PySide6-009CD5)
 ![Status](https://img.shields.io/badge/audit-PENDING__AUDIT-EF4022)
 
-这是一个轻量桌面复核浏览器，用于清洗 YOLO 风格视觉训练数据集中的同源变换、重复或近重复图片变体。它帮助数据集维护者同屏比较同一图源相关的一组图片，保留代表性图源，把其他变体分流到 `out`，并同步移动对应的 YOLO `.txt` 标签。
+这是一个桌面复核浏览器，用于清洗 YOLO 风格视觉训练数据集中的同源变换、重复或近重复图片变体。它帮助数据集维护者同屏比较同一图源相关的一组图片，保留代表性图源，把其他变体分流到 `out`，并同步移动对应的 YOLO `.txt` 标签。
 
-本仓库严格按照内部程序版本顺序发布。当前公开版本与内部构建 `V1.8.2_202606042313` 对齐。
+本仓库按公开程序构建要求顺序发布。当前公开版本与内部构建 `V1.9.1_202606041705` 对齐。
 
 ## 为什么需要它
 
@@ -17,38 +17,41 @@ YOLO 训练数据集中经常混入同一底图的多个变换版本，例如旋
 
 这个工具把清洗任务变成可视化复核流程：一次展示一个图源相关组，人工选择代表图源，其余变体与标签同步进入目标复核文件夹，并保留过程证据。所有治理输出仍保持 `PENDING_AUDIT`。
 
-## 当前版本：V1.8.2_202606042313
+## 当前版本：V1.9.1_202606041705
 
-`V1.8.2_202606042313` 是一个仅包含源代码核心（source-only core）的兼容版本。它严格接在内部 `V1.8.1_202606041443` 之后，并保留后续 Qt/PySide6 外壳所复用的核心文件。
+`V1.9.1_202606041705` 是 PySide6 复核驾驶舱（Review Cockpit）版本。它新增现代 Qt 桌面外壳，同时继续复用已测试的 V1.8.1 后端核心，用于图源组审计、快速复核索引（FastReviewIndex）、文件事务、恢复、目录锁和撤销。
 
-重要边界：
+V1.9.1 新增或改进：
 
-- 内部产物集中存在 V1.8.2 核心源文件，但没有同版本独立 exe、PyInstaller spec 或专用 V1.8.2 测试文件。
-- 因此本次 GitHub release asset 是源代码核心包，不是 Windows 可执行程序包。
-- 为保持内外版本号一致，本次按内部 V1.8.2 原始源文件如实发布。
+- PySide6 / macOS glass 风格复核驾驶舱，界面更清晰、更接近现代桌面工具。
+- 安全门（Safe Gate）工作流：默认只预览；真实文件移动必须在程序内显式启用。
+- 核心可审计性：日志同时记录 UI 版本、后端 core 版本、core 文件路径和 SHA256。
+- Core load 校验：后端符号缺失或版本异常时 fail closed，不允许继续真实移动。
+- 打开筛选目录时显示进度遮罩和 ready 状态。
+- Qt-safe worker 模式，用于打开 review、后台索引、缩略图、审计和导出。
+- UI assets 仅使用抽象 SVG 装饰，并通过 asset manifest 声明不包含数据集图像。
+- ID 初始化在本版本中保留只读/回退说明，写入动作仍由旧后端工作流处理。
+- 包含 Windows 可执行程序。
 
-V1.8.2 保留或承接的能力：
+本次验证结果：
 
-- 继承 V1.8.1 的快速复核索引（FastReviewIndex）、快速预览（quick preview）、事务日志、恢复扫描、目录锁、动态 `.rf.` 分组、标签定位、后台移动队列与审计导出核心。
-- 保留 GUI 启动、直接筛选目录、`--audit-only` 等命令行入口。
-- 保留按运行模式分流日志和图源组事务安全机制。
-- 作为后续 Qt/PySide6 界面版本打包复用的版本化核心。
+```text
+V1.9.1 Qt tests: 7/7 OK
+V1.8.1 backend tests: 32 OK, skipped=1
+source --help OK
+exe audit-only smoke OK on a temporary sample dataset
+```
 
-发布验证中发现的已知问题：
-
-- 使用 V1.8.1 回归测试套件复放到 V1.8.2 核心时，结果为 `30 tests OK, 2 errors, skipped=1`。
-- 两个错误都来自 YOLO 初始化辅助函数测试，原因是 `audit_yolo_dataset()` 内部引用了未定义的 `group_size`。
-- 图源组复核、事务、目录锁、撤销、快速索引与审计路径相关测试均通过。
+说明：由于 V1.9.1 exe 是 windowed PyInstaller（`console=False`）程序，部分 PowerShell 会出现 `--help` 文本已打印但退出码不干净的现象。本次 release smoke 因此采用 `--audit-only`，该测试正常通过。
 
 ## 核心能力
 
 - 直接选择图片复核文件夹。
 - 从 `images/...` 自动推断对应 `labels/...`。
-- 支持显式传入 `--label-dir`。
 - 支持普通或临时复核目录中的动态 `.rf.` source-prefix 分组。
 - 兼容经典 `ManualReview_GroupSize_N` 文件夹。
-- 阻断标签重复、标签缺失、目标文件冲突和不完整组。
-- 将选中图源及标签移动到 `done`，将变体移动到 `out`。
+- 阻断标签重复、标签缺失、目标文件冲突、不完整组和恢复冲突。
+- 在 Safe Gate 启用后，将选中图源及标签移动到 `done`，将变体移动到 `out`。
 - 导出 JSON、CSV 和 Markdown 审计报告。
 - 为图源组移动记录事务日志和恢复快照。
 - 使用 review 目录锁避免同一工作目录被并发编辑。
@@ -60,14 +63,13 @@ V1.8.2 保留或承接的能力：
 
 - 不训练、评估或修改任何模型。
 - 不生成哈希或近哈希 Manual Objects 候选组。
-- 不包含后续 PySide6、Manual Objects 复核、冲突复核、Tier 前缀治理或 N20_PLUS 工作流。
-- 不提供同版本 V1.8.2 Windows exe。
+- 不包含后续 Manual Objects 复核、冲突复核、Tier 前缀治理或 N20_PLUS 工作流。
 - 不删除、不覆盖、不上传、不暴露原始数据集图片或标签。
 - 审计输出保持 `PENDING_AUDIT`；它是过程证据，不是模型性能结论。
 
 ## 预期工作目录形态
 
-V1.8.2 支持 YOLO 风格数据集树下的标准或临时复核目录：
+V1.9.1 支持 YOLO 风格数据集树下的标准或临时复核目录：
 
 ```text
 <dataset-root>/
@@ -92,28 +94,28 @@ V1.8.2 支持 YOLO 风格数据集树下的标准或临时复核目录：
 下载 release asset：
 
 ```text
-YOLO_Transformed_Dataset_Cleaning_Browser_V1.8.2_202606042313.zip
+YOLO_Transformed_Dataset_Cleaning_Browser_V1.9.1_202606041705.zip
+```
+
+解压后运行：
+
+```text
+Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V1.9.1_202606041705.exe
 ```
 
 从源代码运行：
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V1.9.1_202606041705.py
 ```
 
-查看命令行帮助：
+运行测试：
 
 ```powershell
-uv run --with pillow python Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py --help
-```
-
-本次发布验证结果：
-
-```text
-source --help OK
-V1.8.1 回归测试套件复放到 V1.8.2 核心：30 OK, 2 errors, skipped=1
+uv run --with PySide6==6.11.1 --with Pillow python Dataset/Select_Programme/test_source_group_picker_qt_V1.9.1_202606041705.py
+uv run python Dataset/Select_Programme/test_source_group_picker_gui_V1.8.1_202606041443.py
 ```
 
 ## 安全边界
 
-发布包不包含原始数据集图片、标签、运行日志、审计输出、模型权重或数据集压缩包。只有在复核者执行图源组决策时，程序才会在用户所选复核目录内部移动文件。
+发布包不包含原始数据集图片、标签、运行日志、审计输出、模型权重或数据集压缩包。只有在复核者启用 Safe Gate 工作流之后，程序才会在用户所选复核目录内部移动文件。

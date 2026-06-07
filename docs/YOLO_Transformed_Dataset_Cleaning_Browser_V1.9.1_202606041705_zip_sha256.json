@@ -1,0 +1,11 @@
+{
+  "schema_version": "CIVL7009_GITHUB_RELEASE_ZIP_SHA256_V1",
+  "asset_name": "YOLO_Transformed_Dataset_Cleaning_Browser_V1.9.1_202606041705.zip",
+  "asset_path": "D:\\P\\CIVL7009\\Dataset\\Select_Programme\\GitHub_Releases\\YOLO_Transformed_Dataset_Cleaning_Browser_V1.9.1_202606041705.zip",
+  "sha256": "5b67aed9cf1fa6ff4c139c760ec598c180b07a65d209032d1151bb1596284a57",
+  "size_bytes": 74481117,
+  "created_at_utc": "2026-06-07T07:09:04.639111+00:00",
+  "contains_executable": true,
+  "release_kind": "pyside6_review_cockpit_executable_release",
+  "note": "This hash report is external to the zip asset."
+}
