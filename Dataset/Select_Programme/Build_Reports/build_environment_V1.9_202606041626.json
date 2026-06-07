@@ -1,0 +1,25 @@
+{
+  "programme_version": "V1.9",
+  "ui_version": "V1.9_202606041626",
+  "generated_at": "2026-06-04T16:26:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Qt": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "bundled_files": [
+    "CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+    "UI_Assets/V1.9_202606041626/"
+  ],
+  "dependency_strategy": "uv run --with PySide6==6.11.1 --with pyinstaller==6.20.0; pyproject.toml not modified",
+  "clean_runtime_smoke_test": "passed: exe audit-only smoke loaded bundled V1.8.1 core and exported audit report for Source_Archive/01",
+  "latest_exe_smoke_log": "Runtime_Logs/AuditOnly/picker_events_V1.9_20260604165507215.jsonl"
+}
