@@ -1,0 +1,38 @@
+{
+  "programme_version": "V2.2.2",
+  "ui_version": "V2.2.2_202606042205",
+  "build_type": "undo_in_place_selection_highlight_bottom_splitter_hotfix",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "Pillow": "11.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_entry": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.2.2_202606042205.py",
+  "package": "D:/P/CIVL7009/Dataset/Select_Programme/civl7009_picker_v2_2_2",
+  "spec_file": "D:/P/CIVL7009/Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V2.2.2_202606042205.spec",
+  "executable": "D:/P/CIVL7009/Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.2.2_202606042205.exe",
+  "bundled_core": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+  "ui_assets": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2.2_202606042205",
+  "changes": [
+    "Undo now refreshes the current review directory in place and no longer sends the user back to directory selection.",
+    "ImageCard selected state now uses stable selectedState=true/false properties and HKU Academic Red #EF4022 styling.",
+    "Safe Gate ON click/number-key selection keeps a short visual highlight tick before enqueueing the commit.",
+    "Review page now uses a vertical splitter so the Move Queue / Recent Events panel height is draggable.",
+    "Move Queue and Recent Events are now inside a horizontal splitter so their relative widths are draggable."
+  ],
+  "verification": {
+    "v2_2_2_tests": "8/8 OK",
+    "v2_2_1_qt_regression": "8/8 OK",
+    "v2_1_qt_regression": "5/5 OK",
+    "v1_9_1_qt_regression": "7/7 OK",
+    "v1_8_1_backend_regression": "32 OK, 1 skipped",
+    "source_smoke_open_exit_code": 0,
+    "exe_help_exit_code": 0,
+    "exe_smoke_open_exit_code": 0,
+    "standalone_exe_only_smoke_exit_code": 0,
+    "standalone_core_source": "PyInstaller _MEIPASS bundled core",
+    "select_programme_raster_file_count": 0
+  },
+  "audit_status": "PENDING_AUDIT"
+}
