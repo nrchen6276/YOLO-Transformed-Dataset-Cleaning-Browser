@@ -1,0 +1,41 @@
+{
+  "programme_version": "V2.2.1",
+  "ui_version": "V2.2.1_202606042101",
+  "build_type": "standalone_exe_core_bundle_hotfix",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "Pillow": "11.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_entry": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.2.1_202606042101.py",
+  "package": "D:/P/CIVL7009/Dataset/Select_Programme/civl7009_picker_v2_2_1",
+  "spec_file": "D:/P/CIVL7009/Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V2.2.1_202606042101.spec",
+  "executable": "D:/P/CIVL7009/Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.2.1_202606042101.exe",
+  "qt_plugin_inclusion": [
+    "platforms/qwindows.dll",
+    "imageformats/qjpeg.dll",
+    "imageformats/qico.dll",
+    "imageformats/qsvg.dll",
+    "styles/*"
+  ],
+  "bundled_core": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+  "core_loader_fix": {
+    "failure_observed_in_v2_2": "When the exe was moved to another computer or folder, PROGRAMME_DIR resolved to the exe folder and V2.2 only searched for the V1.8.1 core next to the exe.",
+    "fixed_in_v2_2_1": "Core candidates now check PyInstaller _MEIPASS bundled core first, then executable/programme sibling paths.",
+    "failure_logging_added": true
+  },
+  "ui_assets": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2.1_202606042101",
+  "verification": {
+    "v2_2_1_tests": "8/8 OK",
+    "source_help_exit_code": 0,
+    "source_smoke_open_exit_code": 0,
+    "exe_help_exit_code": 0,
+    "exe_smoke_open_exit_code": 0,
+    "standalone_exe_only_smoke_exit_code": 0,
+    "standalone_core_source": "PyInstaller _MEIPASS bundled core",
+    "standalone_core_version": "V1.8.1",
+    "standalone_core_timecode": "202606041443"
+  },
+  "audit_status": "PENDING_AUDIT"
+}
