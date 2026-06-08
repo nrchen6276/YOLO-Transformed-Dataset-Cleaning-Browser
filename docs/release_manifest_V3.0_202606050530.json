@@ -1,0 +1,142 @@
+﻿{
+    "version":  "V3.0_202606050530",
+    "created_at":  "2026-06-08T19:24:50.6985219+08:00",
+    "file_count":  27,
+    "files":  [
+                  {
+                      "path":  "Dataset\\Select_Programme\\Build_Reports\\build_environment_V3.0_202606050530.json",
+                      "size":  732,
+                      "sha256":  "1cc6574be7107aca39d4daa36ec5d3e85fc58518366ed1cd7bbb69a37c0f8adb"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\Build_Spec\\CIVL7009_Source_Group_Picker_V3.0_202606050530.spec",
+                      "size":  1253,
+                      "sha256":  "257e3abb19ff4a083b82097c4bb8e4d7ffc33b2bf19f26103283a2e491eae8bf"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\__init__.py",
+                      "size":  204,
+                      "sha256":  "276cf3d45d073b4efed02657c713a036f465b6727d79051b28575b90e7f6826c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\app.py",
+                      "size":  46015,
+                      "sha256":  "721fc493727d53f7fa800409dc88bd2af0ee73916ac3c9eab1e531d6b7eca08f"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\assets.py",
+                      "size":  6832,
+                      "sha256":  "d93c1092dcf2b8e30a68a2c1adf40c6751992539a6c9321e5a94a96c2e4356ed"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\core.py",
+                      "size":  6178,
+                      "sha256":  "76553649bbe6d1a2d89b9f02519967d4d09591ea9a327624d9a5108a7e3f7d3c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\manual_objects.py",
+                      "size":  14138,
+                      "sha256":  "98c832282a2077f3c4f49b65d0001c0ca9010194563b56f19ce82cccff8ae14e"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\paths.py",
+                      "size":  1023,
+                      "sha256":  "e8c23b619e81ee40ddadc40e2d9e9847c55ed507378c79a5a45c46d519c1dc29"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0\\version.py",
+                      "size":  399,
+                      "sha256":  "3b780d23520050b442073ccff9dc5e9a75550b218a18ef4f88f9cbb65161fead"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+                      "size":  180563,
+                      "sha256":  "50a01cdbf13a1bdd33afb7fcb7e43547e0296e083137c0faf1594e7cd1b74617"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\CIVL7009_source_group_picker_qt_V3.0_202606050530.py",
+                      "size":  408,
+                      "sha256":  "70b5bd81768835fce0ba33346c0b0b4f91b771d9836aefbadb20877e1300d986"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V3.0_202606050530.exe",
+                      "size":  46742178,
+                      "sha256":  "71f1590af6ee1ac484a6b8a36d6ba127e4982d1b5430d7047c4c640419dea69f"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\README_V3.0_202606050530.md",
+                      "size":  3239,
+                      "sha256":  "080ab9f27ce704e96e63336f3161e591671c252854f1f87bbd767308c77a1d9d"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\test_source_group_picker_qt_V3.0_202606050530.py",
+                      "size":  8411,
+                      "sha256":  "95bb4aecbb18ca5339e32f9e6759b7bff567057734a26bde071704c28015a40f"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\ambiguous_state.svg",
+                      "size":  1295,
+                      "sha256":  "3675ae1523033c4575c38b24af0d0c91461c00520e51c41f6e337bca88630b4c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\app_icon.svg",
+                      "size":  1291,
+                      "sha256":  "30d70b67ae38a9093bda55cf116a6b184f5143ce82d8b3c17c94468940e32fa6"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\asset_manifest.json",
+                      "size":  3385,
+                      "sha256":  "cd9b086e32b830575a6ddfb89040fb8f6ad0bf6063dfe55772bcc10c648f40de"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\asset_prompt_log.json",
+                      "size":  542,
+                      "sha256":  "30915b669053074040a862f4c3025e707de74b4c0f6bbcd47b72ddc47ccc4901"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\design_tokens.json",
+                      "size":  721,
+                      "sha256":  "7b8a8e1b1b9218e89aa8b5b0632d65e60ddaeb8b7961d1b803b6a7436f9902f5"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\empty_manual_objects.svg",
+                      "size":  1308,
+                      "sha256":  "4b05580db51a0ef3254fbaca252fd1504567d12e59e9fcf5fe6629899770bf37"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\error_state.svg",
+                      "size":  1283,
+                      "sha256":  "6e0ecb8a90e12697a04c1540a7f090430869d081f45b611a2a383dee501d2b34"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\lock_state.svg",
+                      "size":  1289,
+                      "sha256":  "92a0edd773a0b886ea82958cd1d7b104866c90952867c7aebc71233f1f4717cb"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\manual_objects_pipeline.svg",
+                      "size":  1296,
+                      "sha256":  "816dc434cd24fc6181cb9f8800e168ff937b05b45d8a95302d75cf9b9921b81e"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0_202606050530\\selection_saved.svg",
+                      "size":  1300,
+                      "sha256":  "2cf208f035f19184d6994ec6175ec353c3549c8b0138bd698d2412c584800886"
+                  },
+                  {
+                      "path":  "docs\\RELEASE_NOTES_V3.0_202606050530.md",
+                      "size":  3543,
+                      "sha256":  "0958cfa054ae0fc1bb998a57db2e16ed770e1cc2b2951ef33a6fc5cc09d4a50b"
+                  },
+                  {
+                      "path":  "README.md",
+                      "size":  2400,
+                      "sha256":  "c5f7eb3b26466dad6907e8fda139ef4b8ad5ab5a79a9ed2bfe192899ad0c5e89"
+                  },
+                  {
+                      "path":  "README.zh-CN.md",
+                      "size":  2185,
+                      "sha256":  "78ca5c59341ed251888a34f225c163a82c59bd6cd9b58442700c8336440bd853"
+                  }
+              ]
+}

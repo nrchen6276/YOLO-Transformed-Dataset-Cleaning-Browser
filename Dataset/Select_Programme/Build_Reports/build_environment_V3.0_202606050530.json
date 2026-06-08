@@ -1,0 +1,14 @@
+﻿{
+    "programme_version":  "V3.0",
+    "ui_version":  "V3.0_202606050530",
+    "generated_at":  "2026-06-05T05:21:42.5611408+08:00",
+    "python":  "Python 3.11.13",
+    "uv":  "uv 0.11.6 (65950801c 2026-04-09 x86_64-pc-windows-msvc)",
+    "PySide6":  "6.11.1",
+    "Pillow":  "11.3.0",
+    "platform":  "Microsoft Windows NT 10.0.26200.0",
+    "exe_path":  "D:\\P\\CIVL7009\\Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V3.0_202606050530.exe",
+    "exe_bytes":  46742178,
+    "exe_sha256":  "71f1590af6ee1ac484a6b8a36d6ba127e4982d1b5430d7047c4c640419dea69f",
+    "qt_plugin_note":  "PyInstaller build completed; source import smoke passed. Clean-machine smoke not run in this iteration."
+}
