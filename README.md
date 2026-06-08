@@ -2,33 +2,33 @@
 
 Desktop tooling for reviewing, comparing, and cleaning merged YOLO visual-training datasets. It is designed for data-governance workflows where multiple sources, augmentations, transformed variants, duplicate candidates, or near-duplicate candidates must be reviewed by a human before downstream dataset changes are made.
 
-Latest release: **V3.0.1_202606051430**
+Latest release: **V3.0.2_202606051620**
 
 ## What It Does
 
 - Reviews grouped images and labels produced during YOLO dataset cleaning.
 - Shows related images together in a keypad-style comparison grid.
 - Supports source-image selection, label-synchronised moves, undo, audit reports, and transaction-safe review in the source-group workflow.
-- Adds a Manual Objects workflow for duplicate and near-duplicate cross-dataset candidates.
-- Reads the landed `Manual_Objects/_indexes/manual_objects_index.csv` first, then lazy-loads each group's `group_manifest.json` only when the reviewer opens that group.
+- Provides a Manual Objects workflow for duplicate and near-duplicate cross-dataset candidates.
+- Reads the global Manual Objects index first, then lazy-loads each group only when the reviewer opens it.
 - Writes structured `manual_selection.json` review results for downstream governance agents.
 - Packages a Windows executable for users who do not want to launch Python manually.
 
-## V3.0.1 Highlights
+## V3.0.2 Highlights
 
-- Performance hotfix for the Manual Objects Review workflow.
-- Fast global review board from `_indexes/manual_objects_index.csv`.
-- Current-group lazy loading instead of parsing every `group_manifest.json` at startup.
-- Pagination and filtering for large candidate sets.
-- Background prefetch of nearby groups and thumbnails.
-- Save-and-next workflow for high-throughput human review.
-- Keeps V3.0 Manual Objects safety boundaries: no hash scanning, no candidate creation, no source-library file movement, and no staged image or label modification.
+- Manual Objects preview hotfix.
+- Opening a Manual Objects root no longer loads candidate images immediately.
+- Image previews start only after the reviewer selects a concrete `Reason / Nxx / Gxxxxx` group.
+- Thumbnail loading runs in background workers and reports progress in the right-side status pane.
+- Adds a manual refresh button for the current group's previews.
+- Supports save-and-next within the same N bucket for faster review.
+- Keeps V3 safety boundaries: no hash scanning, no candidate creation, no source-library file movement, and no staged image or label modification.
 
 ## Download
 
 Use the latest release asset:
 
-`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.1_202606051430.zip`
+`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.2_202606051620.zip`
 
 The archive contains the executable, source entrypoint, V1.8.2 core, versioned package, tests, build metadata, and abstract UI assets. It does **not** contain raw dataset images, labels, model weights, or dataset YAML files.
 

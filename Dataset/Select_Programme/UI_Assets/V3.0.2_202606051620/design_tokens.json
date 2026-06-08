@@ -1,0 +1,35 @@
+{
+  "themes": {
+    "light": {
+      "window_bg": "#EEF2F6",
+      "panel": "rgba(255,255,255,0.78)",
+      "text_primary": "#17201C",
+      "text_secondary": "#667085",
+      "deep_green": "#094438",
+      "official_green": "#024638",
+      "light_gold": "#D1C18D",
+      "hku_blue": "#009CD5",
+      "academic_red": "#EF4022",
+      "soft_grey": "#E8EDF2"
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 18,
+    "xl": 24
+  },
+  "radius": {
+    "panel": 12,
+    "card": 12,
+    "button": 8,
+    "chip": 8
+  },
+  "manual_objects": {
+    "card_min_width": 240,
+    "preview_height": 210
+  },
+  "default_theme": "light",
+  "default_visual_quality": "Balanced"
+}

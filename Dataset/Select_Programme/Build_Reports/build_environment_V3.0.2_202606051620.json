@@ -1,0 +1,48 @@
+{
+  "programme_version": "V3.0.2",
+  "ui_version": "V3.0.2_202606051620",
+  "created_at": "2026-06-05T16:20:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Pillow": "11.3.0",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.2_202606051620.py",
+  "spec": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V3.0.2_202606051620.spec",
+  "exe": {
+    "path": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V3.0.2_202606051620.exe",
+    "sha256": "302081FB891A00659A49661CCC9C18FD9A0AE04D83BEEC160867BCEDAFCC8845",
+    "bytes": 71993042
+  },
+  "bundled_core": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "test_results": [
+    {
+      "name": "test_source_group_picker_qt_V3.0.2_202606051620.py",
+      "result": "9/9 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V3.0.1_202606051430.py",
+      "result": "9/9 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V2.2.4_202606042313.py",
+      "result": "10/10 OK"
+    }
+  ],
+  "fix_summary": [
+    "Manual Objects root open no longer auto-loads the first group's previews.",
+    "Preview loading starts only after selecting a concrete group row.",
+    "Thumbnail QRunnable instances are retained until done/error to prevent premature garbage collection.",
+    "Right-side preview loading pane reports done/pending/error counts and error messages.",
+    "Manual preview refresh button clears current visible thumbnail cache and reloads it.",
+    "Single-keep mode can auto-advance within the same reason and N bucket; multi-keep mode disables this auto-advance and uses + Save and Next."
+  ],
+  "safety": {
+    "does_not_create_manual_review_staging": true,
+    "does_not_modify_source_archive_ids": true,
+    "manual_objects_mode_writes_only_selection_files": true,
+    "claim_status": "PENDING_AUDIT",
+    "package_asset_raw_scan": "no raw image/model/YAML files found"
+  }
+}
