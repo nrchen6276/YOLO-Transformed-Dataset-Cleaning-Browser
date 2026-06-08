@@ -1,0 +1,77 @@
+{
+  "programme_version": "V3.0.3",
+  "ui_version": "V3.0.3_202606051705",
+  "created_at": "2026-06-05T17:05:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Pillow": "11.3.0",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.3_202606051705.py",
+  "package": "Dataset/Select_Programme/civl7009_picker_v3_0_3",
+  "spec": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V3.0.3_202606051705.spec",
+  "exe": {
+    "path": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V3.0.3_202606051705.exe",
+    "sha256": "4F6E4E7DE0AD02B9E4A5E9425E4BA740F9E867687434D60203D4ADEF3E9A2A1B",
+    "bytes": 73031075,
+    "smoke_open": "OK"
+  },
+  "bundled_core": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "qt_plugin_notes": [
+    "PyInstaller collected PySide6 Qt runtime through the versioned spec.",
+    "source-run --smoke-open passed.",
+    "exe --smoke-open passed with QT_QPA_PLATFORM=offscreen."
+  ],
+  "test_results": [
+    {
+      "name": "test_source_group_picker_qt_V3.0.3_202606051705.py",
+      "result": "11/11 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V3.0.2_202606051620.py",
+      "result": "9/9 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V2.2.4_202606042313.py",
+      "result": "10/10 OK"
+    },
+    {
+      "name": "source-run --help",
+      "result": "OK"
+    },
+    {
+      "name": "source-run --smoke-open",
+      "result": "OK"
+    },
+    {
+      "name": "exe --smoke-open",
+      "result": "OK"
+    }
+  ],
+  "fix_summary": [
+    "Manual Objects single-keep click now saves the current group and advances to the next unreviewed group within the same reason and N bucket.",
+    "The auto-next checkbox is now interpreted as click-save-and-next within the same N bucket, not merely as a post-save navigation preference.",
+    "Multi-keep mode disables click-save-and-next to preserve deliberate multi-item review.",
+    "YOLO txt labels can be rendered as bounding boxes directly on Manual Objects preview thumbnails.",
+    "Thumbnail cache keys now include label path, label size, label mtime, and bbox overlay state.",
+    "Manual Objects image loading remains on-demand and asynchronous after selecting a concrete group."
+  ],
+  "safety": {
+    "does_not_execute_hash_scan": true,
+    "does_not_create_manual_objects": true,
+    "does_not_create_manual_review_staging": true,
+    "does_not_modify_source_archive_ids": true,
+    "does_not_modify_staged_images_or_labels": true,
+    "manual_objects_mode_writes_only_selection_files": true,
+    "claim_status": "PENDING_AUDIT",
+    "package_asset_raw_scan": "no raw image/model/YAML files found",
+    "manual_review_staging_scan": "no _ManualReview_Staging directory found"
+  },
+  "external_code_policy": {
+    "labelimg_review": "The bbox display requirement was compared with the LabelImg-style annotation viewing workflow.",
+    "vendored_external_code": false,
+    "copied_external_code": false,
+    "implementation": "Fresh lightweight YOLO label parser and PIL-based overlay renderer in the V3.0.3 package."
+  }
+}

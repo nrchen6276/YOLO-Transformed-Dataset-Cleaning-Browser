@@ -2,7 +2,7 @@
 
 Desktop tooling for reviewing, comparing, and cleaning merged YOLO visual-training datasets. It is designed for data-governance workflows where multiple sources, augmentations, transformed variants, duplicate candidates, or near-duplicate candidates must be reviewed by a human before downstream dataset changes are made.
 
-Latest release: **V3.0.2_202606051620**
+Latest release: **V3.0.3_202606051705**
 
 ## What It Does
 
@@ -11,24 +11,24 @@ Latest release: **V3.0.2_202606051620**
 - Supports source-image selection, label-synchronised moves, undo, audit reports, and transaction-safe review in the source-group workflow.
 - Provides a Manual Objects workflow for duplicate and near-duplicate cross-dataset candidates.
 - Reads the global Manual Objects index first, then lazy-loads each group only when the reviewer opens it.
+- Shows YOLO `.txt` bounding boxes over Manual Objects previews when requested.
 - Writes structured `manual_selection.json` review results for downstream governance agents.
 - Packages a Windows executable for users who do not want to launch Python manually.
 
-## V3.0.2 Highlights
+## V3.0.3 Highlights
 
-- Manual Objects preview hotfix.
-- Opening a Manual Objects root no longer loads candidate images immediately.
-- Image previews start only after the reviewer selects a concrete `Reason / Nxx / Gxxxxx` group.
-- Thumbnail loading runs in background workers and reports progress in the right-side status pane.
-- Adds a manual refresh button for the current group's previews.
-- Supports save-and-next within the same N bucket for faster review.
+- Fixes click-to-save and next-group behaviour inside the current `Reason / Nxx` bucket.
+- Adds live YOLO `.txt` bounding-box overlays to Manual Objects preview cards.
+- Adds a `Show txt BBox` toggle for annotation overlays.
+- Uses a fresh lightweight YOLO label parser and renderer; no LabelImg code is vendored or bundled.
+- Keeps preview loading asynchronous and scoped to the selected group.
 - Keeps V3 safety boundaries: no hash scanning, no candidate creation, no source-library file movement, and no staged image or label modification.
 
 ## Download
 
 Use the latest release asset:
 
-`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.2_202606051620.zip`
+`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.3_202606051705.zip`
 
 The archive contains the executable, source entrypoint, V1.8.2 core, versioned package, tests, build metadata, and abstract UI assets. It does **not** contain raw dataset images, labels, model weights, or dataset YAML files.
 
