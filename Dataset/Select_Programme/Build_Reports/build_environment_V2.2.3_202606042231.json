@@ -1,0 +1,40 @@
+{
+  "programme_version": "V2.2.3",
+  "ui_version": "V2.2.3_202606042231",
+  "build_type": "undo_overlay_routing_command_bar_compaction_hotfix",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "PyInstaller": "6.20.0",
+  "Pillow": "11.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "source_entry": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V2.2.3_202606042231.py",
+  "package": "D:/P/CIVL7009/Dataset/Select_Programme/civl7009_picker_v2_2_3",
+  "spec_file": "D:/P/CIVL7009/Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V2.2.3_202606042231.spec",
+  "executable": "D:/P/CIVL7009/Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V2.2.3_202606042231.exe",
+  "bundled_core": "D:/P/CIVL7009/Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.1_202606041443.py",
+  "ui_assets": "D:/P/CIVL7009/Dataset/Select_Programme/UI_Assets/V2.2.3_202606042231",
+  "changes": [
+    "Undo refresh status no longer uses the large image-stage overlay; it routes to the navigation-row status chip.",
+    "Navigation row now has a right-side nav_status_chip for short operational status messages.",
+    "Safe Gate badge is single-line Chinese text: 文件移动已启用 / 自动移动准备中 / 只读预览.",
+    "Command Bar font, spacing, and button padding were reduced to lower top-bar height.",
+    "Context path label now elides long paths and keeps full text in a tooltip."
+  ],
+  "verification": {
+    "v2_2_3_tests": "9/9 OK",
+    "v2_2_2_qt_regression": "8/8 OK",
+    "v2_2_1_qt_regression": "8/8 OK",
+    "v2_1_qt_regression": "5/5 OK",
+    "v1_9_1_qt_regression": "7/7 OK",
+    "v1_8_1_backend_regression": "32 OK, 1 skipped",
+    "source_help_exit_code": 0,
+    "source_smoke_open_exit_code": 0,
+    "exe_help_exit_code": 0,
+    "exe_smoke_open_exit_code": 0,
+    "standalone_exe_only_smoke_exit_code": 0,
+    "standalone_core_source": "PyInstaller _MEIPASS bundled core",
+    "select_programme_raster_file_count": 0
+  },
+  "audit_status": "PENDING_AUDIT"
+}

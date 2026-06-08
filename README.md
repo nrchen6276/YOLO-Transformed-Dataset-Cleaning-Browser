@@ -2,7 +2,7 @@
 
 Desktop tooling for reviewing, comparing, and cleaning merged YOLO visual-training datasets. The project focuses on high-throughput manual decisions for groups of related images: selecting a source image, moving transformed variants into an output bucket, synchronising labels, auditing counts, and preserving a recoverable operation trail.
 
-Latest release: **V2.2.2_202606042205**
+Latest release: **V2.2.3_202606042231**
 
 ## What It Does
 
@@ -10,21 +10,21 @@ Latest release: **V2.2.2_202606042205**
 - Shows related images together in a keypad-style comparison grid.
 - Lets reviewers select the source image while the remaining images become variants.
 - Keeps image and label movement synchronised through a transaction-safe workflow.
-- Supports undo, background move queues, audit summaries, and operation logs.
+- Supports undo, background move queues, audit summaries, operation logs, and compact status feedback.
 - Packages a Windows executable for users who do not want to launch Python manually.
 
-## V2.2.2 Highlights
+## V2.2.3 Highlights
 
-- Keeps the V2.2.1 standalone-exe bundled-core fix.
-- Fixes undo so the current review directory stays open after restoring the last group.
-- Restores clear HKU Academic Red selection feedback on image cards.
-- Makes the bottom Move Queue / Recent Events panel resizable with splitters.
+- Keeps the V2.2.2 undo, red selection feedback, resizable bottom panel, and bundled-core fixes.
+- Routes undo refresh and short background states into a compact navigation-row status chip instead of the large image overlay.
+- Uses single-line Chinese Safe Gate status badges to reduce top-bar height.
+- Tightens the Command Bar with smaller font, lighter padding, and elided context paths with full tooltips.
 
 ## Download
 
 Use the latest release asset:
 
-`YOLO_Transformed_Dataset_Cleaning_Browser_V2.2.2_202606042205.zip`
+`YOLO_Transformed_Dataset_Cleaning_Browser_V2.2.3_202606042231.zip`
 
 The archive contains the executable, source entrypoint, versioned package, tests, build metadata, and abstract UI assets. It does **not** contain raw dataset images, labels, model weights, or dataset YAML files.
 

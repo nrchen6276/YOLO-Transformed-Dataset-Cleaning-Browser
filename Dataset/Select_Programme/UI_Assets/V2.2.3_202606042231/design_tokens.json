@@ -1,0 +1,68 @@
+{
+  "themes": {
+    "light": {
+      "window_bg": "#EEF2F6",
+      "panel": "rgba(255,255,255,0.76)",
+      "text_primary": "#17201C",
+      "text_secondary": "#667085",
+      "deep_green": "#094438",
+      "official_green": "#024638",
+      "light_gold": "#D1C18D",
+      "hku_blue": "#009CD5",
+      "academic_red": "#EF4022",
+      "soft_grey": "#E8EDF2"
+    },
+    "dark": {
+      "window_bg": "#111827",
+      "panel": "rgba(31,41,55,0.78)",
+      "text_primary": "#F9FAFB",
+      "text_secondary": "#CBD5E1",
+      "deep_green": "#3A6960",
+      "official_green": "#356B60",
+      "light_gold": "#D1C18D",
+      "hku_blue": "#33B0DD",
+      "academic_red": "#F2664E",
+      "soft_grey": "#1F2937"
+    },
+    "high_contrast": {
+      "window_bg": "#FFFFFF",
+      "panel": "#FFFFFF",
+      "text_primary": "#000000",
+      "text_secondary": "#1C1C1C",
+      "deep_green": "#024638",
+      "light_gold": "#7A5A00",
+      "hku_blue": "#005F8F",
+      "academic_red": "#B00020"
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 18,
+    "xl": 24
+  },
+  "radius": {
+    "panel": 12,
+    "card": 12,
+    "image_card": 12,
+    "button": 8,
+    "chip": 8,
+    "table": 8,
+    "text_panel": 8
+  },
+  "shadow": {
+    "soft": "0 18 45 rgba(15,23,42,0.16)"
+  },
+  "image_card": {
+    "min_width": 220,
+    "min_height": 260,
+    "preview_height": 190
+  },
+  "default_theme": "light",
+  "default_visual_quality": "Balanced",
+  "motion": {
+    "normal_ms": 160,
+    "reduced_ms": 0
+  }
+}
