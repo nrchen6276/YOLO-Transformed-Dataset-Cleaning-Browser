@@ -1,0 +1,158 @@
+{
+  "version": "V3.0.4_202606051830",
+  "created_at": "2026-06-08T22:58:48.721541+08:00",
+  "file_count": 27,
+  "files": [
+    {
+      "path": "README.md",
+      "size": 2822,
+      "sha256": "4b1974049e5acb1da766ea022d48cbdaf14ad4a2bb29a09bc12dc4aa903c3452"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "size": 2629,
+      "sha256": "ee4c1074071fade4ada4a454faf70ca4649b47fe0c4a4c544fd736289635666f"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Build_Reports\\build_environment_V3.0.4_202606051830.json",
+      "size": 3232,
+      "sha256": "b566c69b41c104bc7e0e5949c82fe46a3b3b1b83e7a7562f9c9259e7674f80bb"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Build_Spec\\CIVL7009_Source_Group_Picker_V3.0.4_202606051830.spec",
+      "size": 1274,
+      "sha256": "d4cf59ec27e287c2388d00793568a2adf282bbd90e5785dc08b702a4ceb63d49"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+      "size": 180563,
+      "sha256": "50a01cdbf13a1bdd33afb7fcb7e43547e0296e083137c0faf1594e7cd1b74617"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\CIVL7009_source_group_picker_qt_V3.0.4_202606051830.py",
+      "size": 412,
+      "sha256": "e0182e623863befa82c22cccea1e45bc7725f7da44919918e10574bc7295f978"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V3.0.4_202606051830.exe",
+      "size": 73047955,
+      "sha256": "88683b43bc5356750f56e9e7b9cb90931f367258fde757dd644e0db03cc6fb0a"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\README_V3.0.4_202606051830.md",
+      "size": 3581,
+      "sha256": "34848fe471ab691769e1929a35b08aa71d8319d235fbc26f6d57d2f2afa69e63"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\test_source_group_picker_qt_V3.0.4_202606051830.py",
+      "size": 17510,
+      "sha256": "48f8665943e5c95efa64329845e440d782808473dda563cd1c4ad9436b5640d3"
+    },
+    {
+      "path": "docs\\RELEASE_NOTES_V3.0.4_202606051830.md",
+      "size": 2526,
+      "sha256": "f49ad76b5435bbab993025b347a4b8c5a0b41335688172e548ed518d74a35487"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\__init__.py",
+      "size": 204,
+      "sha256": "276cf3d45d073b4efed02657c713a036f465b6727d79051b28575b90e7f6826c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\app.py",
+      "size": 82964,
+      "sha256": "3949d399cd1bfe4357401dba0294b411409f4e0baa60dc6201b261dbcb7ad762"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\assets.py",
+      "size": 6834,
+      "sha256": "4199ea81e9721f589f05a0f709811d5fcde481fbdc878b60af594820b2ecd212"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\core.py",
+      "size": 6178,
+      "sha256": "76553649bbe6d1a2d89b9f02519967d4d09591ea9a327624d9a5108a7e3f7d3c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\manual_objects.py",
+      "size": 27593,
+      "sha256": "b01147ca2ea908b68861de267061129111c9b1298b85c46ede4e798cdc12d30a"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\paths.py",
+      "size": 1023,
+      "sha256": "e8c23b619e81ee40ddadc40e2d9e9847c55ed507378c79a5a45c46d519c1dc29"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\civl7009_picker_v3_0_4\\version.py",
+      "size": 405,
+      "sha256": "14a49327a6898bb64903dde26219b8d1ef3a9d1b6f8911e1ce4cdb1fe90465fd"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\ambiguous_state.svg",
+      "size": 1295,
+      "sha256": "3675ae1523033c4575c38b24af0d0c91461c00520e51c41f6e337bca88630b4c"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\app_icon.svg",
+      "size": 1293,
+      "sha256": "b21006cf2383c446aaaf11fed93fec1b72f00bce4152356a6868a4673f3de941"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\asset_manifest.json",
+      "size": 3389,
+      "sha256": "6144c2780bd68ba7a16322090cb67c8c836f53d0e79a5be9193f6c2e29ee0841"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\asset_prompt_log.json",
+      "size": 546,
+      "sha256": "84e156262f52bb148c5a10c5e4d8fa822fa60865a0ed128e247b86c13cc83ea4"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\design_tokens.json",
+      "size": 721,
+      "sha256": "7b8a8e1b1b9218e89aa8b5b0632d65e60ddaeb8b7961d1b803b6a7436f9902f5"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\empty_manual_objects.svg",
+      "size": 1308,
+      "sha256": "4b05580db51a0ef3254fbaca252fd1504567d12e59e9fcf5fe6629899770bf37"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\error_state.svg",
+      "size": 1283,
+      "sha256": "6e0ecb8a90e12697a04c1540a7f090430869d081f45b611a2a383dee501d2b34"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\lock_state.svg",
+      "size": 1289,
+      "sha256": "92a0edd773a0b886ea82958cd1d7b104866c90952867c7aebc71233f1f4717cb"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\manual_objects_pipeline.svg",
+      "size": 1296,
+      "sha256": "816dc434cd24fc6181cb9f8800e168ff937b05b45d8a95302d75cf9b9921b81e"
+    },
+    {
+      "path": "Dataset\\Select_Programme\\UI_Assets\\V3.0.4_202606051830\\selection_saved.svg",
+      "size": 1300,
+      "sha256": "2cf208f035f19184d6994ec6175ec353c3549c8b0138bd698d2412c584800886"
+    }
+  ],
+  "safety": {
+    "raw_dataset_files_included": false,
+    "model_weights_included": false,
+    "dataset_yaml_included": false,
+    "status": "PENDING_AUDIT"
+  },
+  "validation": [
+    "V3.0.4 tests: 13/13 OK",
+    "V3.0.3 regression: 11/11 OK",
+    "V2.2.4 regression: 10/10 OK",
+    "V1.8.1 backend regression: 32 OK, 1 skipped",
+    "Source-run --help: OK",
+    "Source-run --smoke-open: OK",
+    "Packaged executable --help and --smoke-open: OK",
+    "Release tree raw image/YAML/weight scan: clean"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "programme_version": "V3.0.4",
+  "ui_version": "V3.0.4_202606051830",
+  "created_at": "2026-06-05T22:41:20",
+  "assets": [
+    {
+      "asset_name": "manual_objects_pipeline.svg",
+      "generated_by": "procedural_svg",
+      "prompt_hash": "sha256:procedural-v3-manual-objects",
+      "prompt_summary": "Abstract HKU-palette glass panels, geometric queues, manifest sheets, path lines, locks and selection symbols; no real scene, camera footage, face, or dataset-like imagery.",
+      "contains_dataset_image": false
+    }
+  ]
+}

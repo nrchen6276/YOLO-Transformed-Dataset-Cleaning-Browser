@@ -2,7 +2,7 @@
 
 这是一个面向 YOLO 视觉训练数据集的数据清洗桌面工具，用于在人类复核阶段比较和整理多来源、增强变换、合并后重复或近重复的图片与标签。它的目标不是替代算法治理，而是让人工复核更快、更一致，并把选择结果保存为后续治理 agent 可读取的结构化文件。
 
-当前最新版本：**V3.0.3_202606051705**
+当前最新版本：**V3.0.4_202606051830**
 
 ## 工具能力
 
@@ -12,28 +12,30 @@
 - 提供跨库候选复核（Manual Objects Review），用于复核重复或近重复候选对象。
 - 优先读取 Manual Objects 全局索引，只有打开具体组时才加载该组。
 - 可按需把 YOLO `.txt` 标注框叠加显示到候选图片预览上。
+- 支持按数据集 ID 配置类别文件，让 BBox 标签显示类别名。
 - 写入结构化 `manual_selection.json`，供后续治理流程回读。
 - 提供 Windows exe，用户不需要通过命令行启动 Python。
 
-## V3.0.3 更新重点
+## V3.0.4 更新重点
 
-- 修复同一 `Reason / Nxx` 内“保存并进入下一组”的真实行为。
-- 在 Manual Objects 图片预览卡片上增加 YOLO `.txt` BBox 标注框。
-- 新增 `显示 txt BBox` 开关。
-- 使用本项目内重新实现的轻量 YOLO 标签解析和绘制逻辑；不复制、不嵌入、不打包 LabelImg 代码。
-- 预览加载仍然保持异步，并且只针对当前打开的组。
+- 为 YOLO `.txt` BBox 叠加预览新增按数据集 ID 的类别名支持。
+- 自动为 Manual Objects index 中出现的 ID 创建 `Manual_Objects/ID_Classes/<dataset_id>/` 文件夹。
+- 类别文件只要求是非空 `.txt`，文件名不必是 `classes.txt`。
+- 新增类别文件状态弹窗，支持打开对应 ID 文件夹和刷新检测。
+- 检测缺失、空文件、多文件和可用类别文件状态。
+- 类别映射变化后会刷新预览缓存，避免 BBox 标签显示旧类别名。
 - 继续保持 V3 安全边界：不执行哈希扫描、不创建候选区、不移动主库文件、不改写候选图片或标签。
 
 ## 下载
 
 请下载最新 release asset：
 
-`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.3_202606051705.zip`
+`YOLO_Transformed_Dataset_Cleaning_Browser_V3.0.4_202606051830.zip`
 
 压缩包包含 exe、源码入口、V1.8.2 core、版本化包、测试、构建元数据和抽象 UI 资产。压缩包不包含原始数据集图片、标签、模型权重或数据集 YAML。
 
 ## 安全边界
 
-跨库候选复核是人工选择结果写入工具，不是哈希扫描器，也不是主库治理移动器。它不创建候选组，不删除候选副本，不移动主库图片或标签。Manual Objects 模式只写入 `manual_selection.json` 和 `_selection_history/`。
+跨库候选复核是人工选择结果写入工具，不是哈希扫描器，也不是主库治理移动器。它不创建候选组，不删除候选副本，不移动主库图片或标签。Manual Objects 模式只写入 `manual_selection.json`、`_selection_history/`，以及用户放入 `Manual_Objects/ID_Classes/` 的类别文件。
 
 所有数据治理结论仍保持 **PENDING_AUDIT**，不能直接升级为论文、模型或数据质量实证结论。

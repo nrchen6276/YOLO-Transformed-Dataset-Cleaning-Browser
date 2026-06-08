@@ -1,0 +1,74 @@
+{
+  "programme_version": "V3.0.4",
+  "ui_version": "V3.0.4_202606051830",
+  "created_at": "2026-06-05T18:30:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Pillow": "11.3.0",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.4_202606051830.py",
+  "package": "Dataset/Select_Programme/civl7009_picker_v3_0_4",
+  "spec": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V3.0.4_202606051830.spec",
+  "exe": {
+    "path": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V3.0.4_202606051830.exe",
+    "sha256": "88683B43BC5356750F56E9E7B9CB90931F367258FDE757DD644E0DB03CC6FB0A",
+    "bytes": 73047955,
+    "smoke_open": "OK"
+  },
+  "bundled_core": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "test_results": [
+    {
+      "name": "test_source_group_picker_qt_V3.0.4_202606051830.py",
+      "result": "13/13 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V3.0.3_202606051705.py",
+      "result": "11/11 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V2.2.4_202606042313.py",
+      "result": "10/10 OK"
+    },
+    {
+      "name": "source-run --help",
+      "result": "OK"
+    },
+    {
+      "name": "source-run --smoke-open",
+      "result": "OK"
+    },
+    {
+      "name": "exe --smoke-open",
+      "result": "OK"
+    }
+  ],
+  "fix_summary": [
+    "Added ManualObjectsClassService for per-dataset class-name files.",
+    "Opening a Manual_Objects root now auto-creates Manual_Objects/ID_Classes/<dataset_id>/ for every dataset ID found in the global index.",
+    "Class files may use any non-empty .txt filename; classes.txt is not required.",
+    "Added a Chinese class-file status dialog with ID, status, class count, selected file, target folder, message, open-folder, and refresh actions.",
+    "YOLO bbox overlay labels now use the current item's dataset_id-specific class map when available.",
+    "Thumbnail cache keys include the class-map signature so refreshed class files update bbox label text."
+  ],
+  "class_file_protocol": {
+    "root": "Manual_Objects/ID_Classes",
+    "per_dataset_folder": "Manual_Objects/ID_Classes/<dataset_id>",
+    "accepted_filename_rule": "Any non-empty .txt file that does not start with an underscore.",
+    "selection_rule": "If multiple valid .txt files exist, use the first by casefold filename order and show MULTIPLE warning.",
+    "missing_behaviour": "BBox drawing remains enabled but falls back to class numbers such as class 0."
+  },
+  "safety": {
+    "does_not_execute_hash_scan": true,
+    "does_not_create_manual_objects": true,
+    "does_not_create_manual_review_staging": true,
+    "does_not_modify_source_archive_ids": true,
+    "does_not_modify_staged_images_or_labels": true,
+    "manual_objects_mode_writes_only_selection_files": true,
+    "new_support_write_scope": "Manual_Objects/ID_Classes/<dataset_id>/ directories and user-supplied class txt files only.",
+    "claim_status": "PENDING_AUDIT",
+    "package_asset_raw_scan": "no raw image/model/YAML files found",
+    "manual_review_staging_scan": "no _ManualReview_Staging directory found"
+  }
+}
