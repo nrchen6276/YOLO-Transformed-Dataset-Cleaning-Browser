@@ -2,7 +2,7 @@
 
 Desktop tooling for reviewing, comparing, and cleaning merged YOLO visual-training datasets. The project focuses on high-throughput manual decisions for groups of related images: selecting a source image, moving transformed variants into an output bucket, synchronising labels, auditing counts, and preserving a recoverable operation trail.
 
-Latest release: **V2.2.3_202606042231**
+Latest release: **V2.2.4_202606042313**
 
 ## What It Does
 
@@ -10,23 +10,23 @@ Latest release: **V2.2.3_202606042231**
 - Shows related images together in a keypad-style comparison grid.
 - Lets reviewers select the source image while the remaining images become variants.
 - Keeps image and label movement synchronised through a transaction-safe workflow.
-- Supports undo, background move queues, audit summaries, operation logs, and compact status feedback.
+- Supports undo, background move queues, audit summaries, operation logs, compact status feedback, and non-standard grouped review folders.
 - Packages a Windows executable for users who do not want to launch Python manually.
 
-## V2.2.3 Highlights
+## V2.2.4 Highlights
 
-- Keeps the V2.2.2 undo, red selection feedback, resizable bottom panel, and bundled-core fixes.
-- Routes undo refresh and short background states into a compact navigation-row status chip instead of the large image overlay.
-- Uses single-line Chinese Safe Gate status badges to reduce top-bar height.
-- Tightens the Command Bar with smaller font, lighter padding, and elided context paths with full tooltips.
+- Switches the Qt shell to the V1.8.2 core line.
+- Adds support for non-standard review folders such as `images/special` when the paired `labels/special` folder exists.
+- Supports mixed group sizes in one review directory instead of assuming one fixed `ManualReview_GroupSize_N`.
+- Keeps the V2.2.3 compact status chip, single-line Safe Gate badge, in-place undo, red selection feedback, and resizable bottom panel.
 
 ## Download
 
 Use the latest release asset:
 
-`YOLO_Transformed_Dataset_Cleaning_Browser_V2.2.3_202606042231.zip`
+`YOLO_Transformed_Dataset_Cleaning_Browser_V2.2.4_202606042313.zip`
 
-The archive contains the executable, source entrypoint, versioned package, tests, build metadata, and abstract UI assets. It does **not** contain raw dataset images, labels, model weights, or dataset YAML files.
+The archive contains the executable, source entrypoint, V1.8.2 core, versioned package, tests, build metadata, and abstract UI assets. It does **not** contain raw dataset images, labels, model weights, or dataset YAML files.
 
 ## Safety Boundary
 

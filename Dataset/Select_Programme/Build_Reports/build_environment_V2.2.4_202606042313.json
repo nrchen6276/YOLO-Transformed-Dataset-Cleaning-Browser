@@ -1,0 +1,23 @@
+﻿{
+    "programme_version":  "V2.2.4",
+    "ui_version":  "V2.2.4_202606042313",
+    "core_version":  "V1.8.2",
+    "core_timecode":  "202606042313",
+    "python":  "3.11.13",
+    "uv":  "0.11.6",
+    "PySide6":  "6.11.1",
+    "PyInstaller":  "6.20.0",
+    "Pillow":  "11.3.0",
+    "platform":  "Windows",
+    "qt_plugins_included":  [
+                                "platforms/qwindows.dll",
+                                "imageformats/qjpeg.dll",
+                                "imageformats/qico.dll",
+                                "imageformats/qsvg.dll",
+                                "styles/*"
+                            ],
+    "bundled_core":  "CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+    "entry":  "CIVL7009_source_group_picker_qt_V2.2.4_202606042313.py",
+    "exe":  "Executable/CIVL7009_Source_Group_Picker_V2.2.4_202606042313.exe",
+    "note":  "PENDING_AUDIT build report; V2.2.4 fixes nonstandard Auto/Mixed review dirs such as images/special."
+}
