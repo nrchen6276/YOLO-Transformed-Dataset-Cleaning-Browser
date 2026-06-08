@@ -1,0 +1,157 @@
+﻿{
+    "version":  "V3.0.1_202606051430",
+    "created_at":  "2026-06-08T19:57:13.5202050+08:00",
+    "file_count":  27,
+    "files":  [
+                  {
+                      "path":  "README.md",
+                      "size":  2603,
+                      "sha256":  "f08daf3c3d8b9195efa4c2b47054627e63948ad71c231e1b341cfe036c288d4e"
+                  },
+                  {
+                      "path":  "README.zh-CN.md",
+                      "size":  2356,
+                      "sha256":  "a077c92495dc3ddb544f4c0fb6831f5f00a4125689d10adcecd69a2fc047a847"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\Build_Reports\\build_environment_V3.0.1_202606051430.json",
+                      "size":  1976,
+                      "sha256":  "81cb1f720e5ee283affd4a4afb130da9d54bfd65edfb24fe8de2e39d452b41ee"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\Build_Spec\\CIVL7009_Source_Group_Picker_V3.0.1_202606051430.spec",
+                      "size":  1261,
+                      "sha256":  "cf076eab6933a5029763780423b1902c67f237d07999e03dda8ff82480dff276"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+                      "size":  180563,
+                      "sha256":  "50a01cdbf13a1bdd33afb7fcb7e43547e0296e083137c0faf1594e7cd1b74617"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\CIVL7009_source_group_picker_qt_V3.0.1_202606051430.py",
+                      "size":  412,
+                      "sha256":  "199251b42718e98e4d63f259a38727f7a3231ea58eff26d50b2bcdc046796442"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\Executable\\CIVL7009_Source_Group_Picker_V3.0.1_202606051430.exe",
+                      "size":  71986885,
+                      "sha256":  "a4d600dd47b922d67109cf8b23fef25401ec6d1425aac65e28a0543d240d3eb1"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\README_V3.0.1_202606051430.md",
+                      "size":  3575,
+                      "sha256":  "338698598a4e6a309684c4e92d2a19837b8a5a22b26672b0b9da6fd4812c3458"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\test_source_group_picker_qt_V3.0.1_202606051430.py",
+                      "size":  11964,
+                      "sha256":  "0e48219a89916a7bc7b432cd2a508629df08dc5c060a66bb10a76a8d13d8c023"
+                  },
+                  {
+                      "path":  "docs\\RELEASE_NOTES_V3.0.1_202606051430.md",
+                      "size":  2830,
+                      "sha256":  "35604c8e7e5f45e614eaddc74451e0a0c4d19bf47c99dd08827bee86f2c5278d"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\__init__.py",
+                      "size":  204,
+                      "sha256":  "276cf3d45d073b4efed02657c713a036f465b6727d79051b28575b90e7f6826c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\app.py",
+                      "size":  64191,
+                      "sha256":  "1cb9653c90aaab4775dfd82faaeb9cde8ccbc7fb86fbe440b05dd2940b12c9f5"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\assets.py",
+                      "size":  6834,
+                      "sha256":  "7c08185305ce6aa42f6089be5b8260fe7bd4dcb9e356589982a3e044097c6563"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\core.py",
+                      "size":  6178,
+                      "sha256":  "76553649bbe6d1a2d89b9f02519967d4d09591ea9a327624d9a5108a7e3f7d3c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\manual_objects.py",
+                      "size":  23891,
+                      "sha256":  "ce2ab66072790cf52d9612ce61d30dbde13e2f49a9f7e6cac906282b7ce12833"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\paths.py",
+                      "size":  1023,
+                      "sha256":  "e8c23b619e81ee40ddadc40e2d9e9847c55ed507378c79a5a45c46d519c1dc29"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\civl7009_picker_v3_0_1\\version.py",
+                      "size":  405,
+                      "sha256":  "6c1777986119208054070888227a7d41d64260162ac7a94f2cbecf6a4c944a4c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\ambiguous_state.svg",
+                      "size":  1295,
+                      "sha256":  "3675ae1523033c4575c38b24af0d0c91461c00520e51c41f6e337bca88630b4c"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\app_icon.svg",
+                      "size":  1291,
+                      "sha256":  "30d70b67ae38a9093bda55cf116a6b184f5143ce82d8b3c17c94468940e32fa6"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\asset_manifest.json",
+                      "size":  3389,
+                      "sha256":  "f687f5b738922bf3154bc9409c33a0832684566b293db43d65813eb19929e522"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\asset_prompt_log.json",
+                      "size":  546,
+                      "sha256":  "5cfe9615e57df962a3a4462f8a9212f450b87155d8456e5c8797fac28eda0336"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\design_tokens.json",
+                      "size":  721,
+                      "sha256":  "7b8a8e1b1b9218e89aa8b5b0632d65e60ddaeb8b7961d1b803b6a7436f9902f5"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\empty_manual_objects.svg",
+                      "size":  1308,
+                      "sha256":  "4b05580db51a0ef3254fbaca252fd1504567d12e59e9fcf5fe6629899770bf37"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\error_state.svg",
+                      "size":  1283,
+                      "sha256":  "6e0ecb8a90e12697a04c1540a7f090430869d081f45b611a2a383dee501d2b34"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\lock_state.svg",
+                      "size":  1289,
+                      "sha256":  "92a0edd773a0b886ea82958cd1d7b104866c90952867c7aebc71233f1f4717cb"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\manual_objects_pipeline.svg",
+                      "size":  1296,
+                      "sha256":  "816dc434cd24fc6181cb9f8800e168ff937b05b45d8a95302d75cf9b9921b81e"
+                  },
+                  {
+                      "path":  "Dataset\\Select_Programme\\UI_Assets\\V3.0.1_202606051430\\selection_saved.svg",
+                      "size":  1300,
+                      "sha256":  "2cf208f035f19184d6994ec6175ec353c3549c8b0138bd698d2412c584800886"
+                  }
+              ],
+    "safety":  {
+                   "raw_dataset_files_included":  false,
+                   "model_weights_included":  false,
+                   "dataset_yaml_included":  false,
+                   "status":  "PENDING_AUDIT"
+               },
+    "validation":  [
+                       "V3.0.1 tests: 9/9 OK",
+                       "V3.0 regression: 6/6 OK",
+                       "V2.2.4 regression: 10/10 OK",
+                       "V1.8.1 backend regression: 32 OK, 1 skipped",
+                       "Source import: OK",
+                       "Packaged executable --help: exit 0",
+                       "Release tree raw image/YAML/weight scan: clean"
+                   ]
+}

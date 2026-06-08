@@ -1,0 +1,100 @@
+{
+  "programme_version": "V3.0.1",
+  "ui_version": "V3.0.1_202606051430",
+  "created_at": "2026-06-05T16:23:13",
+  "policy": {
+    "contains_dataset_image": false,
+    "internet_assets_used": false,
+    "system_fonts_packaged": false,
+    "forbidden_motifs": [
+      "street scenes",
+      "faces",
+      "surveillance imagery",
+      "public-safety incidents",
+      "dataset-like samples"
+    ]
+  },
+  "assets": [
+    {
+      "asset_name": "ambiguous_state.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "3675ae1523033c4575c38b24af0d0c91461c00520e51c41f6e337bca88630b4c"
+    },
+    {
+      "asset_name": "app_icon.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "30d70b67ae38a9093bda55cf116a6b184f5143ce82d8b3c17c94468940e32fa6"
+    },
+    {
+      "asset_name": "asset_prompt_log.json",
+      "asset_type": "json",
+      "generated_by": "manual_placeholder",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "5cfe9615e57df962a3a4462f8a9212f450b87155d8456e5c8797fac28eda0336"
+    },
+    {
+      "asset_name": "design_tokens.json",
+      "asset_type": "json",
+      "generated_by": "manual_placeholder",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "7b8a8e1b1b9218e89aa8b5b0632d65e60ddaeb8b7961d1b803b6a7436f9902f5"
+    },
+    {
+      "asset_name": "empty_manual_objects.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "4b05580db51a0ef3254fbaca252fd1504567d12e59e9fcf5fe6629899770bf37"
+    },
+    {
+      "asset_name": "error_state.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "6e0ecb8a90e12697a04c1540a7f090430869d081f45b611a2a383dee501d2b34"
+    },
+    {
+      "asset_name": "lock_state.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "92a0edd773a0b886ea82958cd1d7b104866c90952867c7aebc71233f1f4717cb"
+    },
+    {
+      "asset_name": "manual_objects_pipeline.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "816dc434cd24fc6181cb9f8800e168ff937b05b45d8a95302d75cf9b9921b81e"
+    },
+    {
+      "asset_name": "selection_saved.svg",
+      "asset_type": "svg",
+      "generated_by": "procedural_svg",
+      "source": "procedural",
+      "contains_dataset_image": false,
+      "created_at": "2026-06-05T16:23:13",
+      "sha256": "2cf208f035f19184d6994ec6175ec353c3549c8b0138bd698d2412c584800886"
+    }
+  ]
+}

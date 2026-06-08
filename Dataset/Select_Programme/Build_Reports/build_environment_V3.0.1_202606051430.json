@@ -1,0 +1,54 @@
+{
+  "programme_version": "V3.0.1",
+  "ui_version": "V3.0.1_202606051430",
+  "created_at": "2026-06-05T14:30:00+08:00",
+  "python": "3.11.13",
+  "uv": "0.11.6",
+  "PySide6": "6.11.1",
+  "Pillow": "11.3.0",
+  "PyInstaller": "6.20.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "entry": "Dataset/Select_Programme/CIVL7009_source_group_picker_qt_V3.0.1_202606051430.py",
+  "spec": "Dataset/Select_Programme/Build_Spec/CIVL7009_Source_Group_Picker_V3.0.1_202606051430.spec",
+  "exe": {
+    "path": "Dataset/Select_Programme/Executable/CIVL7009_Source_Group_Picker_V3.0.1_202606051430.exe",
+    "sha256": "A4D600DD47B922D67109CF8B23FEF25401EC6D1425AAC65E28A0543D240D3EB1",
+    "bytes": 71986885
+  },
+  "bundled_core": "Dataset/Select_Programme/CIVL7009_source_group_picker_gui_V1.8.2_202606042313.py",
+  "qt_plugin_notes": [
+    "PyInstaller PySide6 hooks included QtCore, QtGui, QtWidgets, QtNetwork, QtSvg, and QtSvgWidgets dependencies.",
+    "Smoke-open test passed with QT_QPA_PLATFORM=offscreen.",
+    "Pillow is bundled for Qt-safe background thumbnail generation in Manual Objects mode."
+  ],
+  "test_results": [
+    {
+      "name": "test_source_group_picker_qt_V3.0.1_202606051430.py",
+      "result": "9/9 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V3.0_202606050530.py",
+      "result": "6/6 OK"
+    },
+    {
+      "name": "test_source_group_picker_qt_V2.2.4_202606042313.py",
+      "result": "10/10 OK"
+    }
+  ],
+  "real_manual_objects_read_only_check": {
+    "root": "Dataset/Source_Archive/Manual_Objects",
+    "mode": "index",
+    "group_count": 43563,
+    "row_count": 135349,
+    "index_load_ms_observed": 1834.915,
+    "example_group": "SHA256_EXACT_IMAGE/N02/G000001",
+    "example_item_count": 2,
+    "example_issues": 0
+  },
+  "safety": {
+    "does_not_create_manual_review_staging": true,
+    "does_not_modify_source_archive_ids": true,
+    "manual_objects_mode_writes_only_selection_files": true,
+    "claim_status": "PENDING_AUDIT"
+  }
+}
